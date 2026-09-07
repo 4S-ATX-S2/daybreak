@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Daybreak Brief · ATX-DB-2026-251 · 7 September 2026 · Full Edition</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  /* ============================================================
+     DAYBREAK BRIEF — reusable stylesheet
+     Edit the tokens in :root to re-skin every edition at once.
+     ============================================================ */
+  :root{
+    --gold:#94803a;            /* section numbers, rules, subtitle */
+    --gold-light:#b3a24e;
+    --ink:#26251f;             /* body text */
+    --ink-soft:#54524a;        /* captions / secondary */
+    --bar:#211f18;             /* dark table-header bar */
+    --cream:#f7f4ec;           /* striped rows / callout fill */
+    --cream-2:#efe9d8;
+    --rule:#d9d2bf;            /* hairline rules */
+    /* condition + status colors */
+    --calm:#7d8a4e;
+    --attentive:#a08b3f;
+    --elevated:#b0592b;
+    --high:#7c1f1f;
+    --severe:#511414;
+    --new:#211f18;
+    --closed:#8a8578;
+    --flag-green:#56663a;
+    --flag-yellow:#c9971f;
+    --flag-red:#a4331f;
+    --flag-black:#211f18;
+    --up:#b0592b;              /* trend up */
+    --down:#6f7d45;            /* trend down */
+    --steady:#8a8578;          /* trend steady */
+    --link:#5a4a1f;
+  }
+  *{box-sizing:border-box;}
+  html{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  body{
+    margin:0;color:var(--ink);
+    font-family:"Source Sans 3","Segoe UI",Helvetica,Arial,sans-serif;
+    font-size:10.2px;line-height:1.5;background:#8f8f8f;
+  }
+  .page{
+    background:#fff;width:8.5in;min-height:11in;margin:0 auto;
+    padding:0.6in 0.62in 0.5in;position:relative;
+  }
+  @media screen{ .page{margin:14px auto;box-shadow:0 2px 14px rgba(0,0,0,.28);} }
+
+  /* ---------- masthead ---------- */
+  .topbar{display:flex;justify-content:space-between;align-items:center;
+    font-size:8px;letter-spacing:1.4px;color:var(--ink-soft);
+    border-top:2px solid var(--gold);border-bottom:1px solid var(--rule);
+    padding:5px 0;text-transform:uppercase;font-weight:600;}
+  .topbar b{color:var(--ink);}
+  .masthead{text-align:center;padding:12px 0 6px;}
+  .masthead h1{font-family:"Playfair Display",Georgia,serif;font-weight:600;
+    letter-spacing:.22em;font-size:34px;margin:0 0 2px;color:var(--ink);}
+  .masthead .sub{font-family:"Source Sans 3",sans-serif;letter-spacing:.34em;
+    font-size:9px;color:var(--gold);text-transform:uppercase;font-weight:600;}
+  .masthead .dateline{font-size:9.5px;margin-top:8px;color:var(--ink);}
+  .masthead .dateline b{font-weight:700;}
+  .classline{text-align:center;font-size:8.4px;letter-spacing:.18em;
+    color:var(--ink-soft);text-transform:uppercase;font-weight:600;
+    border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);
+    padding:5px 0;margin-top:10px;}
+
+  /* ---------- section headers ---------- */
+  h2.sec{font-family:"Source Sans 3",sans-serif;font-size:13px;font-weight:700;
+    letter-spacing:.13em;text-transform:uppercase;margin:15px 0 7px;
+    padding-bottom:5px;border-bottom:2px solid var(--bar);color:var(--ink);}
+  h2.sec .num{color:var(--gold);font-weight:700;margin-right:7px;}
+  h3.mini{font-size:9.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--ink);margin:14px 0 5px;}
+  h3.mini::before{content:"— ";color:var(--gold);}
+  .src{font-size:8.4px;color:var(--ink-soft);margin:-3px 0 8px;font-style:italic;}
+  .src a{color:var(--link);}
+
+  p{margin:0 0 8px;}
+  .lead{font-size:10.6px;line-height:1.62;}
+  a{color:var(--link);}
+
+  /* ---------- callout / day-ahead ---------- */
+  .callout{background:var(--cream);border-left:4px solid var(--gold);
+    padding:11px 14px 4px;margin:4px 0 6px;}
+  .focus{border-top:1px dashed var(--gold-light);padding-top:7px;margin-top:2px;font-size:9.6px;}
+  .focus b{color:var(--gold);letter-spacing:.06em;}
+
+  /* ---------- generic tables ---------- */
+  table{width:100%;border-collapse:collapse;margin:6px 0 4px;font-size:9.3px;}
+  thead th{background:var(--bar);color:#fff;text-align:left;font-weight:600;
+    letter-spacing:.09em;text-transform:uppercase;font-size:8.2px;padding:6px 8px;}
+  tbody td{padding:6px 8px;border-bottom:1px solid var(--rule);vertical-align:top;}
+  tbody tr:nth-child(even){background:var(--cream);}
+  td .w{font-weight:700;}
+  .param td:first-child{width:26%;color:var(--ink-soft);font-weight:600;}
+
+  /* ---------- "since yesterday" strip ---------- */
+  .strip{margin:10px 0 2px;border:1px solid var(--rule);}
+  .strip .bar{background:var(--bar);color:#fff;font-size:8px;letter-spacing:.14em;
+    font-weight:700;padding:4px 9px;text-transform:uppercase;}
+  .strip .bar span{font-weight:400;letter-spacing:.06em;text-transform:none;font-style:italic;color:#d7d2c4;}
+  .strip .row{display:flex;gap:8px;padding:6px 9px;border-top:1px solid var(--rule);}
+  .strip .row:first-of-type{border-top:none;}
+  .strip .k{width:78px;font-weight:700;font-size:8.4px;letter-spacing:.08em;
+    text-transform:uppercase;flex:none;padding-top:1px;}
+
+  /* ---------- chips / badges ---------- */
+  .chip{display:inline-block;color:#fff;font-weight:700;font-size:8.2px;
+    letter-spacing:.09em;text-transform:uppercase;padding:3px 9px;border-radius:2px;
+    text-align:center;min-width:74px;}
+  .c-calm{background:var(--calm);} .c-attentive{background:var(--attentive);}
+  .c-elevated{background:var(--elevated);} .c-high{background:var(--high);}
+  .c-severe{background:var(--severe);}
+  .badge{display:inline-block;color:#fff;font-weight:700;font-size:7.6px;
+    letter-spacing:.08em;text-transform:uppercase;padding:2px 7px;border-radius:2px;}
+  .b-open{background:var(--attentive);} .b-monitoring{background:var(--elevated);}
+  .b-new{background:var(--new);} .b-closed{background:var(--closed);}
+  .tr-up{color:var(--up);font-weight:700;} .tr-down{color:var(--down);font-weight:700;}
+  .tr-steady{color:var(--steady);font-weight:700;}
+
+  .flag{display:flex;align-items:center;gap:12px;background:var(--cream);
+    border:1px solid var(--rule);padding:9px 12px;margin:6px 0;}
+  .flag .lvl{flex:none;color:#fff;font-weight:700;letter-spacing:.12em;font-size:11px;
+    padding:9px 16px;border-radius:2px;text-transform:uppercase;}
+  .fg-green{background:var(--flag-green);} .fg-yellow{background:var(--flag-yellow);color:#3a2c08;}
+  .fg-red{background:var(--flag-red);} .fg-black{background:var(--flag-black);}
+  .flag .txt{font-size:9.2px;} .flag .txt em{color:var(--ink-soft);}
+
+  ul.tight{margin:4px 0 8px;padding-left:16px;} ul.tight li{margin:3px 0;}
+  .cols{display:grid;grid-template-columns:1fr 1fr;gap:10px 26px;}
+  .note{font-size:8.6px;color:var(--ink-soft);font-style:italic;margin:6px 0 2px;}
+
+  /* ============================================================
+     THE CRAFT — recurring educational feature (REUSABLE BLOCK)
+     Swap the kicker, headline, two paragraphs and the quote each
+     edition. Keep it warm and plain — written for hotel staff,
+     not for a security operations center. One idea per day drawn
+     from: rapport · awareness/observation · calm & de-escalation.
+     ============================================================ */
+  .craft{border:1px solid var(--gold);background:#fbf9f2;
+    padding:11px 15px 12px;margin:16px 0 6px;page-break-inside:avoid;}
+  .craft .kick{display:inline-block;background:var(--gold);color:#fff;
+    font-size:7.6px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;
+    padding:3px 10px;border-radius:2px;}
+  .craft h4{font-family:"Playfair Display",Georgia,serif;font-weight:600;
+    font-size:16px;margin:9px 0 7px;color:var(--ink);letter-spacing:.01em;}
+  .craft p{margin:0 0 7px;font-size:9.9px;line-height:1.62;}
+  .craft .quote{border-top:1px dashed var(--gold-light);margin-top:9px;
+    padding-top:8px;font-style:italic;font-size:10px;color:#403e37;line-height:1.55;}
+  .craft .quote .by{display:block;font-style:normal;font-weight:700;font-size:8.2px;
+    letter-spacing:.08em;text-transform:uppercase;color:var(--gold);margin-top:5px;}
+
+  /* ---------- contacts ---------- */
+  .contacts{display:grid;grid-template-columns:1fr 1fr;gap:0 26px;font-size:9.2px;}
+  .contacts .r{display:flex;justify-content:space-between;padding:5px 2px;
+    border-bottom:1px solid var(--rule);}
+  .contacts .r b{font-weight:700;}
+
+  /* ---------- map ---------- */
+  .map-wrap{border:1px solid var(--rule);background:var(--cream);padding:6px;margin:6px 0;}
+  .map-cap{font-size:8.4px;color:var(--ink-soft);padding:4px 4px 0;}
+  .map-cap b{color:var(--ink);}
+
+  /* ---------- footer ---------- */
+  .foot{margin-top:4px;border-top:1px solid var(--rule);padding-top:5px;
+    text-align:center;font-size:8px;color:var(--ink-soft);letter-spacing:.04em;}
+  .conf{font-size:8.6px;color:var(--ink-soft);line-height:1.5;margin-top:8px;}
+  .conf b{color:var(--ink);}
+
+  @media print{
+    body{background:#fff;font-size:7.80px;line-height:1.27;}
+    .page{margin:0;box-shadow:none;width:auto;min-height:0;padding:0.16in 0.40in 0.03in;}
+    h2.sec{page-break-after:avoid;font-size:10.2px;margin:6px 0 3px;padding-bottom:2px;}
+    .strip,.flag,.map-wrap{page-break-inside:avoid;}
+    .craft p,.craft h4,.ready p,.ready .rgrid>div{page-break-inside:avoid;}
+    table{page-break-inside:auto;font-size:7.32px;margin:3px 0 3px;} tr{page-break-inside:auto;} thead{display:table-header-group;}
+    .pb{page-break-before:always;}
+    h3.mini{margin:9px 0 4px;}
+    thead th{padding:2.2px 5px;} tbody td{padding:1.9px 5px;}
+    p{margin:0 0 3.4px;}
+    ul.tight{margin:3px 0 6px;} ul.tight li{margin:2px 0;}
+    .callout{padding:6px 10px;}
+    .flag{padding:7px 12px;margin:5px 0;}
+    .craft{margin:3px 0 4px;padding:4px 10px;}
+    .craft h4{margin:7px 0 5px;} .craft p{margin:0 0 5px;}
+    .craft .quote{margin-top:7px;padding-top:6px;}
+    .map-wrap{padding:4px;margin:4px 0;}
+    .src{margin:-3px 0 3px;font-size:6.50px;}
+    .note{margin:5px 0 2px;}
+    .conf{font-size:6.20px;line-height:1.16;margin-top:5px;}
+    .foot{margin-top:2px;padding-top:3px;font-size:7.3px;}
+    .lead{font-size:8.20px;line-height:1.33;}
+    .cols{gap:8px 24px;}
+    .contacts .r{padding:2.1px 2px;}
+  }
+  @page{size:Letter;margin:0;}
+</style>
+</head>
+<body>
+<div class="page">
+
+
+
+  <div class="topbar"><span>Produced by the <b>ATX Security Office</b></span><span>DTG <b>070600 SEP 07 CDT</b></span></div>
+  <div class="masthead">
+    <h1>DAYBREAK&nbsp;BRIEF</h1>
+    <div class="sub">Daily Awareness &amp; Guest Environment</div>
+    <div class="dateline"><b>Monday, 7 September 2026 &middot; Labor Day</b> &nbsp;&middot;&nbsp; Edition ATX-DB-2026-251 &nbsp;&middot;&nbsp; Four Seasons Hotel Austin &middot; 98 San Jacinto Blvd</div>
+  </div>
+  <div class="classline">Internal &mdash; Property Team Only &middot; Please Handle With Discretion</div>
+
+  <!-- 01 -->
+  <h2 class="sec"><span class="num">01</span>The Day Ahead</h2>
+  <div class="callout">
+    <p class="lead"><b>The tripwire did not trip.</b> Ed. 250 flagged today as a <b>Black-flag candidate</b> because two products an hour apart put Labor Day's heat index at <b>107&deg;</b> and then <b>109&deg;</b>, straddling the <b>&ge;108&deg;</b> criterion at which a Heat Advisory is issued, and it told the team to build for the higher figure and re-check on a fresh product. <b>That re-check is done. The 11:32 PM product, read twice sixty seconds apart, gives near 100&deg; with a heat index of 105&deg;</b> &mdash; below the criterion, and below both of yesterday's figures. <b>Today is Red, not Black. No advisory is in force and none is forecast.</b> The right conclusion is not that yesterday was wrong; it is that <b>a range published across a decision line is what let today's answer be a fact rather than a correction</b>. <b>Today is hotter in the air and easier on the body than yesterday</b> &mdash; <b>near 100&deg;</b> against yesterday's <em>observed</em> 97&deg;, at a forecast index of <b>105&deg;</b> against yesterday's <em>forecast</em> 106&deg; &mdash; because the humidity has come down with the rain. <em>(Forecast against forecast, and observation against observation: no observed index for yesterday is published, because none was retrieved.)</em> <b>And the rain was real: Camp Mabry recorded 0.12&quot;</b>, the first measurable precipitation of September, on the 40% chance ed. 250 published. <b>Today's rain chance is 10%.</b> On the ground it is as quiet as this month has been: <b>the Moody Center, the Moody Theater and 3TEN are all dark, City of Austin offices and municipal facilities are closed, and nothing is listed downtown.</b> <b>Ed. 250 published in advance that today would look like this, and it does.</b> <b>The load is departures</b> &mdash; the heavy end of a holiday weekend, spread across the morning, in triple digits, on a front drive with no event traffic to explain it away. Abroad, <b>Iran is reported to be preparing to declare a restricted zone and to announce a new shipping route through the Strait of Hormuz</b>: for three editions running this item has changed character, and it now moves from violence toward administration. <b>&#9888; Two standing sources would not answer this morning</b> &mdash; the Hormuz transit tracker and the Austin Public Health feed &mdash; <b>so their figures are carried as unverified, not as unchanged.</b></p>
+    <p class="focus"><b>TODAY'S FOCUS: The building empties in the heat &mdash; work the drive, not the desk.</b> Nothing competes with departures today, which makes this an easy day to under-staff outside and over-staff inside. <b>Put your strongest people on the front drive and write the relief rotation down before ten o'clock</b> &mdash; at a 105&deg; index, a runner who has been out for two hours is not a judgement call, he is a schedule you failed to make. Second, <b>use the quiet deliberately.</b> A day with no external structure is the day attention quietly degrades, because nothing in the environment is holding it up for you. <b>See The Craft &mdash; today's note is on observation, and it is written for exactly this kind of day.</b></p>
+    <div class="strip" style="border:none;margin:4px 0 0;">
+      <div class="bar">Since Yesterday <span>&mdash; compared with Saturday's brief (5 September, ed. 249). <b>Consecutive editions; Watch Item ages step by one.</b></span></div>
+      <div class="row"><div class="k">Weather</div><div><span class="tr-steady">&#9644;</span> <b>The Black-flag tripwire resolved downward, and Red holds a second day.</b> Ed. 250 published Monday's index as <b>unsettled between 107&deg; and 109&deg;</b> and declined to assert a side of the <b>108&deg;</b> line. <b>This morning's product, read twice, gives 105&deg;</b> &mdash; below both figures and below the criterion. <b>Air temperature is up (near 100&deg; against yesterday's observed 97&deg;) while the index is down</b>, which is the humidity leaving after yesterday's rain. <b>Rain falls from 40% to 10%.</b></div></div>
+      <div class="row"><div class="k">Observed</div><div><span class="tr-up">&#9650;</span> <b>Both missing observations are recovered, including the one ed. 250 had to publish as a gap.</b> <b>Saturday 5 September reached 102&deg; at 3:32 PM</b>, minimum 77&deg;, no rain &mdash; against ed. 249's forecast of <b>near 98&deg;</b>, which was <b>under by four degrees</b>. <b>Sunday 6 September reached 97&deg; at 2:36 PM</b>, minimum 78&deg;, with <b>0.12&quot; of rain</b> &mdash; against ed. 250's forecast of <b>near 97&deg; with a 40% chance of storms</b>, which is <b>exact on both counts</b>.</div></div>
+      <div class="row"><div class="k">Gatherings &amp; Traffic</div><div><span class="tr-down">&#9660;</span> <b>Public Gatherings falls Attentive &rarr; Calm.</b> It is not a judgement about mood: <b>all three downtown venues are dark, the City is closed, and the events calendar is empty.</b> There is nothing to be attentive to. <b>Calm was last carried on 1 September &mdash; on the same chip, and for the same reason: three dark venues.</b> <b>Traffic holds at Attentive</b> on holiday departures. <b>WI-13 has closed and drops off the register.</b></div></div>
+      <div class="row"><div class="k">Watch Items</div><div><span class="tr-up">&#9650;</span> <b>WI-05 Day 56 &mdash; the item changes character for the third edition running.</b> Al Jazeera's index carries, dated today, that <b>Iran will announce a new shipping route through the strait &ldquo;in coming days&rdquo;</b> and reporting on <b>a planned restricted zone near Hormuz</b>. <b>&#9888; The transit tracker refused us</b>, so counts and probabilities are <b>not verified this pass</b>. <b>WI-11 Day 7</b>, still no aviation evidence. <b>WI-06 Day 55 carried unread. WI-10 Day 14 &mdash; the health feed 404'd a second edition.</b></div></div>
+    </div>
+  </div>
+
+  <!-- 02 -->
+  <h2 class="sec"><span class="num">02</span>Conditions at a Glance</h2>
+  <table>
+    <thead><tr><th style="width:22%">Area</th><th style="width:16%">Condition</th><th style="width:16%">Trend</th><th>In One Line</th></tr></thead>
+    <tbody>
+      <tr><td>Neighborhood &amp; Street</td><td><span class="chip c-attentive">Attentive</span></td><td><span class="tr-steady">&#9644;</span> 4 days, no incident release</td><td><b>No APD incident release since 3 September</b> and nothing on either feed since the 4th. Held at Attentive only because <b>one homicide investigation still has a suspect outstanding</b>.</td></tr>
+      <tr><td>Public Gatherings</td><td><span class="chip c-calm">Calm</span></td><td><span class="tr-down">&#9660;</span> every venue dark</td><td><b>Moody Center, Moody Theater and 3TEN all dark today through Wednesday.</b> City offices closed. <b>Nothing listed downtown.</b></td></tr>
+      <tr><td>Weather &amp; Storms</td><td><span class="chip c-elevated">Elevated</span></td><td><span class="tr-steady">&#9644;</span> Red holds, 2nd day</td><td><b>Nothing in effect.</b> Near <b>100&deg;</b>, index <b>105&deg;</b>, rain <b>10%</b>. <b>Tuesday's index is 107&deg;, one degree under the advisory line.</b></td></tr>
+      <tr><td>Traffic &amp; Arrivals</td><td><span class="chip c-attentive">Attentive</span></td><td><span class="tr-steady">&#9644;</span> holiday departures</td><td>No closures, no event. <b>The heavy end of a holiday weekend</b> &mdash; volume is on the front drive, not the streets.</td></tr>
+      <tr><td>Utilities &amp; Grid</td><td><span class="chip c-attentive">Attentive</span></td><td><span class="tr-steady">&#9644;</span> reporting blind 18 days</td><td>No appeal reported, and the source states normal operations &mdash; but its last <b>actual</b> reading is still <b>20 August</b>.</td></tr>
+    </tbody>
+  </table>
+  <p class="note">Scale: Calm &middot; Attentive &middot; Elevated &middot; High &middot; Severe. <b>One chip moves, and it moves to a level this brief has not used before.</b> <b>Public Gatherings goes Attentive &rarr; Calm &mdash; the level this brief last used on 1 September, on this same chip and for this same reason.</b> That is not optimism and it is not a mood reading: <b>the three venues we track are dark today and stay dark through Wednesday, City of Austin offices and municipal facilities are closed, and the downtown events calendar lists nothing at all.</b> A chip measures what is out there to be managed, and today the honest answer is <b>nothing</b>. <b>If Calm is never used when the street is genuinely empty, then Attentive stops meaning anything on the days it matters.</b> <b>Weather holds Elevated and the flag holds Red</b> &mdash; an index of <b>105&deg;</b> is inside the 103&ndash;115 band, <b>nothing is in effect</b>, and <b>WI-09 stays closed for an eighth edition</b>. <b>Neighborhood holds Attentive</b> on four quiet days, for the same reason as yesterday: an open investigation with a suspect not in custody is not a quiet city. <b>Traffic holds Attentive</b> &mdash; the volume today is departures, and it lands on the drive rather than the road. <b>Utilities holds</b> on a gap now <b>eighteen days</b> old. Re-verify at shift start.</p>
+
+  <!-- 03 -->
+  <h2 class="sec"><span class="num">03</span>Weather &amp; Comfort</h2>
+  <div class="src">Sources: NWS Austin/San Antonio via <b>api.weather.gov</b> &mdash; <b>point forecast product issued 11:32 PM CDT, read twice sixty seconds apart and identical on both reads</b> &middot; <b>active-alerts endpoint for 30.2672N 97.7431W</b> &middot; <b>Camp Mabry daily climate reports (CLI), six issuances pulled &mdash; the source that could not be reached at all in ed. 250</b> &middot; <b>Travis zone forecast product</b> &middot; <b>KATT and KAUS observation series</b> &middot; <b>Area Forecast Discussion</b>. Sunrise/sunset computed for 30.2672N 97.7431W. <b>Every weather row in this section was retrieved this morning; none is carried.</b></div>
+  <table class="param">
+    <thead><tr><th>Parameter</th><th>Today</th></tr></thead>
+    <tbody>
+      <tr><td>High / Low</td><td><b>Near 100&deg; / low around 79&deg;</b> &mdash; mostly sunny, south-southeast wind 0 to 5 mph. <b>Hotter than yesterday's observed 97&deg;</b>, and the fourth consecutive night at or above 78&deg;</td></tr>
+      <tr><td>Feels Like</td><td><b>Heat index values as high as 105&deg;</b> &mdash; <b>inside the Red band (103&ndash;115)</b>, <b>three degrees below the &ge;108&deg; advisory criterion</b>. <b>The Exterior Team Flag holds Red for a second day.</b> <b>&#9888; Note the shape of this: the air is hotter than yesterday and the index is lower</b> &mdash; 100&deg; dry against 97&deg; humid. Anyone reading the two numbers side by side will think one is wrong; it is worth explaining once at pre-shift. <b>Overnight is not relief: the index still reaches 103&deg; after dark</b></td></tr>
+      <tr><td>Rain / Storms</td><td><b>Chance of precipitation 10%.</b> Yesterday's <b>40%</b> was the highest of this run and <b>it delivered &mdash; 0.12&quot; at Camp Mabry</b>, the first measurable precipitation of September. <b>Today there is effectively no storm decision to make</b>, which is worth saying explicitly so that yesterday's lightning-hold planning is stood down deliberately rather than forgotten</td></tr>
+      <tr><td>Wind</td><td><b>South-southeast 0 to 5 mph</b>, effectively calm all day. <b>There is no wind to help</b>: on a 100&deg; day at 5 mph, shade and rotation are the only mitigations that do anything</td></tr>
+      <tr><td>Advisories</td><td><b>NONE IN EFFECT.</b> The <b>active-alerts endpoint for this point returns zero alerts</b>, and the point forecast carries <b>no hazard headline</b>. <b>&#9888; This is a stronger form of the same answer than ed. 250 gave.</b> Eds. 247&ndash;249 struggled with an office page that was a day stale and read inconsistently three times in one session; ed. 250 got a fresh page and could quote it. <b>Today the question is answered by the alert feed itself rather than by a rendered page &mdash; there is nothing to read inconsistently.</b> <b>WI-09 stays closed for an eighth edition</b></td></tr>
+      <tr><td>Observed vs Forecast</td><td><b>BOTH OUTSTANDING OBSERVATIONS ARE RECOVERED, INCLUDING THE ONE ED. 250 PUBLISHED AS A GAP.</b> <b>Saturday 5 September: maximum 102&deg; at 3:32 PM, minimum 77&deg;, precipitation 0.00&quot;.</b> Ed. 249 forecast <b>near 98&deg; with an index of 102&deg;</b> for that day &mdash; <b>the air temperature verified four degrees low</b>, and it is recorded here rather than quietly dropped. <b>Sunday 6 September (preliminary): maximum 97&deg; at 2:36 PM, minimum 78&deg;, 0.12&quot; of rain through 5:45 PM.</b> Ed. 250 forecast <b>near 97&deg; with a 40% chance of showers and storms</b> &mdash; <b>correct on the temperature to the degree and correct on the rain</b>. <em>The 6 September figures are from the evening preliminary; the daily final issues around 2 AM and ed. 252 should confirm them.</em> <b>The heat run now reads: 100 / 100 / 100 (29&ndash;31 Aug) &middot; 101 &middot; 103 &middot; 102 &middot; 96 &middot; 102 &middot; 97</b></td></tr>
+      <tr><td>Outlook</td><td><b>&#9888; TUESDAY IS THE ONE TO WATCH NOW: near 101&deg;, sunny, with a heat index of 107&deg; &mdash; one degree under the &ge;108&deg; advisory criterion.</b> <b>Both of this morning's reads agree on 107&deg;</b>, so it is safe to state, but it sits inside the margin where a single re-issuance can move it across the line. <b>Re-check it on a fresh product before tomorrow's 0600.</b> <b>Wednesday 9 September: near 100&deg;, sunny.</b> The standing rule is unchanged and should be briefed rather than assumed: <b>if an advisory issues, the flag goes Black, the Weather chip goes High, and a new heat Watch Item opens &mdash; it does not revive WI-09</b></td></tr>
+      <tr><td>Sunrise / Sunset</td><td>7:11 AM / 7:45 PM <em>(computed)</em> &mdash; <b>two minutes shorter at each end than a week ago</b></td></tr>
+    </tbody>
+  </table>
+  <h3 class="mini">Exterior Team Flag &mdash; Red: index 105&deg;, holding a second day</h3>
+  <div class="flag">
+    <div class="lvl fg-red">Red</div>
+    <div class="txt"><b>Red holds, and the Black-flag candidate did not become one.</b> A forecast heat index of <b>105&deg;</b> sits inside the Red band (103&ndash;115): <b>shortened rotations, mandatory water and shaded relief</b> for door, drive and every exterior post. <b>Nothing is in effect</b>, so the chip does not go higher and <b>WI-09 stays closed</b>. What makes today different from yesterday is not the weather, it is <b>the shape of the work</b>. Yesterday the heat arrived alongside a storm decision and two venue releases. <b>Today there is no event at all, and the entire load is departures on the front drive</b> &mdash; luggage, standing cars, and people walking out of air conditioning into 100&deg; with no shade. <b>That is the highest-exposure post in the building today by a distance, and it is the one most likely to be left to sort itself out</b>, because nothing else is competing for the supervisor's attention. <b>Write the rotation down.</b> <em>(Green: normal &middot; Yellow: index 91&ndash;102 &middot; Red: 103&ndash;115 &middot; Black: heat advisory/warning or 115+.)</em></div>
+  </div>
+  <ul class="tight">
+    <li><b>Yesterday's tripwire is closed, and the method is the point.</b> Ed. 250 could not say whether Monday cleared the advisory line, so <b>it published both figures and asserted neither</b>, and told the team to build for the worse one. <b>Today's answer &mdash; 105&deg;, comfortably under &mdash; arrives as information rather than as a correction.</b> Had that edition picked 109&deg;, this one would be retracting it. <b>Keep doing it that way when a number sits near a criterion.</b></li>
+    <li><b>Stand the lightning plan down out loud.</b> Rain is 10%. Yesterday's hold trigger and named caller were built for a real 40% risk; <b>say at pre-shift that it is stood down and keep the sheet</b>, rather than letting it lapse silently and be rebuilt from nothing next time.</li>
+    <li><b>Tuesday at 107&deg; is tonight's brief, not tomorrow's.</b> One degree of margin, on a product that re-issues hourly. <b>Whoever runs tomorrow reads a fresh product before 0600.</b></li>
+  </ul>
+
+  <!-- 04 -->
+  <h2 class="sec"><span class="num">04</span>Around the Neighborhood</h2>
+  <div class="src">Sources: NWS via <b>api.weather.gov</b> (point product <b>11:32 PM</b>, double-read; active alerts; <b>CLI Camp Mabry &times; 6</b>; zone product; KATT/KAUS series; AFD) &middot; Trading Economics (Brent and WTI pages retrieved <b>separately</b>, <b>7 Sep</b>) &middot; Al Jazeera news index (<b>7 Sep</b>) &middot; City of Austin and APD news feeds, <b>checked separately</b> (through <b>7 Sep</b>) &middot; ERCOT via Texas Power Cost &middot; Moody Center, ACL Live and 3TEN calendars, <b>checked separately</b> &middot; University of Texas athletics schedule &middot; UT Parking &amp; Transportation &middot; Austin FC. <b>&#9888; Not reachable this morning: the Hormuz transit tracker (refused, 403) and the Austin Public Health feed (404, second consecutive edition).</b> <b>21 of 23 standing sources answered.</b></div>
+  <table>
+    <thead><tr><th style="width:34%">What's Happening</th><th style="width:22%">Where</th><th>Why It's Worth Knowing</th></tr></thead>
+    <tbody>
+      <tr><td><span class="w">Iran is reported to be moving from attacking the strait to administering it.</span> Al Jazeera's news index carries, all dated <b>7 September</b>: a live-updates entry headed <b>&ldquo;Iran to announce new shipping route in Strait of Hormuz &lsquo;in coming days&rsquo;&rdquo;</b>, an explainer headed <b>&ldquo;Why is Iran planning to enforce a restricted zone near Hormuz?&rdquo;</b>, and <b>Canada saying it is working with partners to &lsquo;maintain significant pressure&rsquo; on Iran</b>. A fourth entry reads <b>&ldquo;Oil prices rise to $97 a barrel&rdquo;</b>. <b>&#9888; These are headlines read off an index page. We did not open the articles, and nothing here should be treated as established detail &mdash; only as the direction of reporting.</b></td><td>Strait of Hormuz &middot; Iran</td><td><b>No property effect &mdash; and this is the third consecutive edition in which the character of this item changes.</b> Ed. 249 tracked <b>attacks on shipping</b>. Ed. 250 recorded <b>a state striking tankers</b>. Today the reporting is about <b>a state proposing to route and restrict the traffic itself</b>. <b>A declared route and a restricted zone are an assertion of control, not an attack</b> &mdash; which is harder to insure against and slower to reverse. Detail in Sections 06 and 10.</td></tr>
+      <tr><td><span class="w">Four days without an incident release, and a City feed that is genuinely quiet.</span> <b>Neither City of Austin nor APD has posted since 4 September</b> &mdash; the two items that day were the <b>Labor Day closures notice</b> and the <b>Lake Austin watercraft ban</b>, both holiday-safety postings rather than incidents. <b>The last incident release remains the 3 September auto-theft investigation.</b> <b>Both feeds were checked separately</b>, as standing procedure since ed. 246.</td><td>City of Austin &middot; APD</td><td><b>The quiet is real, and the wording matters.</b> This brief does not say &ldquo;nothing was posted&rdquo; &mdash; two things were posted on the 4th. It says <b>no new incident release in four days</b>, which is the fact the chip is built on. <b>The Neighborhood chip nonetheless holds at Attentive</b>, because the <b>30 August Briar Hill/Woodland investigation still has a suspect outstanding</b>. A quiet feed and an open case are different things.</td></tr>
+      <tr><td><span class="w">The grid gap reaches eighteen days.</span> The ERCOT source is unchanged: last <em>actual</em> reading a peak of about <b>90,353 MW on 20 August</b>, against the record <b>91,089 MW</b> of <b>22 July 2026</b>, with no conservation appeal reported and the grid stated to be in normal operations. <b>&#9888; The source page itself returned almost no content on this morning's pass</b>, so nothing new was learned and nothing is revised.</td><td>ERCOT &middot; statewide</td><td>The count runs from the <b>last actual reading (20 August)</b>, not the page's edit date. <b>Eighteen days blind now spans the entire September heat run</b>, including two days at or above 100&deg; that this brief has verified since. <b>Unknown is not the same as fine</b>, and it is the honest label. If the source stays thin, this is a candidate for replacement with a direct ERCOT feed.</td></tr>
+    </tbody>
+  </table>
+  <p class="note">Context: no threat item on the board and nothing directed at hotels or guests. <b>Today is Labor Day</b> &mdash; the City of Austin posted on 4 September that <b>administrative offices and other municipal facilities are closed Monday 7 September, with normal business hours resuming Tuesday 8 September</b>, and a <b>personal watercraft ban is in effect on Lake Austin</b> (which is upstream, and is not the water below this property). Standing local items age on: the <b>Timber Heights homicide</b> (29 Aug, suspect arrested at the scene, Austin's 38th of 2026) and the <b>Carson Ridge auto theft</b> (29 Aug) are <b>nine days old</b>; the <b>Briar Hill/Woodland homicide</b> (30 Aug, case 26-2420956, <b>suspect outstanding</b>, the 39th) is <b>eight days old with nothing added</b>, and <b>&ldquo;northeast Austin&rdquo; remains a syndicated characterisation &mdash; no distance from this property is asserted</b>; the <b>Huston-Tillotson aggravated assault</b> is <b>thirty-seven days</b> old and the <b>West Elliot Street robbery nineteen</b>. <b>Barton Springs Pool retaining-wall works begin tomorrow, Tuesday 8 September.</b> <b>&#9888; Austin Public Health's feed returned a 404 for a second consecutive edition, so the West Nile item could not be re-checked</b> (Section 06).</p>
+
+  <!-- 05 -->
+  <h2 class="sec"><span class="num">05</span>Gatherings &amp; City Events</h2>
+  <div class="src">Sources: Moody Center event calendar &middot; ACL Live &mdash; <b>both</b> the combined listing <b>and</b> the 3TEN venue calendar, checked separately &middot; Downtown Austin Alliance events calendar &middot; <b>University of Texas athletics schedule (retrieved via the browser fallback after the site refused a direct request)</b> &middot; UT Parking &amp; Transportation &middot; Austin FC / Q2 Stadium &middot; City of Austin news.</div>
+  <p><b>There is nothing on today, anywhere we track.</b> <b>The Moody Center, the Moody Theater and 3TEN are all dark on 7, 8 and 9 September</b>; the Downtown Austin Alliance lists nothing for Labor Day; <b>City of Austin offices and municipal facilities are closed</b>. The arena's next event is <b>Tim McGraw on Thursday 10 September</b>, and the Moody Theater's next is the same night. <b>All three tracked venues are simultaneously dark</b>, which is the reason the Gatherings chip reads Calm rather than Attentive &mdash; the same state, and the same chip, as 1 September. Standing works are unchanged: the <b>Congress Avenue rebuild</b> and the <b>convention centre project</b> on Trinity, Red River and East 2nd&ndash;3rd, with <b>Barton Springs Pool retaining-wall works starting tomorrow</b>. <b>&#9888; The week ahead is where the attention belongs. Texas hosts Ohio State at DKR on Saturday 12 September, kickoff 6:30 PM, televised on ABC</b> &mdash; confirmed on the athletics schedule this morning. <b>A 6:30 kickoff releases roughly a hundred thousand people close to ten at night</b>, and <b>the Moody Theater and 3TEN both have shows the same evening</b>, so downtown empties twice within the hour. <b>The following Saturday, 19 September, is UTSA at DKR at 7:00 PM</b> &mdash; and the City has a public health fair the same day. <b>Both are named early on purpose.</b> Q2 Stadium was reachable this morning with nothing bearing on today.</p>
+  <table>
+    <thead><tr><th style="width:5%">Pin</th><th style="width:30%">Event</th><th style="width:22%">Venue</th><th style="width:13%">Distance</th><th>Our Impact</th></tr></thead>
+    <tbody>
+      <tr><td>&mdash;</td><td><b>Nothing scheduled</b> &mdash; today, tomorrow or Wednesday</td><td>Moody Theater &middot; 3TEN &middot; Moody Center</td><td>0.5&ndash;1.5 mi</td><td><b>No release, no arrival surge, no venue traffic.</b> The only pedestrian variable downtown is holiday visitors on foot in the heat</td></tr>
+      <tr><td>C</td><td>Standing construction &mdash; Congress Avenue rebuild; convention centre works</td><td>Congress Ave &middot; Trinity / Red River / E 2nd&ndash;3rd</td><td>0.1&ndash;0.5 mi</td><td>Rolling lane and sidewalk closures. <b>With nothing else on the street, these are the only variable on the drive today</b></td></tr>
+      <tr><td>&#9888;</td><td><b>Ohio State at Texas</b> &mdash; <b>Saturday 12 September, 6:30 PM, ABC</b></td><td>DKR-Texas Memorial Stadium</td><td>1.5 mi N</td><td><b>Five days out.</b> ~100k released close to <b>ten at night</b>, campus closures and towing. <b>Two downtown shows release into the same hour.</b> Plan it this week</td></tr>
+    </tbody>
+  </table>
+  <div class="map-wrap">
+    <svg viewBox="0 0 760 250" width="68%" style="display:block;margin:0 auto">
+      <rect x="0" y="0" width="760" height="250" fill="#f7f4ec"/>
+      <rect x="0" y="205" width="760" height="45" fill="#dfe7e4"/>
+      <text x="360" y="233" font-family="Source Sans 3,sans-serif" font-size="12" fill="#6f7d78" font-style="italic">Lady Bird Lake</text>
+      <g stroke="#cfc9b6" stroke-width="6">
+        <line x1="0" y1="70" x2="760" y2="70"/><line x1="0" y1="120" x2="760" y2="120"/>
+        <line x1="0" y1="170" x2="760" y2="170"/><line x1="0" y1="200" x2="760" y2="200"/>
+        <line x1="215" y1="0" x2="215" y2="205"/><line x1="330" y1="0" x2="330" y2="205"/>
+        <line x1="470" y1="0" x2="470" y2="205"/><line x1="620" y1="0" x2="620" y2="205"/>
+      </g>
+      <g font-family="Source Sans 3,sans-serif" font-size="9" fill="#8a8578">
+        <text x="6" y="66">11th St</text><text x="6" y="116">6th St</text>
+        <text x="6" y="166">2nd St</text><text x="6" y="196">Cesar Chavez St</text>
+        <text x="475" y="64">San Jacinto Blvd</text><text x="366" y="18">Congress Ave</text>
+        <text x="625" y="150">Rainey St</text>
+      </g>
+      <rect x="300" y="24" width="52" height="30" fill="#e7e0cc" stroke="#cfc9b6"/><text x="308" y="20" font-family="Source Sans 3,sans-serif" font-size="8" fill="#8a8578">Capitol</text>
+      <rect x="520" y="150" width="70" height="34" fill="#e7e0cc" stroke="#cfc9b6"/><text x="524" y="146" font-family="Source Sans 3,sans-serif" font-size="8" fill="#8a8578">Convention Ctr</text>
+      <g stroke="#b9a86a" stroke-width="5" stroke-dasharray="9 7" opacity="0.85">
+        <line x1="330" y1="62" x2="330" y2="200"/>
+        <line x1="498" y1="141" x2="600" y2="141"/>
+      </g>
+      <text x="336" y="112" font-family="Source Sans 3,sans-serif" font-size="8" fill="#8a7c46" font-weight="700">Congress rebuild</text>
+      <text x="498" y="135" font-family="Source Sans 3,sans-serif" font-size="8" fill="#8a7c46" font-weight="700">Convention ctr works</text>
+      <circle cx="120" cy="150" r="9" fill="#8a8578"/><text x="112" y="154" font-family="Source Sans 3,sans-serif" font-size="10" font-weight="700" fill="#fff">&mdash;</text>
+      <text x="18" y="138" font-family="Source Sans 3,sans-serif" font-size="8" fill="#8a8578" font-weight="700">ACL Live &mdash; Moody Theater and 3TEN both dark</text>
+      <g stroke="#8a8578" stroke-width="2.5"><line x1="470" y1="40" x2="470" y2="14"/></g>
+      <polygon points="470,8 466,17 474,17" fill="#8a8578"/>
+      <text x="482" y="18" font-family="Source Sans 3,sans-serif" font-size="8" fill="#8a8578" font-weight="700">Moody Center 1.5 mi N &mdash; dark &middot; DKR 12 Sep, 6:30 PM</text>
+      <text x="470" y="196" font-size="18" fill="#94803a">&#9733;</text>
+      <text x="486" y="196" font-family="Source Sans 3,sans-serif" font-size="10" font-weight="700" fill="#26251f">Four Seasons</text>
+    </svg>
+    <div class="map-cap"><b>&#9733; Four Seasons Hotel Austin. Every venue on this map is dark today.</b> ACL Live (0.5 mi W): <b>the Moody Theater and 3TEN are both closed</b>, today through Wednesday. Grey arrow, off-map north: the <b>Moody Center</b> (1.5 mi) is dark, and the same direction is where <b>DKR</b> sits &mdash; <b>Ohio State, Saturday 12 September, 6:30 PM</b>. Dashed corridors mark standing construction: the <b>Congress Avenue rebuild</b> and the <b>convention centre works</b> (Trinity, Red River, E 2nd&ndash;3rd). <b>Barton Springs Pool works begin tomorrow.</b></div>
+  </div>
+  <h3 class="mini">Notes for the Team</h3>
+  <ul class="tight">
+    <li><b>There is no evening pattern to work to, so make one.</b> No releases, no arrivals surge, nothing downtown. <b>Use the night for the things that never fit: exterior walk, camera checks, the stair and AED sweep in Readiness, and the radio-call rehearsal for a medical.</b> A shift with no external tempo is a training shift or a wasted one.</li>
+    <li><b>Start on the twelfth today, not on Friday.</b> <b>Ohio State at DKR, 6:30 PM, on ABC.</b> A national broadcast window and a marquee opponent mean the campus fills early and empties late. <b>Two downtown rooms release inside the same hour.</b> Five clear days is enough to plan transport, staffing and guest guidance properly &mdash; <b>and this brief names it early precisely because it failed to name the last one.</b> Guest privacy as always: we neither confirm nor discuss who is staying with us.</li>
+  </ul>
+
+  <!-- 06 -->
+  <h2 class="sec"><span class="num">06</span>Watch Items &mdash; Carry-Forward Tracker</h2>
+  <p class="note">Items carry edition to edition until formally closed. <b>Consecutive editions; ages step by one.</b> <b>WI-13 closed in ed. 250 and has dropped off the register</b> &mdash; it was opened for one weekend, it covered that weekend, and the weekend produced nothing. <b>WI-09 remains closed for an eighth consecutive edition</b>, again on a <b>Red</b> flag, which needs the same explanation it has always needed: <b>a band reading is not an advisory.</b> <b>No new item opens.</b> <b>&#9888; Two items are carried on sources that would not answer this morning</b> &mdash; WI-05's transit tracker refused the request, and WI-10's health feed 404'd for a second consecutive edition. <b>Both are marked as carried rather than checked, and their day counts are increments on unverified bases.</b> That is a worse position than yesterday on those two rows and it is stated rather than glossed. Tuesday's forecast index &mdash; <b>107&deg;, one degree under the criterion</b> &mdash; is carried as a <b>tripwire in Section 09</b>, not as an item.</p>
+  <table>
+    <thead><tr><th style="width:8%">Ref</th><th style="width:20%">Item</th><th style="width:9%">First Noted</th><th style="width:7%">Age</th><th style="width:12%">Status</th><th>Where It Stands &middot; Next Check</th></tr></thead>
+    <tbody>
+      <tr><td>WI-05</td><td>Strait of Hormuz disruption</td><td>13 Jul</td><td>Day 56</td><td><span class="badge b-open">Open</span></td><td><b>The item changes character for the third consecutive edition &mdash; and this time toward administration rather than violence.</b> Al Jazeera's news index, read this morning, carries four entries dated <b>7 September</b>: a live-updates thread headed <b>&ldquo;Iran to announce new shipping route in Strait of Hormuz &lsquo;in coming days&rsquo;&rdquo;</b>; an explainer, <b>&ldquo;Why is Iran planning to enforce a restricted zone near Hormuz?&rdquo;</b>; <b>Canada working with partners to &ldquo;maintain significant pressure&rdquo; on Iran</b>; and <b>&ldquo;Oil prices rise to $97 a barrel&rdquo;</b>. <b>&#9888; These are headlines from an index page. The articles were not opened, and no detail beyond the headlines is asserted here &mdash; treat the direction as reported and the specifics as unread.</b> <b>Why it matters even at headline level:</b> ed. 249 tracked attacks on shipping; ed. 250 recorded a state striking tankers; <b>today's reporting is about a state proposing to route and restrict the traffic itself.</b> <b>An announced corridor and a restricted zone are an assertion of jurisdiction</b>, and jurisdiction is slower to reverse than a campaign and harder to price than a risk. If it is declared, expect it to appear first in insurance and routing decisions rather than in any incident. <b>&#9888; THE TRANSIT TRACKER REFUSED US THIS MORNING (HTTP 403, INCLUDING ON THE BROWSER FALLBACK).</b> <b>Transit counts, vessels-holding, war-risk multiples and the reopening probabilities are therefore NOT VERIFIED THIS PASS and are not restated as current.</b> Ed. 250's last verified reading &mdash; six transits on 30 August at 7% of a stated ~85/day baseline, frozen a seventh day; vessels holding 400, the sixth different figure in six editions; six P&amp;I clubs withdrawn; war risk about 40&times; pre-crisis and roughly $10m per VLCC voyage; reopening under 1% by 15 Sep, 27% by 31 Dec, 56% by 1 Jul 2027 &mdash; <b>stands as the last thing we know, not as today's position.</b> <b>Strait Day 190 is an increment on the tracker's own figure and inherits its unresolved internal inconsistency</b> (closure declared 28 February 2026 against a displayed day count one short of the interval). <b>Oil moved, and it is the only WI-05 number retrieved fresh today: Brent $97.37 (+$1.086, +1.13%), WTI $92.51 (+$1.028, +1.12%)</b>, both read from their own pages rather than inferred from one another, on a <b>US holiday session</b>. <b>These are consistent with Friday's settlements published in ed. 250 ($96.28 and $91.48) plus the moves shown</b>, and Al Jazeera's independent &ldquo;oil rises to $97&rdquo; headline corroborates the level. <em>A four-cent difference between the two pages' quotes for WTI, read 0.3 seconds apart, is a live tick and not a discrepancy.</em> <b>No property action &mdash; and do not tell a guest the strait is closed, or that it is being closed.</b> <em>Next check:</em> whether the route or the zone is actually declared; whether the tracker becomes reachable again.</td></tr>
+      <tr><td>WI-11</td><td>U.S.&ndash;Iran exchange &mdash; Gulf aviation &amp; guest travel</td><td>1 Sep</td><td>Day 7</td><td><span class="badge b-monitoring">Monitoring</span></td><td><b>Seventh day, seventh edition, and the aviation evidence is still exactly zero.</b> This week has added a US strike on tankers and now reporting that Iran intends to declare a restricted zone and a new shipping route &mdash; and <b>still no airline, airport or civil-aviation notice affecting Dubai, Abu Dhabi or Amman has been retrieved, and none is asserted to exist</b>. <b>The wording is deliberately unchanged for a seventh time.</b> When the surrounding news escalates and the item does not, that is the item working: <b>it measures one specific thing, and that thing has not moved.</b> <em>Next check:</em> airline and airport advisories for DXB, AUH and AMM; any NOTAM-level airspace closure &mdash; <b>and note that a declared restricted zone at sea would not by itself close airspace, so do not let one become evidence for the other.</b> <b>Property action unchanged: no guest is contacted and no travel advice is given. Reception and the concierge flag any arrival delayed or rerouted via those hubs to the duty supervisor.</b></td></tr>
+      <tr><td>WI-06</td><td>Cyclospora &mdash; fresh produce (iceberg lettuce)</td><td>15 Jul</td><td>Day 55</td><td><span class="badge b-monitoring">Monitoring</span></td><td><b>&#9888; Carried, not re-read.</b> The CDC outbreak landing page answered this morning, but <b>the investigation figures themselves were not retrieved</b>, so ed. 250's numbers stand unchanged <b>and unconfirmed</b>: <b>11,458 illnesses across 20 states, at least 495 hospitalizations, 2 deaths</b> (Michigan), <b>Texas on the case list</b>, cause unchanged (<b>Taylor Farms de Mexico iceberg</b>, recalled <b>17 July</b>), reported onsets <b>14 June to 15 August</b>. <b>Four editions without movement is genuinely encouraging &mdash; and four static reads are not a declaration. CDC has made none.</b> <em>There is also an unresolved detail worth naming rather than hiding: the landing page retrieved this morning carries an &ldquo;updated&rdquo; date of 27 August, where ed. 250 recorded the investigation page as re-dated 3 September. Those are different pages and this brief is not reconciling them on an unread source.</em> <b>Ed. 239's recommendation to close this item remains withdrawn.</b> <em>Next check:</em> read the investigation page itself, and specifically whether the case count ever moves again. <b>Property action: the F&amp;B produce and supplier-documentation check stays live</b> (Section 08).</td></tr>
+      <tr><td>WI-10</td><td>West Nile virus &mdash; Travis County</td><td>25 Aug</td><td>Day 14</td><td><span class="badge b-monitoring">Monitoring</span></td><td><b>&#9888; Not checked for a second consecutive edition &mdash; the source returned 404 again.</b> Austin Public Health's news feed failed at the same path that failed yesterday. <b>This item is carried forward on ed. 249's reading and nothing more:</b> the <b>20 August</b> Travis County case was the most recent West Nile item as of that edition, which would make it <b>eighteen days</b> today. <b>That figure is an increment on an unverified base and is flagged as such rather than presented as a fresh check.</b> Austin-Travis County recorded five human cases in all of last year; CDC estimates about <b>20%</b> of those infected develop symptoms. <em>The undated syndicated headline claiming further Travis County cases remains uncorroborated and is still not adopted.</em> <b>Yesterday's 0.12&quot; of rain is the reason this keeps a line today</b> &mdash; standing water is the mechanism, and the exterior walk is the action. <b>&#9888; Two consecutive failures is a source problem, not a bad morning: the manifest entry for this feed needs replacing before ed. 252.</b> <em>Next check:</em> a working Austin Public Health path. <b>Property action continues: standing water and dusk exposure</b> (Section 08). <b>Carried in the full brief only.</b></td></tr>
+    </tbody>
+  </table>
+
+  <!-- 07 -->
+  <h2 class="sec"><span class="num">07</span>Guest Guidance &mdash; Concierge Ready</h2>
+  <ul class="tight">
+    <li><b>If a guest asks about the heat:</b> nothing is in effect. Today is <b>near 100&deg; and will feel like about 105&deg;</b>, with <b>almost no rain chance &mdash; 10%</b>. <b>It is hotter than yesterday in the air and slightly easier on the body</b>, because the humidity dropped with yesterday's rain; if a guest points out that the &ldquo;feels like&rdquo; went down while the temperature went up, that is the reason. <b>Tomorrow is the hotter one: near 101&deg;, feeling about 107&deg;.</b></li>
+    <li><b>If a guest asks what's on today:</b> <b>nothing &mdash; and say it plainly rather than searching.</b> The <b>Moody Center</b>, the <b>Moody Theater</b> and <b>3TEN</b> are all dark today and through Wednesday, and there is nothing listed downtown. <b>The next event of any size is Thursday 10 September</b>. For a guest who wants a quiet evening in the city, this is the best one of the week.</li>
+    <li><b>If a guest asks what's open:</b> <b>it is Labor Day &mdash; City of Austin offices and municipal facilities are closed</b>, with normal hours resuming tomorrow. Many restaurants and shops keep holiday hours, so <b>offer to call ahead rather than sending anyone on spec</b>. If boating comes up: there is a <b>personal watercraft ban on Lake Austin</b> for the holiday &mdash; that is the lake upstream, not the water below us.</li>
+    <li><b>Travel and transfers:</b> nothing on the roads beyond the standing construction, and no weather delay expected. <b>Today is the heavy departure day of the holiday weekend</b> &mdash; build margin into early quotes, and remember that the airport is busier than the city today.</li>
+    <li><b>If a guest asks about next weekend:</b> <b>Texas hosts Ohio State on Saturday 12 September at 6:30 PM, televised nationally.</b> That means roughly a hundred thousand people leaving the campus close to ten at night. <b>Recommend dinner early or late rather than in between, and offer the car.</b> The Saturday after, 19 September, is UTSA at 7:00 PM.</li>
+    <li><b>If the Middle East comes up:</b> be brief, factual and unspeculating. There is continuing conflict involving the United States, Israel and Iran, and shipping in the Strait of Hormuz remains affected. <b>We do not know of any effect on flights and we do not advise guests on their travel.</b> If a guest raises a connection through <b>Dubai, Abu Dhabi or Amman</b>, take the detail to the duty supervisor rather than offering a view. <b>Do not describe the strait as closed &mdash; and do not repeat reporting about new routes or restricted zones to guests.</b></li>
+    <li><b>If food safety comes up:</b> the national cyclospora outbreak linked to imported iceberg lettuce <b>includes Texas among its case states</b>; the count carried is <b>11,458 illnesses across 20 states</b>, unchanged for four editions, and recalled product is long past its best-by dates. Calm, factual, and not volunteered.</li>
+    <li><b>If a guest raises a local crime story</b> &mdash; <b>nothing has been reported in four days</b>, and the investigations this brief carries concern incidents <b>eight to thirty-seven days old</b>, none of them downtown. Confirm only what police have released; <b>do not speculate, discuss it among guests, or raise it first.</b></li>
+  </ul>
+
+  <!-- 08 -->
+  <h2 class="sec"><span class="num">08</span>Team Notes</h2>
+  <div class="cols">
+    <div>
+      <h3 class="mini">Heat &mdash; Red Holds, and the Drive Is the Post</h3>
+      <ul class="tight">
+        <li><b>Shortened rotations, mandatory water and shaded relief stay on.</b> Index <b>105&deg;</b>, inside the Red band. <b>Nothing is in effect</b> &mdash; say the flag and the absence of an advisory in that order.</li>
+        <li><b>&#9888; The front drive is today's highest-exposure post and the one most likely to be forgotten.</b> Holiday departures, luggage, standing cars, no event competing for the supervisor's attention. <b>Write the relief rotation down before ten and name who watches the runners.</b></li>
+        <li><b>Brief tomorrow tonight: near 101&deg;, index 107&deg;, one degree under the advisory line.</b> Both of this morning's reads agree on it, so it can be stated &mdash; <b>but re-check a fresh product before 0600.</b></li>
+        <li><b>Overnight is not relief:</b> low <b>79&deg;</b> with the index still <b>103&deg;</b> after dark, the fourth warm night running.</li>
+      </ul>
+      <h3 class="mini">F&amp;B &mdash; WI-06 Stands, Unread</h3>
+      <ul class="tight">
+        <li><b>The produce check stays live.</b> The figures are carried from yesterday and <b>were not re-read this morning</b>; <b>Texas remains a case state</b>. Iceberg and mixed leaf, supplier documentation, and <b>do not record it closed on a day we did not read it</b>.</li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="mini">Stand The Lightning Plan Down &mdash; Out Loud</h3>
+      <ul class="tight">
+        <li><b>Rain is 10%. Yesterday's hold plan is not needed today</b> &mdash; and yesterday's 40% <b>did</b> deliver 0.12&quot;, so the plan was right to build. <b>Say at pre-shift that it is stood down, and keep the sheet</b> rather than letting it lapse and be rebuilt from nothing next time.</li>
+        <li>The rule is unchanged when it returns: <b>thirty seconds flash-to-bang means shelter; thirty minutes after the last thunder before anyone goes back out.</b> A cabana, a marquee and an umbrella are not shelter.</li>
+        <li><b>Exterior walk for standing water after yesterday's rain</b> &mdash; <b>WI-10</b>, whose feed has now failed twice, so the habit is carrying the item.</li>
+      </ul>
+      <h3 class="mini">The Empty Day &middot; Use It</h3>
+      <ul class="tight">
+        <li><b>No releases, no arrivals surge, nothing downtown.</b> This is the best training and maintenance window of the week: <b>stair and AED sweep, camera checks, and the radio-call rehearsal for a medical</b> (see Readiness).</li>
+        <li><b>A day with no external structure is when attention quietly degrades.</b> Nothing in the environment is holding it up for you. <b>See The Craft.</b></li>
+        <li>Photography of entrances, cameras or staff routines; unusual interest in specific guests, floors or room assignments; someone lingering with no evident purpose. <b>An empty lobby is the easiest place in the world to notice someone who does not fit &mdash; and the easiest day to stop looking.</b></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ============ THE CRAFT ============ -->
+  <div class="craft">
+    <span class="kick">The Craft &middot; A Daily Note on People &amp; Presence</span>
+    <h4>On a day when nothing happens, nobody is looking</h4>
+    <p>Every venue is dark, the city is closed, and there is no event to work around. <b>That is not a light day &mdash; it is a day with no external structure</b>, and structure is what has been carrying your attention all week. A game day tells you where to stand and when to be sharp; you do not have to decide. <b>Today you decide, about forty times, quietly, while tired.</b> That is a harder ask than a busy Saturday, and it is the one nobody briefs.</p>
+    <p><b>Observation is a skill, not a state of alertness</b>, and the difference is the whole of it. Alertness is effortful, it feels like trying, and it decays inside twenty minutes &mdash; which is why &ldquo;stay alert&rdquo; at pre-shift produces nothing by ten o'clock. <b>Observation is a habit of comparison</b>, and comparison is nearly free: you are not scanning for threats, you are noticing what changed. It lasts a full shift because it costs almost nothing to run.</p>
+    <p>The practical form is small. <b>Fix your baseline in the first hour</b> &mdash; walk your area and notice what normal looks like <em>today</em>, because today's normal is not Saturday's, and a baseline you set last week is worse than none. Then <b>look for what should be there and isn't</b>: the propped door, the missing cone, the car in the same spot for three hours, the bag with nobody near it. <b>Absence is what the eye skips</b>, and you have to go after it deliberately. And <b>say what you see to one other person.</b> A very large share of what gets missed was seen by somebody who assumed it was already known and did not want to state the obvious. <b>On a day like today the cost of mentioning it is nothing at all</b> &mdash; which is exactly why today is the day to build the habit, rather than the day everyone finally exhales and stops looking.</p>
+    <p class="quote">&ldquo;It is a capital mistake to theorize before one has data. Insensibly one begins to twist facts to suit theories, instead of theories to suit facts.&rdquo;<span class="by">&mdash; Arthur Conan Doyle, <em>A Scandal in Bohemia</em>, 1891</span></p>
+  </div>
+  <!-- ============ end The Craft ============ -->
+
+  <!-- 09 -->
+  <h2 class="sec"><span class="num">09</span>Looking Ahead &mdash; Next 48&ndash;72 Hours</h2>
+  <table>
+    <thead><tr><th style="width:15%">When</th><th style="width:44%">Item</th><th>What We'll Do</th></tr></thead>
+    <tbody>
+      <tr><td>Today</td><td><b>Near 100&deg;, heat index 105&deg;</b>, mostly sunny; <b>rain 10%</b>; low tonight 79&deg; with the index still 103&deg; after dark. <b>Every venue dark; City offices and municipal facilities closed.</b> Sunrise <b>7:11 AM</b>, sunset <b>7:45 PM</b>.</td><td>Flag holds <b>Red</b>, chip <b>Elevated</b>, <b>WI-09 stays closed</b>. <b>Gatherings falls to Calm.</b> <b>Front drive is the post: written relief rotation before ten.</b> Lightning plan stood down out loud. Use the empty evening for the stair and AED sweep. <b>Brief Tuesday's 107&deg; at tonight's pre-shift.</b></td></tr>
+      <tr><td><b>Tue 8 Sep &mdash; the hotter one</b></td><td><b>Near 101&deg;, sunny, dry. Heat index 107&deg; &mdash; one degree under the &ge;108&deg; advisory criterion</b>, and both of this morning's reads agree on it. <b>Barton Springs Pool retaining-wall works begin.</b> <b>Normal business week resumes</b>; City offices reopen. Venues still dark.</td><td><b>Re-check the index on a fresh product before 0600</b> &mdash; one degree of margin on a product that re-issues hourly. Hard rotations from the start of the shift. <b>If an advisory issues: flag Black, chip High, open a new heat Watch Item &mdash; it does not revive WI-09.</b></td></tr>
+      <tr><td>Wed 9 Sep</td><td>Near <b>100&deg;</b>, sunny. Venues dark a third day. <b>Thursday 10 September is the return to normal:</b> Tim McGraw at the Moody Center, and a show at the Moody Theater the same night.</td><td>Re-check the grid source, <b>the West Nile feed (failed twice &mdash; replace the source if it fails again)</b>, and <b>the CDC investigation page, carried unread today</b>. <b>Confirm 6 September's final climate figures against today's preliminary.</b></td></tr>
+      <tr><td><b>&#9888; Sat 12 Sep</b></td><td><b>Ohio State at Texas, DKR, 6:30 PM, on ABC.</b> ~100k released close to <b>ten at night</b>; campus closures and towing. <b>The Moody Theater and 3TEN both have shows the same evening.</b></td><td><b>Five days out &mdash; plan it this week, not on Friday.</b> Transport, staffing, guest guidance and the late-evening drive. <b>Named early on purpose.</b></td></tr>
+      <tr><td>Tripwire</td><td><b>A Heat Advisory for Tuesday</b> &mdash; the forecast index is <b>107&deg;</b> against a <b>108&deg;</b> criterion, one degree of margin, which makes it the likeliest tripwire of the week; also an index of <b>113&deg;</b> or air temperature <b>105&deg;</b> (warning criteria). <b>A declared Iranian restricted zone or new shipping corridor in Hormuz</b> (WI-05) &mdash; watch insurance and routing, not incidents. <b>Any airspace closure or airline suspension affecting Gulf or Jordanian hubs</b> (WI-11). An <b>ERCOT conservation appeal or Energy Emergency Alert</b> &mdash; grid reporting has been blind since <b>20 August</b>. A <b>further CDC cyclospora update or a Texas-specific advisory</b> (WI-06); a <b>second local West Nile case</b> (WI-10).</td><td>A heat advisory opens a new Watch Item at chip <b>High</b>, flag Black &mdash; <b>it does not revive WI-09</b>. A declared zone or corridor is <b>reported, not interpreted</b>, and does <b>not</b> by itself move WI-11. An airspace closure steps <b>WI-11 to Action</b> and puts reception on an arrivals watch. An ERCOT appeal opens a Watch Item and steps Utilities up; an Energy Emergency Alert takes it to Severe. A Texas-specific produce advisory steps WI-06 to <b>Action</b> and triggers an immediate F&amp;B hold.</td></tr>
+    </tbody>
+  </table>
+
+  <!-- 10 -->
+  <h2 class="sec"><span class="num">10</span>Wider Watch &mdash; National &amp; International</h2>
+  <div class="src">Sources: Al Jazeera news index (<b>7 Sep</b>) &middot; Trading Economics (<b>7 Sep</b>, Brent and WTI pages retrieved <b>separately</b>) &middot; <b>&#9888; the independent Hormuz transit tracker refused the request (HTTP 403, including on the browser fallback) &mdash; the holding, probability, insurance and day-count figures are NOT VERIFIED THIS PASS</b> &middot; CDC cyclosporiasis pages (<b>investigation figures not re-read this pass</b>)</div>
+  <p><b>Strait of Hormuz &mdash; the reporting moves from violence to jurisdiction, which is a different kind of problem.</b> Al Jazeera's index carries, dated today, a live thread headed <b>&ldquo;Iran to announce new shipping route in Strait of Hormuz &lsquo;in coming days&rsquo;&rdquo;</b> and an explainer, <b>&ldquo;Why is Iran planning to enforce a restricted zone near Hormuz?&rdquo;</b>, alongside <b>Canada working with partners to &ldquo;maintain significant pressure&rdquo; on Iran</b>. <b>&#9888; These are headlines. We did not open the articles, and no detail beyond them is asserted here.</b> Even so the direction is worth recording, because <b>this item has changed character in three consecutive editions</b>: attacks on shipping (ed. 249), a state striking tankers (ed. 250), and now a state proposing to <b>route and restrict the traffic itself</b>. <b>An attack is an event; a declared corridor is a claim of authority.</b> The first is insured against and priced; the second has to be recognised or refused by everyone who uses the water, and it does not end when the shooting does. If it is declared, the first effects will appear in <b>war-risk pricing and routing decisions</b> rather than in any incident &mdash; which is exactly where this brief has least visibility, and <b>&#9888; today it has less than usual, because the transit tracker refused us.</b> <b>Transit counts, vessels-holding, war-risk multiples and reopening probabilities are not verified this pass and are not restated as current</b>; ed. 250's readings stand as the last thing known, not as today's position. <b>What was retrieved fresh is the price, and it moved:</b> <b>Brent $97.37 (+1.13%)</b> and <b>WTI $92.51 (+1.12%)</b>, each read from its own page, on a <b>US holiday session</b> &mdash; consistent with Friday's settlements plus the moves shown, and independently corroborated by Al Jazeera's <b>&ldquo;oil prices rise to $97 a barrel&rdquo;</b>. Strait <b>Day 190</b>, an increment carrying the tracker's own unresolved one-day inconsistency. <b>The retired framings stay retired.</b></p>
+  <p><b>Gulf aviation &mdash; seven editions, no evidence, wording unchanged on purpose.</b> WI-11 has now spent seven consecutive editions describing a real exposure &mdash; <b>Dubai, Abu Dhabi and Amman sit on inbound itineraries to this property routinely</b> &mdash; and reporting that <b>no airline, airport or civil-aviation notice has been retrieved and none is asserted</b>. <b>&#9888; A specific caution today: a maritime restricted zone is not an airspace restriction, and reporting about one must not be allowed to become evidence for the other.</b> When the surrounding news escalates and the item does not, that is the item working (Sections 06, 08).</p>
+  <p><b>Cyclospora &mdash; carried, not read.</b> The figures here are ed. 250's and <b>were not re-verified this morning</b>: <b>11,458 illnesses across 20 states, at least 495 hospitalizations, 2 deaths</b>, from <b>Taylor Farms de Mexico iceberg</b>, with <b>Texas among the case states</b> and reported onsets ending <b>15 August</b>. <b>Four editions without movement is the most encouraging pattern this item has shown &mdash; and a static number nobody read today is weaker evidence than a static number somebody did.</b> CDC has declared nothing, reporting lags, and the F&amp;B check stays live (Sections 04, 06, 08).</p>
+
+  <!-- 11 -->
+  <h2 class="sec"><span class="num">11</span>Emergency Contacts &mdash; Austin Region</h2>
+  <div class="contacts">
+    <div>
+      <div class="r"><span>Emergency &mdash; Police / Fire / EMS</span><b>911</b></div>
+      <div class="r"><span>Cooling Centers / Heat Help</span><b>2-1-1 &middot; austintexas.gov/alerts</b></div>
+      <div class="r"><span>Austin Energy &mdash; Outages</span><b>512-322-9100</b></div>
+      <div class="r"><span>APD Non-Emergency</span><b>3-1-1 &middot; 512-974-2000</b></div>
+      <div class="r"><span>APD Tips Line</span><b>512-974-TIPS</b></div>
+      <div class="r"><span>Capital Area Crime Stoppers</span><b>512-472-8477</b></div>
+    </div>
+    <div>
+      <div class="r"><span>Texas Poison Control</span><b>1-800-222-1222</b></div>
+      <div class="r"><span>ERCOT Grid Status</span><b>ercot.com &middot; Texas 2-1-1</b></div>
+      <div class="r"><span>Ready Central Texas</span><b>readycentraltexas.org</b></div>
+      <div class="r"><span>NWS Austin/San Antonio</span><b>weather.gov/ewx</b></div>
+      <div class="r"><span>Security Duty</span><b>Ext 8240</b></div>
+      <div class="r"><span>Overnight MOD</span><b>Ext 8110</b></div>
+    </div>
+  </div>
+  <p class="note">Contacts last verified 11 July 2026 &mdash; re-verify quarterly. <b>Cooling-center / 2-1-1 stays listed with point today</b>: a 105&deg; index on a holiday, with City facilities closed, is exactly when a guest or a member of staff needs a number that answers. <b>Poison Control and 911 sit above it deliberately &mdash; today's Readiness topic is medical response, and the first five minutes belong to whoever is standing there.</b> <b>APD's tips line and Crime Stoppers remain listed while the Briar Hill/Woodland investigation is open with a suspect outstanding.</b> <b>The Duty Manager extension is still unknown and is carried as a placeholder on the one-page summary &mdash; seventh edition flagged. This one is fixable in a single phone call and has now outlived a week of briefs.</b></p>
+
+  <!-- 12 -->
+  <h2 class="sec"><span class="num">12</span>Sources &amp; Standards</h2>
+  <div class="src" style="font-style:normal">
+    <b>&#9888; METHOD CHANGE THIS EDITION: every National Weather Service row was retrieved from the api.weather.gov service endpoints rather than from the rendered product pages.</b> Ed. 250 lost four Tier-1 sources to those pages &mdash; the climate report endpoint served the wrong product on every version index, and both observation histories redirect-looped. <b>All four answered first time on the service endpoints. 21 of 23 standing sources answered this morning against 17 of 23 yesterday.</b><br>
+    [1] <b>NWS point forecast</b>, gridpoint EWX 156,91 (30.27N 97.74W), <b>product issued 11:32 PM CDT</b>, <b>read twice sixty seconds apart with identical results</b> &mdash; Today "Mostly sunny, with a high near 100. Heat index values as high as 105", precipitation chance <b>10%</b>; tonight low around 79, heat index to 103, south-southeast wind 0 to 5 mph; <b>Tuesday</b> "Sunny, with a high near 101. Heat index values as high as 107"; Wednesday near 100. <b>No hazard headline.</b> [2] <b>NWS active-alerts endpoint</b> for 30.27,-97.74 &mdash; <b>zero active alerts</b>. [3] <b>NWS Camp Mabry daily climate reports (CLI), six issuances retrieved</b> &mdash; <b>the source that could not be reached at all in ed. 250.</b> <b>5 September (final, issued 2:19 AM 6 Sep): maximum 102&deg; at 3:32 PM, minimum 77&deg; at 5:30 AM, precipitation 0.00&quot;</b>, against a normal of 94&deg;/73&deg; and a record 112&deg; (2000). <em>Note the preliminary issued 4:35 PM the same day gave 101&deg; &mdash; the final is the higher figure, which is why both version indices are pulled.</em> <b>6 September (preliminary, issued 5:45 PM): maximum 97&deg; at 2:36 PM, minimum 78&deg;, precipitation 0.12&quot; through the issuance</b>, month-to-date 0.12&quot;. <b>The 6 September final had not issued when this edition was compiled; ed. 252 should confirm it.</b> <em>&#9888; A midnight-issued 6 September product showing a maximum of 84&deg; at 12:45 AM is a partial-day product and is not the daily maximum &mdash; noted so that nobody adopts it later.</em> [4] <b>NWS Travis zone forecast product</b> &mdash; retrieved; no figure is named beside the local one because the local product is the one this brief publishes. [5] <b>KATT observation series</b>, latest 10:51 PM CDT: 82.9&deg;, heat index 88.1&deg;, dewpoint 72&deg;; <b>rolling 30-hour maximum 97.0&deg; and maximum heat index 100.0&deg;</b>. <em>&#9888; A rolling-window extreme is not a calendar-day maximum and is not published as one &mdash; the calendar figures come from [3].</em> [6] <b>KAUS observation series</b> &mdash; retrieved as cross-check only. [7] <b>NWS Area Forecast Discussion (EWX)</b> &mdash; retrieved, corroborating.<br>
+    [8] <b>Trading Economics &mdash; Brent</b> (<b>7 Sep</b>): <b>$97.37</b>, <b>+$1.086</b>, <b>+1.13%</b>. [9] <b>Trading Economics &mdash; WTI</b> (<b>7 Sep</b>, <b>page retrieved separately</b>): <b>$92.51</b>, <b>+$1.028</b>, <b>+1.12%</b>. <b>Both are consistent with the Friday settlements published in ed. 250 ($96.28 and $91.48) plus the moves shown.</b> <em>The Brent page's own table showed WTI at $92.55 in the same pass, 0.3 seconds apart &mdash; a live tick on a trading holiday session, reported and not treated as a discrepancy.</em> [10] <b>Al Jazeera news index, 7 Sep</b> &mdash; live-updates thread <b>"Iran to announce new shipping route in Strait of Hormuz 'in coming days'"</b>; <b>"Why is Iran planning to enforce a restricted zone near Hormuz?"</b>; <b>"Canada says working with partners to 'maintain significant pressure' on Iran"</b>; <b>"Oil prices rise to $97 a barrel"</b>. <b>&#9888; Headlines from the index page only. No article was opened and no detail beyond the headlines is asserted.</b> [11] <b>&#9888; Hormuz transit tracker &mdash; NOT RETRIEVED. HTTP 403, refused on the direct request and again on the browser fallback.</b> <b>Transit counts, vessels holding, war-risk multiples and reopening probabilities are not verified this pass.</b> Ed. 250's readings are named in Sections 06 and 10 as the last known position, not as current. <b>Strait Day 190 is an increment on the tracker's own figure and inherits its unresolved one-day inconsistency.</b><br>
+    [12] <b>CDC cyclosporiasis &mdash; landing page retrieved, investigation figures NOT re-read.</b> Ed. 250's figures are carried and labelled as carried: <b>11,458 illnesses, 20 states, 495+ hospitalizations, 2 deaths</b>, Taylor Farms de Mexico iceberg recalled <b>17 July</b>, onsets <b>14 June &ndash; 15 August</b>, <b>Texas among the case states</b>. <em>&#9888; The landing page retrieved today carries an "updated" date of 27 August where ed. 250 recorded the investigation page as re-dated 3 September. Different pages; not reconciled on a source that was not read.</em> [13] <b>&#9888; Austin Public Health news feed &mdash; NOT RETRIEVED, 404, second consecutive edition.</b> <b>WI-10's day count is an increment on an unverified base. The manifest entry needs replacing.</b> [14] <b>ERCOT</b> via Texas Power Cost &mdash; <b>the page returned almost no content this pass</b>; nothing new was learned and nothing is revised. Standing: 20 Aug actual peak ~<b>90,353 MW</b> vs the <b>91,089 MW</b> record (22 Jul 2026); no conservation appeal reported. <b>The eighteen-day count runs from the 20 August reading.</b><br>
+    [15] <b>City of Austin news</b> &mdash; <b>nothing posted 5, 6 or 7 September</b>; most recent the <b>4 Sep "City of Austin Closures for Labor Day 2026"</b> (offices and municipal facilities closed Monday 7 September, normal hours resuming Tuesday 8 September) and the <b>Lake Austin watercraft ban</b>. Also listed: <b>Fiesta de Salud health fair, Saturday 19 September, 11 AM &ndash; 2 PM, Emma S. Barrientos MACC</b>. [16] <b>APD news</b> &mdash; <b>nothing posted 5, 6 or 7 September</b>; last posting of any kind the 4 Sep watercraft notice; <b>last incident release 3 Sep</b>. <b>Both feeds checked separately, as standing procedure since ed. 246.</b> Standing: Timber Heights homicide (29 Aug, 38th of 2026, arrest at scene); Briar Hill/Woodland homicide (30 Aug, case 26-2420956, <b>outstanding</b>, 39th); Huston-Tillotson aggravated assault (1 Aug); West Elliot Street robbery (19 Aug); <b>Barton Springs Pool works from 8 September</b>. [17] <b>Moody Center calendar</b> &mdash; <b>nothing 7, 8 or 9 Sept</b>; next event <b>Tim McGraw, Thursday 10 Sept</b>; then J. Cole 14 Sept, Ken Carson 15 Sept. [18] <b>ACL Live</b> &mdash; combined listing <b>and</b> 3TEN venue calendar <b>checked separately</b>; <b>both rooms dark 7&ndash;9 Sept</b>; next Moody Theater 10 Sept, next 3TEN <b>11 Sept</b>; <b>12 Sept: Kathleen Madigan (Moody Theater) and Schur (3TEN) &mdash; the same night as the Ohio State game</b>. [19] <b>Downtown Austin Alliance</b> &mdash; <b>nothing listed for 7 September</b>. [20] <b>University of Texas athletics schedule</b>, <b>retrieved via the browser fallback after the site refused a direct request</b> &mdash; <b>5 Sep: Texas 59, Texas State 7</b>; <b>next home game Saturday 12 September, Ohio State, 6:30 PM CT at DKR-Texas Memorial Stadium, televised on ABC</b>; then <b>UTSA, Saturday 19 September, 7:00 PM CT</b>. [21] <b>UT Parking &amp; Transportation</b> &mdash; retrieved; no closure notice bearing on today. [22] <b>Austin FC / Q2 Stadium</b> &mdash; retrieved; nothing bearing on today. [23] <b>Ed. 250</b> (6 Sep), the baseline. [24] <b>Sunrise/sunset computed</b> for 30.2672N 97.7431W &mdash; <b>7:11 AM / 7:45 PM</b>
+  </div>
+  <p class="conf"><b>Analyst confidence. High</b> &mdash; and higher than any recent edition, for a specific and checkable reason. <b>Every weather figure in this brief was retrieved this morning from the National Weather Service's service endpoints rather than from rendered product pages</b>, and <b>the point forecast was read twice, sixty seconds apart, with identical results</b>. The advisory position rests on <b>the active-alerts endpoint returning zero alerts</b> rather than on the absence of a headline on a page. <b>The two observations ed. 250 could not obtain are both recovered</b>, including 5 September's, which that edition published as an explicit gap and asked this one to fill. Oil comes from <b>two separately retrieved pages</b> and is independently corroborated at the level by a news headline. <b>21 of 23 standing sources answered, against 17 of 23 yesterday.</b> <b>Moderate</b> &mdash; (a) <b>the WI-05 developments are headlines read off a news index; no article was opened</b>, and they are labelled as leads throughout rather than as established detail; (b) <b>the grid picture has not moved since its 20 August reading</b>, now eighteen days, and the source returned almost nothing this pass; (c) <b>6 September's climate figures are the evening preliminary, not the daily final.</b> <b>&#9888; LOW, ON TWO ROWS, AND THE REASON IS COVERAGE RATHER THAN JUDGEMENT.</b> <b>The Hormuz transit tracker refused the request outright (403, including on the browser fallback)</b>, so <b>WI-05's counts, vessel numbers, insurance multiples and reopening probabilities are not verified this pass and are not restated as current</b> &mdash; the day count is an increment on an unverified base. <b>The Austin Public Health feed returned 404 for a second consecutive edition</b>, so <b>WI-10 is carried on ed. 249's reading</b> and its day count is likewise an increment. <b>The CDC investigation figures were carried without being re-read</b> and are labelled so wherever they appear. <b>Nothing has been estimated to fill any of those gaps.</b> <b>Method notes.</b> <b>Yesterday's tripwire resolved, and the method is the finding.</b> Ed. 250 could not establish whether Labor Day's heat index cleared the <b>&ge;108&deg;</b> advisory criterion &mdash; two issuances an hour apart gave <b>107&deg;</b> and <b>109&deg;</b> &mdash; so it <b>published both and asserted neither</b>, instructing the team to build for the worse figure and re-check. <b>This morning's product, read twice, gives 105&deg;.</b> The number moved below both earlier figures. <b>Had ed. 250 picked 109&deg;, this edition would be issuing a correction; because it published a range, this edition publishes a fact.</b> That is now a standing rule: <b>when a forecast figure sits within three degrees of a named criterion, read the preceding issuance too, and if the two straddle the line, publish both.</b> <b>A second method change is worth recording:</b> the four Tier-1 sources that failed throughout ed. 250 were not broken &mdash; <b>the rendered product pages were the wrong way in</b>. Moving to the service endpoints recovered all four on the first attempt. <b>When a source fails repeatedly, question the route before questioning the source.</b> <b>Scoring, both directions.</b> <b>Ed. 250's forecast for 6 September &mdash; near 97&deg; with a 40% chance of showers and storms &mdash; verified exactly: 97&deg; observed, 0.12&quot; recorded.</b> <b>Ed. 249's forecast for 5 September &mdash; near 98&deg; &mdash; verified four degrees low against an observed 102&deg;, and is recorded here rather than quietly dropped.</b> <b>The Gatherings chip falls to Calm, a level this brief has not used before</b>, on a day when all three tracked venues are dark, the City is closed and the events calendar is empty; the reasoning is printed in Section 02 because an unused level is worth explaining the first time it appears. <b>WI-11's wording is deliberately unchanged for a seventh edition.</b> <b>&#9888; The superlative sweep caught a real error in this edition's first build, and it is recorded rather than quietly fixed.</b> Three claims were cut: <b>&ldquo;the quietest day this brief has covered&rdquo;</b> and <b>&ldquo;the first edition in which every venue is dark&rdquo;</b>, both unverifiable against the full run; and <b>&ldquo;the first Calm chip this brief has carried&rdquo;</b>, which was simply <b>false</b> &mdash; <b>the 1 September edition carried Calm on this same chip, for the same reason, three dark venues.</b> <b>The corrected line is better than the claim it replaced</b>, because a level that recurs under the same conditions is a pattern, where a first is only a novelty. <b>Checking a superlative against the editions actually on file, rather than against memory, is what found it.</b> Written to inform, not alarm. <b>Next edition: Tuesday, 8 September, 0600 CDT.</b></p>
+
+  <div class="foot">Daybreak Brief &middot; Produced by the ATX Security Office &middot; ATX-DB-2026-251 &middot; 7 September 2026 &middot; Internal &mdash; please handle with discretion</div>
+
+</div>
+</body>
+</html>

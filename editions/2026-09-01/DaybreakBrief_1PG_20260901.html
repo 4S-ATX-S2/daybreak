@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Daybreak Brief · ATX-DB-2026-245 · 1 September 2026 · One-Page Summary</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --gold:#94803a;--gold-light:#b3a24e;--ink:#26251f;--ink-soft:#54524a;
+    --bar:#211f18;--cream:#f7f4ec;--rule:#d9d2bf;
+    --calm:#7d8a4e;--attentive:#a08b3f;--elevated:#b0592b;--high:#7c1f1f;--severe:#511414;
+    --new:#211f18;--closed:#8a8578;--flag-green:#56663a;--flag-yellow:#c9971f;
+    --flag-red:#a4331f;--flag-black:#211f18;
+    --up:#b0592b;--down:#6f7d45;--steady:#8a8578;--link:#5a4a1f;
+  }
+  *{box-sizing:border-box;}
+  html{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  body{margin:0;color:var(--ink);font-family:"Source Sans 3","Segoe UI",Helvetica,Arial,sans-serif;
+    font-size:8.7px;line-height:1.42;background:#8f8f8f;}
+  .page{background:#fff;width:8.5in;min-height:11in;margin:0 auto;padding:0.42in 0.5in 0.34in;}
+  @media screen{.page{margin:14px auto;box-shadow:0 2px 14px rgba(0,0,0,.28);}}
+
+  .topbar{display:flex;justify-content:space-between;align-items:center;font-size:7.2px;
+    letter-spacing:1.2px;color:var(--ink-soft);border-top:2px solid var(--gold);
+    border-bottom:1px solid var(--rule);padding:4px 0;text-transform:uppercase;font-weight:600;}
+  .topbar b{color:var(--ink);}
+  .masthead{text-align:center;padding:8px 0 4px;}
+  .masthead h1{font-family:"Playfair Display",Georgia,serif;font-weight:600;letter-spacing:.2em;
+    font-size:27px;margin:0 0 1px;}
+  .masthead .sub{letter-spacing:.3em;font-size:7.6px;color:var(--gold);text-transform:uppercase;font-weight:600;}
+  .masthead .dateline{font-size:8.4px;margin-top:5px;}
+  .masthead .dateline b{font-weight:700;}
+  .classline{text-align:center;font-size:7.4px;letter-spacing:.16em;color:var(--ink-soft);
+    text-transform:uppercase;font-weight:600;border-top:1px solid var(--rule);
+    border-bottom:1px solid var(--rule);padding:3px 0;margin-top:6px;}
+
+  /* status band */
+  .band{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin:5px 0;}
+  .cell{border:1px solid var(--rule);text-align:center;padding:5px 3px 4px;}
+  .cell .lab{font-size:7px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft);font-weight:600;line-height:1.25;min-height:18px;}
+  .cell .chip{display:block;color:#fff;font-weight:700;font-size:8px;letter-spacing:.06em;
+    text-transform:uppercase;padding:3px 0;margin:3px 0 2px;}
+  .cell .tr{font-size:7.4px;color:var(--ink-soft);}
+  .c-calm{background:var(--calm);}.c-attentive{background:var(--attentive);}
+  .c-elevated{background:var(--elevated);}.c-high{background:var(--high);}.c-severe{background:var(--severe);}
+  .tr-up{color:var(--up);font-weight:700;}.tr-down{color:var(--down);font-weight:700;}.tr-steady{color:var(--steady);font-weight:700;}
+
+  .lead{background:var(--cream);border-left:4px solid var(--gold);padding:8px 11px 3px;margin:0 0 7px;font-size:8.9px;line-height:1.5;}
+  .lead .focus{border-top:1px dashed var(--gold-light);padding-top:5px;margin-top:4px;font-size:8.2px;}
+  .focus b{color:var(--gold);}
+
+  .sy{border:1px solid var(--rule);margin:0 0 8px;}
+  .sy .h{background:var(--bar);color:#fff;font-size:7px;letter-spacing:.13em;font-weight:700;padding:3px 8px;text-transform:uppercase;}
+  .sy .h span{font-weight:400;letter-spacing:.04em;text-transform:none;font-style:italic;color:#d7d2c4;}
+  .sy .r{display:flex;gap:7px;padding:4px 8px;border-top:1px solid var(--rule);}
+  .sy .k{width:64px;font-weight:700;font-size:7.4px;letter-spacing:.06em;text-transform:uppercase;flex:none;}
+
+  h3{font-size:8.2px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin:6px 0 3px;color:var(--ink);border-bottom:1.5px solid var(--bar);padding-bottom:2px;}
+  h3.dash{border:none;padding:0;margin:8px 0 3px;}
+  h3.dash::before{content:"— ";color:var(--gold);}
+
+  .wi{border:1px solid var(--rule);}
+  .wi .h{background:var(--bar);color:#fff;font-size:7px;letter-spacing:.13em;font-weight:700;padding:3px 8px;text-transform:uppercase;}
+  .wi .r{display:flex;gap:6px;align-items:baseline;padding:3px 8px;border-top:1px solid var(--rule);font-size:8.1px;}
+  .wi .ref{width:38px;font-weight:700;flex:none;}
+  .wi .badge{flex:none;width:82px;color:#fff;font-weight:700;font-size:6.6px;letter-spacing:.05em;
+    text-transform:uppercase;padding:1.5px 0;text-align:center;border-radius:2px;}
+  .b-open{background:var(--attentive);}.b-monitoring{background:var(--elevated);}
+  .b-new{background:var(--new);}.b-closed{background:var(--closed);}
+  .wi .tx b{font-weight:700;}
+
+  .grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin:2px 0;}
+  .box .when{font-size:7.4px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--elevated);}
+  .box p{margin:2px 0 0;font-size:8px;line-height:1.4;}
+
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:8px 20px;}
+  ul{margin:3px 0 4px;padding-left:14px;}li{margin:2px 0;}
+  .flag{display:flex;gap:8px;align-items:center;background:var(--cream);border:1px solid var(--rule);padding:5px 7px;margin:3px 0;}
+  .flag .lvl{flex:none;background:var(--flag-black);color:#fff;font-weight:700;font-size:8px;letter-spacing:.08em;padding:5px 9px;border-radius:2px;text-transform:uppercase;}
+  .flag .t{font-size:7.8px;line-height:1.35;}
+  .contacts .r{display:flex;justify-content:space-between;padding:2.5px 1px;border-bottom:1px solid var(--rule);font-size:8px;}
+  .contacts .r b{font-weight:700;}
+
+  /* THE CRAFT — compact recurring feature (REUSABLE: swap the line + quote each edition) */
+  .craft{border:1px solid var(--gold);background:#fbf9f2;padding:6px 10px 7px;margin:4px 0 0;}
+  .craft .kick{display:inline-block;background:var(--gold);color:#fff;font-size:6.4px;font-weight:700;
+    letter-spacing:.13em;text-transform:uppercase;padding:2px 7px;border-radius:2px;}
+  .craft .cl{font-size:8.2px;line-height:1.45;margin:5px 0 0;}
+  .craft .cl b{font-weight:700;}
+  .craft .q{font-style:italic;font-size:8.1px;color:#403e37;margin:4px 0 0;line-height:1.4;}
+  .craft .q .by{font-style:normal;font-weight:700;color:var(--gold);}
+
+  .foot{margin-top:3px;border-top:1px solid var(--rule);padding-top:5px;text-align:center;font-size:7px;color:var(--ink-soft);letter-spacing:.03em;line-height:1.5;}
+
+  @media print{body{background:#fff;font-size:7.28px;line-height:1.18;}.page{margin:0;box-shadow:none;width:auto;min-height:0;padding:0.11in 0.35in 0.02in;}.craft{margin-top:1px;padding:4px 10px 3px;}.craft .cl{margin-top:4px;}.craft .q{margin-top:3px;}.foot{margin-top:1px;padding-top:2px;font-size:6.4px;line-height:1.28;}h3{margin:5px 0 3px;}h3.dash{margin:5px 0 2px;}ul{margin:2px 0 2px;}li{margin:0.9px 0;}.wi .r{padding:1.9px 7px;}.sy .r{padding:3px 8px;}.band{margin:2px 0;}.masthead{padding:2px 0 1px;}.sy .r{padding:2.1px 7px;}.two{gap:5px 16px;}}
+  @page{size:Letter;margin:0;}
+</style>
+</head>
+<body>
+<div class="page">
+
+
+  <div class="topbar"><span>Produced by the <b>ATX Security Office</b></span><span>DTG <b>010600 SEP 01 CDT</b></span></div>
+  <div class="masthead">
+    <h1>DAYBREAK&nbsp;BRIEF</h1>
+    <div class="sub">One-Page Summary · Daily Awareness &amp; Guest Environment</div>
+    <div class="dateline"><b>Tuesday, 1 September 2026</b> · Edition ATX-DB-2026-245 · Four Seasons Hotel Austin</div>
+  </div>
+  <div class="classline">Internal — Property Team Only · Please Handle With Discretion</div>
+
+  <div class="band">
+    <div class="cell"><div class="lab">Neighborhood &amp; Street</div><div class="chip c-attentive">Attentive</div><div class="tr"><span class="tr-up">▲</span> suspect outstanding</div></div>
+    <div class="cell"><div class="lab">Public Gatherings</div><div class="chip c-calm">Calm</div><div class="tr"><span class="tr-steady">▬</span> second dark night</div></div>
+    <div class="cell"><div class="lab">Weather &amp; Storms</div><div class="chip c-elevated">Elevated</div><div class="tr"><span class="tr-steady">▬</span> hot, unregulated</div></div>
+    <div class="cell"><div class="lab">Traffic &amp; Arrivals</div><div class="chip c-attentive">Attentive</div><div class="tr"><span class="tr-steady">▬</span> weekday pattern</div></div>
+    <div class="cell"><div class="lab">Utilities &amp; Grid</div><div class="chip c-attentive">Attentive</div><div class="tr"><span class="tr-steady">▬</span> reporting blind</div></div>
+  </div>
+
+  <div class="lead">
+    <b>The Strait of Hormuz has been shut for 184 days. Last night was the first night it was also a battlefield.</b> The U.S. bombed <b>Larak Island</b> inside the strait; Iran fired at "U.S. targets" in <b>Jordan and the UAE</b>; the UAE <b>intercepted a drone</b> and denies its Al Menhad base was hit; a <b>supertanker struck two mines and caught fire</b>. Corroborated by Al Jazeera and Seatrade — <b>not tracker-only</b>. Oil followed: <b>Brent $92.22 (+1.91%)</b>, <b>WTI $86.99 (+1.44%)</b> — first time above $90 in this brief. <b>WI-05 escalates; WI-11 opens</b> on Gulf aviation, because Dubai, Abu Dhabi and Amman are on our guests' itineraries. Locally none of it reaches the door: <b>nothing is in effect</b>, today is <b>near 99° / index 104°</b> with a <b>20% storm chance after 1 PM</b> — the first rain wording in weeks — and every venue is dark again. One thing did move here: <b>APD has an open homicide from Sunday with a suspect outstanding</b>. <b>Neighborhood steps Calm → Attentive.</b>
+    <div class="focus"><b>TODAY'S FOCUS:</b> A quiet property on a loud morning — spend it on the building, not the news. <b>Walk the exterior</b> (standing water for WI-10, drainage and the porte-cochère before tomorrow's 40% rain chance). <b>And look at each other:</b> ten days of heat back to 22 August, three of them verified at exactly 100°. Day-ten fatigue looks like shortness, silence, or volunteering for a double. <b>See The Craft.</b></div>
+  </div>
+
+  <div class="sy">
+    <div class="h">Since Yesterday <span>— vs Monday's brief (31 Aug, ed. 244). Consecutive editions; ages step by one.</span></div>
+    <div class="r"><div class="k">Watch Items</div><div><span class="tr-up">▲</span> <b>WI-05 escalates — the corridor became a conflict.</b> U.S. strikes on <b>Larak Island</b>; Iranian strikes on <b>Jordan and the UAE</b>; a <b>tanker mined and afire</b>; IRGC claims a downed MQ-9. <b>WI-11 opens</b> on Gulf/Levantine aviation exposure. Oil <b>Brent $92.22 / WTI $86.99</b>, both up. <b>Vessels holding 326 → 249 — not read as improvement.</b> Transits <b>still 3 on 23 Aug</b>, nine days. <b>WI-06, WI-10 unchanged.</b></div></div>
+    <div class="r"><div class="k">Weather</div><div><span class="tr-down">▼</span> <b>Down, and wet.</b> Ed. 244 published today at <b>100° / index 106°</b>; today's <b>3:42 AM</b> product gives <b>99° / index 104°</b> plus <b>20% showers and storms after 1 PM</b>. Flag holds <b>Red</b> on the band; <b>still no advisory</b>. <b>Verified:</b> Camp Mabry official <b>100° Mon 31 Aug</b> — ed. 244's "near 101" ran <b>1° hot</b>; <b>third straight day at exactly 100°</b>. <b>Wednesday:</b> local <b>105°</b> index vs day-old zone <b>109°</b> — named, not blended.</div></div>
+      </div>
+
+  <div class="wi">
+    <div class="h">Watch Items — Carry-Forward</div>
+    <div class="r"><div class="ref">WI-05</div><div class="badge b-new">Escalated · Day 50</div><div class="tx"><b>Strait of Hormuz — the corridor became a conflict.</b> Al Jazeera: <b>U.S. strikes on Larak Island</b>, <b>two killed</b> per Iranian state media, <b>Iranian attacks on "U.S. targets" in Jordan and the UAE</b>, <b>UAE intercepts a drone</b> and denies Al Menhad was hit. Seatrade: <b>"Tanker attacked in Hormuz, US hits Iranian mine launchers."</b> <b>First corroborated escalation here — no longer tracker-only.</b> <b>Vessels holding 326 → 249</b>, which under live strikes is as likely departures as transits — <b>not read as improvement</b>. Transits <b>3 on 23 Aug</b>, unchanged <b>nine days</b>, ~4% of an ~85/day baseline. <b>The tracker's 1% is a "by 1 September" horizon, not yesterday's year-end 30% — different questions, not a collapse.</b> Crude still moving, some <b>transponders off</b>. <b>Day 184.</b></div></div>
+    <div class="r"><div class="ref">WI-11</div><div class="badge b-new">New · Day 1</div><div class="tx"><b>U.S.–Iran exchange — Gulf aviation &amp; guest travel.</b> Opened narrowly, for one property-relevant consequence: <b>disruption through Gulf and Levantine hubs</b>. Strikes were reported against targets in <b>Jordan and the UAE</b>; <b>Dubai, Abu Dhabi and Amman are ordinary connecting points for arrivals here</b>, and regional airspace closures arrive with little notice. <b>No aviation notice has been retrieved and none is asserted; no guest is contacted and no travel advice given.</b> Reception and concierge: <b>flag any arrival delayed or rerouted via those hubs to the duty supervisor</b>.</div></div>
+    <div class="r"><div class="ref">WI-06</div><div class="badge b-monitoring">Monitor · Day 49</div><div class="tx"><b>Cyclospora (iceberg) — no change, and the 27 Aug escalation stands.</b> CDC still carries <b>11,458 illnesses, 20 states, ≥495 hospitalizations, 2 deaths</b>, with <b>Texas on the case list</b>. Taylor Farms de Mexico iceberg, recalled 17 July; best-by dates passed. Reported onsets end <b>15 August</b> — encouraging, but reporting lags mean it is not yet evidence the outbreak stopped. <b>The F&amp;B produce check stays live — do not record it closed.</b></div></div>
+    <div class="r"><div class="ref">WI-10</div><div class="badge b-monitoring">Monitor · Day 8</div><div class="tx"><b>West Nile — Travis County. No change.</b> Austin Public Health's feed still shows the <b>20 Aug</b> case as its most recent West Nile item — <b>no further local case in twelve days</b>. Pools positive in Travis, Williamson, Hays. ~<b>20%</b> of infections symptomatic. <em>The undated syndicated headline remains uncorroborated by APH; still not adopted.</em> <b>Today's rain is why this earns a line:</b> new standing water is the mechanism. Action: <b>tip standing water before the shower</b>, repellent at outdoor stations at dusk.</div></div>
+  </div>
+
+  <h3>Next 72 Hours</h3>
+  <div class="grid3">
+    <div class="box"><div class="when">Today — no advisory</div><p>Near <b>99°</b>, index to <b>104°</b>; <b>20% showers/storms after 1 PM</b>; sunset 7:53 PM. <b>Every venue dark.</b> Tabernacle Encounter, Palmer Events Center, 12:00–6:00 PM. <b>Flag Red, Weather Elevated, Neighborhood to Attentive.</b> Rain kit out.</p></div>
+    <div class="box"><div class="when">Wed 2 Sep</div><p>Near <b>99°</b>, index to <b>105°</b>, <b>40% storm chance</b>. Venues still dark. Day-old zone product says <b>109°</b> — above the criterion, <b>named beside the local figure, not blended</b>. Re-verify on a fresh product.</p></div>
+    <div class="box"><div class="when">Thu 3 Sep — the city restarts</div><p>Near <b>97°</b>, 30% storms — first sub-99° day of the run. <b>Koe Wetzel (Moody Center) and Fragile Rock (3TEN).</b> Two quiet nights end at once — <b>plan the release tomorrow, not Thursday morning.</b></p></div>
+  </div>
+
+  <div class="two" style="margin-top:6px">
+    <div>
+      <h3 class="dash">Weather</h3>
+      <ul>
+        <li><b>NO advisory, watch or warning in effect</b> — today's 3:42 AM product carries no headline. Near <b>99°</b>, <b>index to 104°</b>, calm becoming east 5 mph; tonight partly cloudy, low <b>78°</b></li>
+        <li><b>First rain wording in weeks</b> — 20% after 1 PM today, <b>40% tomorrow</b>. Umbrellas at the drive, slip check on the porte-cochère, drainage walked</li>
+        <li><b>Observed:</b> Camp Mabry official <b>100° Mon 31 Aug</b> (max 4:31 PM, min 77°, normal 95°) — <b>third straight day at exactly 100°</b>. <b>No observed index for 30 or 31 Aug</b> — both feeds end mid-morning; 30 Aug is now <b>permanently unresolved</b> and we brief from the forecast index</li>
+      </ul>
+      <div class="flag"><div class="lvl" style="background:var(--flag-red)">Red</div><div class="t"><b>Same flag, same reason — say it the same way twice.</b> A forecast index of <b>104°</b> keeps today in the Red band (103–115): hard rotations, mandatory water and shaded relief stay on for door, drive and exterior posts. <b>Nothing is in effect and no advisory is expected</b>, so the Weather chip does not move and <b>WI-09 stays closed</b>. Two additions: <b>the index is falling</b> — 106° yesterday, 104° today — and a falling number at day ten is exactly when rotations quietly stop being taken. <b>Supervisors, take yours visibly.</b> And there is <b>moisture in the air now</b>: the humidity driving the index is rising even as the temperature eases.</div></div>
+      <h3 class="dash">F&amp;B &amp; Grid</h3>
+      <ul>
+        <li><b>WI-06: the produce check stays live</b> — iceberg and mixed leaf, supplier documentation. CDC's figures have not moved since 27 Aug, but they have not improved either, and <b>Texas remains a case state</b>.</li>
+        <li><b>Grid: unknown, not fine.</b> No appeal known, but our reporting hasn't moved since <b>22 Aug</b> — a <b>twelve-day</b> gap that omits the <b>27 Aug peak</b>, the hottest day of the event. Re-verify at shift start.</li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="dash">Tonight's Events</h3>
+      <ul>
+        <li><b>Moody Center, Moody Theater and 3TEN all dark tonight and tomorrow</b> — checked independently, including the 3TEN venue page. <b>No release, no egress, no surge window.</b> <b>A second dark night is rarer than one.</b></li>
+        <li><b>Q2 Stadium unverified</b> — Austin FC schedule sources unreachable again. Check at shift start; we do not assert it is dark.</li>
+      </ul>
+      <h3 class="dash">Guest Guidance</h3>
+      <ul>
+        <li><b>Nothing is in effect.</b> Near 99°, feels like about 104° in the afternoon. <b>"Is it going to rain?"</b> Probably not — but for the first time in weeks, possibly: <b>20% today, 40% tomorrow</b>.</li>
+        <li><b>If the Middle East comes up:</b> brief, factual, no speculation. Strikes have been reported around the strait and in the region. <b>We know of no effect on flights and we do not advise guests on travel.</b> A concern about a connection through <b>Dubai, Abu Dhabi or Amman</b> goes to the duty supervisor, not to an opinion.</li>
+        <li><b>If Sunday's homicide is raised</b> — confirm only what police released: an open investigation at an intersection <b>away from downtown</b>, information to APD. <b>Do not speculate, do not raise it first.</b> <b>Transfers:</b> fatal collisions reported on the <b>SH 71/US 183 ramp</b>, <b>Anderson Mill Rd</b> and <b>N. MoPac NB</b> between 25 and 27 Aug; nothing added since. <b>Afternoon storms are today's likelier delay.</b> <b>Food safety:</b> the iceberg cyclospora outbreak <b>includes Texas</b>; CDC counts <b>11,458 illnesses across 20 states</b>. Calm, factual, not volunteered.</li>
+      </ul>
+      <h3 class="dash">Key Contacts</h3>
+      <div class="contacts">
+        <div class="r"><span>Emergency</span><b>911</b></div>
+        <div class="r"><span>APD Tips / Crime Stoppers</span><b>512-974-TIPS / 512-472-8477</b></div>
+        <div class="r"><span>Cooling Centers / Heat Help</span><b>2-1-1</b></div>
+        <div class="r"><span>Austin Energy — Outages</span><b>512-322-9100</b></div>
+        <div class="r"><span>Duty Supervisor</span><b>[Ext]</b></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="craft">
+    <span class="kick">The Craft · A Daily Note on People &amp; Presence</span>
+    <p class="cl"><b>The check-in that isn't a question.</b> Ten days of heat, back to 22 August, three of them verified at exactly a hundred — and today is the second quiet one. This is the shape of shift in which people fall over — not during the hard week, when adrenaline does the carrying, but in the flat days after. The trouble is that <em>"you all right?"</em> is a formality, not a question, and everyone here was trained from childhood to answer it <em>"yeah, fine"</em> — you get nothing and you have used up the moment. The version that works is specific and asks for no verdict. <b>Name the thing, not the feeling</b> — <em>you were on the drive eleven to four Thursday, that was the hottest one</em> — because a fact is easy to confirm and a feeling is not. <b>Ask about the next hour, not the week:</b> have you eaten, when's your break, are you drinking anything besides coffee. Those get answered honestly because they are small enough to answer honestly. <b>Say your own first</b> — a supervisor who admits to being tired makes it safe to be tired. Then the hard part: <b>leave the silence alone.</b> Most people say the true thing about four seconds after the polite thing, and only if nobody fills the gap.</p>
+    <p class="q">"What do we live for, if it is not to make life less difficult to each other?" <span class="by">— George Eliot, <em>Middlemarch</em></span></p>
+  </div>
+
+  <div class="foot">Daybreak Brief · ATX Security Office · ATX-DB-2026-245 · DTG 010600 SEP 01 CDT · Written to inform, not alarm · Next: Wednesday 0600 CDT</div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,83 @@
+# .github/workflows/daybreak.yml
+#
+# The cloud runner. Use this ONLY if the Mac route is not reliable enough —
+# it costs metered API tokens and it needs two secrets.
+#
+# SECRETS (Settings → Secrets and variables → Actions):
+#   ANTHROPIC_API_KEY   from console.anthropic.com — meters separately from the
+#                       Claude subscription. Do NOT paste a subscription session token.
+#   (the checkout PAT is only needed if the KB lives in a DIFFERENT private repo;
+#    for this repo the built-in GITHUB_TOKEN below is enough — one less secret.)
+#
+# 09:30 UTC = 4:30 AM CDT (UTC-5) = 3:30 AM CST (UTC-6).
+# Cron in GitHub Actions is UTC and does NOT follow daylight saving, so this
+# drifts by an hour twice a year. Two entries, one per half of the year, is the
+# usual fix; a single early entry plus a guard in run_daily.sh also works.
+
+name: Daybreak Brief
+
+on:
+  schedule:
+    - cron: "30 9 * * *"      # 04:30 CDT — Mar–Nov
+    - cron: "30 10 * * *"     # 04:30 CST — Nov–Mar (harmless overlap; the run is idempotent)
+  workflow_dispatch:
+    inputs:
+      date:
+        description: "Edition date (YYYY-MM-DD). Blank = today."
+        required: false
+
+permissions:
+  contents: write             # to commit the day's output back
+
+jobs:
+  brief:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Install Chromium for the 403 fallback
+        run: |
+          npm i -g playwright
+          npx playwright install --with-deps chromium
+
+      - name: Install Claude Code
+        run: npm i -g @anthropic-ai/claude-code
+
+      - name: Run the edition
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          NO_COLOR: "1"
+        run: |
+          chmod +x cli/run_daily.sh
+          ./cli/run_daily.sh ${{ inputs.date }} || EXIT=$?
+          # exit 3 means a DEGRADED edition was produced — that is a warning, not a failure
+          if [ "${EXIT:-0}" = "3" ]; then echo "::warning::degraded edition"; EXIT=0; fi
+          exit ${EXIT:-0}
+
+      - name: Commit the edition
+        run: |
+          git config user.name  "daybreak-bot"
+          git config user.email "noreply@rowanrisk.invalid"
+          git add cli/out cli/raw cli/logs || true
+          git diff --staged --quiet || git commit -m "ed. $(date +%F)"
+          git push
+
+      # The artifacts are kept even when the run failed — the gate report is
+      # the first thing you want to read on a bad morning.
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: daybreak-${{ github.run_id }}
+          path: |
+            cli/out/
+            cli/logs/
+          retention-days: 30

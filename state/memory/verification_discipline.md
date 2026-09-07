@@ -1,0 +1,71 @@
+---
+name: verification-discipline
+description: Hard rules for factual claims in published deliverables — learned from real errors caught in the Daybreak Brief, including four caught on ed. 249's own review pass and the ed. 250 forecast-threshold error
+type: feedback
+---
+Ryan audits published output and catches unsourced or inflated numbers. On ed. 237 he asked "what are you referring to in regards to 400,000?" and the answer exposed five further defects. Treat every number in a deliverable as something he will trace back to a source.
+
+## The rules
+
+**1. Never publish a figure you did not retrieve this session.**
+On ed. 237 WTI was published as "$85.25 / −2.05%" having never fetched the WTI page — only Brent. The real figure was $85.25 / −2.08%. Being close is luck, not method. **If two numbers travel together (Brent+WTI, high+low, cases+hospitalizations), fetch both. Do not infer the second from the first.**
+Why: a plausible fabricated number is worse than a missing one, because nothing flags it.
+How to apply: before publishing, list every number in the draft and name the tool call that produced it. Anything unmatched gets fetched or cut.
+
+**2. Never convert a forecast into an observation.**
+Ed. 237 said "Sunday's ~106° tied the 2010 record." The source (KUT, 23 Aug 9:54 AM) said Austin *could* tie it — a forecast published that morning. Saturday's 107° in the same article *was* observed.
+How to apply: when a source is dated the same day as the event, check whether each figure is past or future tense. Publish observed and forecast in different words ("observed" vs "forecast, unconfirmed"). If the observation can't be retrieved, say so and carry it unresolved.
+**This fired again on ed. 239 and was caught pre-publication.** A Team Notes line read "this team has now worked 106°, 105°, 104° and today's 104°" — but the 105° was Tuesday's *forecast*, unverified because the observation page had not refreshed. Rewritten to "three verified days at 106°, 105° and 104°, plus yesterday and today." **The lesson: the rule does not only apply to the sentence that first states a number. It applies wherever the number is later reused, including in prose that never touches Section 03. Grep every temperature in the draft against the observed/forecast distinction, not just against staleness.**
+
+**3. Do not borrow a number from one subject to characterise another.**
+"A team that has already worked a 400,000-person Saturday" attached a citywide parade attendance projection to a single hotel's workload. The property did not serve 400,000 people. The correct phrasing — already present in the same document's Heat Flag box — was "a very large Saturday."
+How to apply: ask whose number it is and whether the sentence's subject is the same entity. If not, drop the figure and describe the thing qualitatively.
+
+**4. A caveat attached in one edition must survive into the next.**
+The 400,000 was flagged in ed. 236 as "an organizer projection, not a measured count," then repeated bare in ed. 237. Carried-forward facts must carry their qualifiers.
+
+**5. Never let editing separate a number from its source reference.**
+Page-fit trimming dropped the Pride source ref from ed. 237's Section 12 while leaving the 400,000 in the body — and the 1PG used it twice with zero Pride references anywhere. **After any trim pass, re-check that every figure in the body still has a live reference.**
+
+**6. Distinguish regional from local figures.**
+Ed. 237 published "heat index ~110°" as today's number; that was a *regional* maximum from a page timestamped the previous morning, while the local point forecast said 108°. Publish the local value, name the regional one separately, never blend or split them.
+**Same shape, different axis, on ed. 239:** the local point product gave a high of 104° while the Travis *zone* product, issued sixteen minutes earlier, worded it "highs around 103." Published the local hourly figure and named the zone value beside it. **Never split the difference between two products; publish one, name the other.**
+**⚠️ This failed on ed. 249's first build and was caught on review.** The Wind row and the High/Low row published "southeast wind 5 to 10 mph" as the local figure — it was the *zone* product's number. The local point product said "calm wind becoming southeast around 5 mph in the afternoon." **The zone figure had been correctly attributed in the sources note and the Outlook row, and still leaked into two other rows as if it were ours. Grep every figure the zone product supplies, not just the one you consciously borrowed.**
+
+**7. Do not claim corroboration you did not obtain.**
+Section source lines listed "Al Jazeera · Reuters · Bloomberg" for details actually single-sourced to one tracker. If a fact rests on one source, label it single-sourced and uncorroborated in the text, not just in the confidence note.
+
+**8. Check the publication YEAR on anything a date-keyed search returns.**
+Searching "ERCOT conservation appeal August 24" surfaced FOX 7 and Oncor articles from **2023** that read as current. Nearly published a fabricated grid emergency. **Hit again on ed. 239** — a co-op notice at `tvec.net/august-26-ercot-appeals-for-energy-conservation-3-9-p-m/` whose URL slug carried the right day and the wrong year (2023). Fetched purely to read the dateline, confirmed, discarded. **For recurring incident types (tanker strikes off Oman, heat warnings, grid appeals) also check the DAY** — ed. 239's search for the Metro Venetian surfaced a different 18 Aug 2026 Hormuz projectile incident and a 2022 "Pacific Zircon" story with nearly identical wording.
+**Hit a fourth time on ed. 249** — a television-news article describing the Congress Avenue bridge closed "from 5 a.m. Saturday through 5 a.m. Sunday" for Bat Fest, from a previous year's festival. Identified, discarded, and **flagged in print so the next edition would not adopt it**. **Annual events are the worst offenders: the coverage is near-identical every year and the day-of-week often matches.**
+
+**9. Treat the fetch tool's summary of a table as a claim, not as data.**
+On ed. 239 two fetches of the same NWS observation page, minutes apart, reported different maxima for the same day (104.0° at 17:51 vs 100.9° at 18:51). The summarising model misread the column. **How to apply: for any tabular source, prompt it to "transcribe faithfully, read the actual column values, do not summarize," and cross-check the result against the figure the previous edition published. If two reads disagree and no third source settles it, publish the one that is corroborated and say so.**
+**⚠️ Extended on ed. 249: this applies to HAZARD BLOCKS, not just tables.** Three reads of the NWS EWX office page in one session returned different answers — one said no hazards at all, two said a Flood Advisory and a Special Weather Statement. **The first build published "the office page now lists no hazards" off a single read and declared a two-edition discrepancy resolved. It was not resolved.** Corrected to: publish the two agreeing reads, publish the fresh *local* products' silence, and report the discrepancy as **narrowed** (the heat headline had genuinely dropped off) rather than closed. **Never declare a discrepancy resolved on one read of a source that disagrees with itself — and be especially suspicious when the tidy narrative ("it closed our way") is the one a single read supports.**
+
+**10. When a source changes its own baseline between editions, publish the ratio and flag the change.**
+The Hormuz tracker moved its "normal transits" baseline from ~73/day to ~85/day between ed. 238 and ed. 239 with no explanation, and simultaneously quoted a Brent price and percentage change that disagreed with the price source. Ed. 239 published the retrieved price from the price source, published transits as a ratio rather than an absolute, and flagged both discrepancies in the confidence note without reconciling them. **Do not silently adopt a revised baseline; a number that moves for unstated reasons is a caveat, not an update.**
+**⚠️ Ed. 249 added the inverse failure: a flagged "discrepancy" that was only a time difference.** The tracker quoted Brent at $94.85 (−1.81%) against the price source's $96.28 (+0.80%) and the first build flagged it as *"a disagreement on direction, not merely on level."* On review, the tracker's page was stamped **4 Sep 1305Z — a Friday-morning reading** — and an independent futures commentary datelined **Friday 6:45 AM ET** put Brent at **$94.86**, within a cent of the tracker. Brent then rallied to $96.28 by the close. **Both figures were right and hours apart.** The flag was withdrawn in print.
+**How to apply: before flagging any price or count as a source conflict, compare the two sources' TIMESTAMPS. Two market figures from different hours of a moving session are not a discrepancy. Check the page stamp, not just the number.** This also cuts the other way: it means a stale page's price is evidence of *when* it was read, and can corroborate rather than contradict.
+
+**11. "Nothing was posted" is a claim about a feed, and feeds carry more than one kind of item.**
+Ed. 246's original failure was stating "the City has posted nothing new since 31 August" when seven items had been posted on 1 September. **Ed. 249 repeated a smaller version of it**: the first build said "no APD news release was posted on 4 or 5 September." APD had posted one item on 4 September — a Labor Day watercraft-ban notice, which sits on the *police* feed rather than the general one. The chip logic was unaffected (no new *incident*), but the flat claim was false.
+**How to apply: never write "nothing was posted." Write what kind of thing was not posted — "no new incident release" — and check both City feeds separately every edition, which has been standing procedure since ed. 246. A safety or holiday notice on the police feed is a posting.**
+
+**12. ⚠️ Rule 9 applies to FORECASTS, and hardest when a figure sits near a decision threshold.**
+Ed. 250's first build asserted Labor Day's heat index as **109°** and therefore as **above the ≥108° Heat Advisory criterion**. The re-check found the number had moved between consecutive issuances of the same product: **11:42 PM 5 Sep = 107°**, **12:44 AM 6 Sep = 109°**, **1:42 AM = a tabular view with no worded figure**. The criterion sits *between* them, so whether Monday cleared the advisory line depended entirely on which hour you read. Rule 9 had been applied only to observations; a forecast product re-issues hourly and is just as capable of disagreeing with itself.
+**How to apply: before publishing any forecast number that crosses a named criterion (advisory thresholds, capacity limits, curfew hours, price triggers), read the PRECEDING issuance as well as the current one. If they straddle the threshold, publish both values and choose neither** — ed. 250's wording was *"unsettled 107–109°, straddling the line; build for 109°, re-check first thing"*, plus the operational form **"plan for Black, hope for Red."** A range that spans a decision point is more honest and more useful than a single number on one side of it.
+**The corollary: the closer a figure is to a threshold, the more reads it earns.** A forecast index of 96° needs one read; 107° against a 108° criterion needs three.
+
+## When an error is found
+Correct it in the artifact, and **record the correction in the document itself** (the Daybreak Brief carries a "Corrections to this edition as first issued" clause in its confidence note). Then fix any memory file that propagated the same error — memory had carried the bad WTI figure, the 110° index and the Sunday record as fact until corrected, and carried ed. 250's bare 109° until the review pass. Do not quietly overwrite; state what was wrong and what it is now.
+
+**Distinguish a correction from a revision.** Ed. 239 published today's figures as 104°/107° where ed. 238 had forecast 105°/109° for the same day. That is not an error in ed. 238 — it is the forecast changing — and it was labelled as such: "Not an error in that edition — a forecast revision, recorded here because the direction matters." **Calling a revision a correction erodes the value of the corrections clause; calling a correction a revision hides a mistake.** Ed. 250's 107/109 was a **correction**, not a revision: the earlier issuance existed at build time and was not consulted.
+
+**Corrections made before the edition's own 0600 issue go in place, with no revision letter.** This is the ed. 247 precedent (oil re-fetched and updated in place before issue) and it was used again on ed. 249 (four defects) and ed. 250 (the threshold error) — but **the confidence note still names them**, because the point of the clause is the discipline, not the letter.
+
+## ⚠️ The audit must cover comparatives, not just figures
+Ed. 249's numeric audit caught three claims that were **Claude's own, not any source's**: *"the eighth time"* a wrong-year source had appeared (only three were documented), *"the most chips this brief has carried in one edition"* (unverifiable — no full chip history exists), and *"the quietest stretch since ed. 245"* (unverifiable). All three were cut or softened to something checkable.
+**Ed. 250 caught four more in the same sweep**: *"the largest day of the year for this block"* (×2, unverifiable against SXSW/ACL/F1), *"the strongest sign yet that this outbreak is over"* (a claim about the outbreak rather than about the item), *"the first positive grid information in weeks"* (ed. 249 already carried one), and *"on every measure a larger event"* for the Ohio State game (same stadium, same capacity — reframed to the release *shape*: a 6:30 kickoff empties ~100k near ten at night).
+**How to apply: run the audit over "first", "most", "highest", "strongest", "nth time", "since ed. N" as well as over digits. A superlative needs a source or a stated basis, or it gets cut.** A superlative that *does* have a basis is fine and should keep it — ed. 249's "Brent at $96.28 is the highest this brief has carried" survived because the preceding editions' figures are all on record.
+**The sweep has now caught something in every edition it has run on. It is not optional.**

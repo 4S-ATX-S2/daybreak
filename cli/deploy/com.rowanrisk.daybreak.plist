@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Daybreak Brief — daily run on the Mac.
+
+  INSTALL
+    1. Edit the two paths below to match where the KB actually lives.
+    2. cp deploy/com.rowanrisk.daybreak.plist ~/Library/LaunchAgents/
+    3. launchctl load  ~/Library/LaunchAgents/com.rowanrisk.daybreak.plist
+    4. launchctl start com.rowanrisk.daybreak        # test it now, don't wait for 3:30 AM
+    5. tail -f <KB>/cli/logs/$(date +%F).log
+
+  UNINSTALL
+    launchctl unload ~/Library/LaunchAgents/com.rowanrisk.daybreak.plist
+
+  THE MACHINE MUST BE AWAKE. launchd will run a missed job when the Mac wakes,
+  but 3:30 AM is only useful if it fires AT 3:30. Schedule a wake:
+    sudo pmset repeat wakeorpoweron MTWRFSU 03:25:00
+  Confirm with:  pmset -g sched
+-->
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.rowanrisk.daybreak</string>
+
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/bash</string>
+    <string>-lc</string>
+    <!-- EDIT THIS PATH -->
+    <string>/Volumes/XEN0/00_TheSea/DAYBREAK_KB/cli/run_daily.sh</string>
+  </array>
+
+  <key>StartCalendarInterval</key>
+  <dict>
+    <key>Hour</key><integer>3</integer>
+    <key>Minute</key><integer>30</integer>
+  </dict>
+
+  <!-- Run it on wake if the machine was asleep at 3:30 -->
+  <key>RunAtLoad</key>
+  <false/>
+
+  <!-- EDIT THESE PATHS -->
+  <key>WorkingDirectory</key>
+  <string>/Volumes/XEN0/00_TheSea/DAYBREAK_KB/cli</string>
+  <key>StandardOutPath</key>
+  <string>/Volumes/XEN0/00_TheSea/DAYBREAK_KB/cli/logs/launchd.out</string>
+  <key>StandardErrorPath</key>
+  <string>/Volumes/XEN0/00_TheSea/DAYBREAK_KB/cli/logs/launchd.err</string>
+
+  <key>EnvironmentVariables</key>
+  <dict>
+    <!-- launchd gives a very thin PATH. Node and claude must be findable. -->
+    <key>PATH</key>
+    <string>/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+    <key>NO_COLOR</key>
+    <string>1</string>
+  </dict>
+
+  <key>ProcessType</key>
+  <string>Background</string>
+</dict>
+</plist>

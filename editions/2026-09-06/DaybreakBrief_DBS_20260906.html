@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Daybreak Brief &middot; ATX-DB-2026-250 &middot; 6 September 2026 &middot; DBS One-Page Summary</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --gold:#94803a;--gold-light:#b3a24e;--ink:#26251f;--ink-soft:#54524a;
+    --bar:#211f18;--cream:#f7f4ec;--rule:#d9d2bf;
+    --calm:#7d8a4e;--attentive:#a08b3f;--elevated:#b0592b;--high:#7c1f1f;--severe:#511414;
+    --new:#211f18;--closed:#8a8578;--flag-green:#56663a;--flag-yellow:#c9971f;
+    --flag-red:#a4331f;--flag-black:#211f18;
+    --up:#b0592b;--down:#6f7d45;--steady:#8a8578;
+  }
+  *{box-sizing:border-box;}
+  html{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  body{margin:0;color:var(--ink);font-family:"Source Sans 3","Segoe UI",Helvetica,Arial,sans-serif;
+    font-size:8.7px;line-height:1.42;background:#8f8f8f;}
+  .page{background:#fff;width:8.5in;min-height:11in;margin:0 auto;padding:0.42in 0.5in 0.34in;}
+  @media screen{.page{margin:14px auto;box-shadow:0 2px 14px rgba(0,0,0,.28);}}
+
+  .topbar{display:flex;justify-content:space-between;align-items:center;font-size:7.2px;
+    letter-spacing:1.2px;color:var(--ink-soft);border-top:2px solid var(--gold);
+    border-bottom:1px solid var(--rule);padding:4px 0;text-transform:uppercase;font-weight:600;}
+  .topbar b{color:var(--ink);}
+  .masthead{text-align:center;padding:8px 0 4px;}
+  .masthead h1{font-family:"Playfair Display",Georgia,serif;font-weight:600;letter-spacing:.2em;font-size:27px;margin:0 0 1px;}
+  .masthead .sub{letter-spacing:.3em;font-size:7.6px;color:var(--gold);text-transform:uppercase;font-weight:600;}
+  .masthead .dateline{font-size:8.4px;margin-top:5px;}
+  .classline{display:flex;justify-content:space-between;font-size:7.4px;letter-spacing:.16em;color:var(--ink-soft);
+    text-transform:uppercase;font-weight:600;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);
+    padding:3px 0;margin-top:6px;}
+
+  .band{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin:5px 0;}
+  .cell{border:1px solid var(--rule);text-align:center;padding:5px 3px 4px;}
+  .cell .lab{font-size:7px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft);font-weight:600;line-height:1.25;min-height:18px;}
+  .cell .chip{display:block;color:#fff;font-weight:700;font-size:8px;letter-spacing:.06em;text-transform:uppercase;padding:3px 0;margin:3px 0 2px;}
+  .cell .tr{font-size:7.4px;color:var(--ink-soft);}
+  .c-calm{background:var(--calm);}.c-attentive{background:var(--attentive);}
+  .c-elevated{background:var(--elevated);}.c-high{background:var(--high);}.c-severe{background:var(--severe);}
+  .tr-up{color:var(--up);font-weight:700;}.tr-down{color:var(--down);font-weight:700;}.tr-steady{color:var(--steady);font-weight:700;}
+
+  .lead{background:var(--cream);border-left:4px solid var(--gold);padding:8px 11px 4px;margin:0 0 6px;font-size:8.9px;line-height:1.5;}
+  .lead .focus{border-top:1px dashed var(--gold-light);padding-top:5px;margin-top:4px;font-size:8.2px;}
+  .focus b{color:var(--gold);}
+
+  h3.dash{font-size:8.2px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin:7px 0 3px;
+    color:var(--ink);border-bottom:1.5px solid var(--bar);padding-bottom:2px;display:flex;justify-content:space-between;align-items:baseline;}
+  h3.dash em{font-weight:400;letter-spacing:.02em;text-transform:none;font-size:7.2px;color:var(--ink-soft);}
+
+  /* D — day at a glance */
+  .glance{display:grid;grid-template-columns:1.62fr 1fr;gap:10px;align-items:start;}
+  .chart{border:1px solid var(--rule);background:#fdfcf8;padding:3px 4px 1px;}
+  .legend{display:flex;gap:10px;font-size:6.6px;text-transform:uppercase;letter-spacing:.06em;font-weight:700;color:var(--ink-soft);padding:1px 2px 2px;}
+  .legend i{display:inline-block;width:14px;height:0;border-top:2px solid var(--gold);vertical-align:middle;margin-right:3px;}
+  .legend i.ix{border-top:2px solid var(--flag-red);}
+  .legend i.bd{border-top:6px solid rgba(164,51,31,.16);}
+  .legend i.rn{border-top:6px solid rgba(90,130,170,.20);}
+  .legend i.yb{border-top:6px solid rgba(201,151,31,.30);}
+  .out .d{border:1px solid var(--rule);padding:3px 6px;margin-bottom:4px;}
+  .out .d .when{font-size:6.9px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--elevated);}
+  .out .d p{margin:1px 0 0;font-size:7.6px;line-height:1.32;}
+
+  /* E — divisions */
+  .dv{display:grid;grid-template-columns:repeat(4,1fr);gap:5px;}
+  .dv>div{border:1px solid var(--rule);padding:3px 6px 4px;}
+  .dv .n{font-size:6.7px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--ink);
+    border-bottom:1px solid var(--rule);padding-bottom:1.5px;margin-bottom:2px;}
+  .dv p{margin:0;font-size:7.5px;line-height:1.33;}
+
+  /* F — watch items */
+  .wi{border:1px solid var(--rule);}
+  .wi .h{background:var(--bar);color:#fff;font-size:7px;letter-spacing:.13em;font-weight:700;padding:3px 8px;
+    text-transform:uppercase;display:flex;justify-content:space-between;}
+  .wi .h span{font-weight:400;letter-spacing:.04em;text-transform:none;font-style:italic;color:#d7d2c4;}
+  .wi .r{display:flex;gap:6px;align-items:baseline;padding:3px 8px;border-top:1px solid var(--rule);font-size:8.1px;}
+  .wi .ref{width:34px;font-weight:700;flex:none;}
+  .wi .badge{flex:none;width:88px;color:#fff;font-weight:700;font-size:6.6px;letter-spacing:.05em;
+    text-transform:uppercase;padding:1.5px 0;text-align:center;border-radius:2px;}
+  .b-open{background:var(--attentive);}.b-monitoring{background:var(--elevated);}
+  .b-new{background:var(--new);}.b-closed{background:var(--closed);}
+  .wi .act{color:var(--gold);font-weight:700;}
+
+  /* G — two columns */
+  .two{display:grid;grid-template-columns:1.28fr 1fr;gap:8px 18px;}
+  ul{margin:3px 0 4px;padding-left:13px;}li{margin:2px 0;}
+  .flag{display:flex;gap:8px;align-items:center;background:var(--cream);border:1px solid var(--rule);padding:5px 7px;margin:4px 0 0;}
+  .flag .lvl{flex:none;color:#fff;font-weight:700;font-size:8px;letter-spacing:.08em;padding:5px 9px;border-radius:2px;text-transform:uppercase;}
+  .flag .t{font-size:7.6px;line-height:1.34;}
+  .qa .q{font-size:7.9px;font-weight:700;font-style:italic;color:var(--gold);margin:3px 0 0;}
+  .qa .a{font-size:7.9px;line-height:1.36;margin:0 0 4px;}
+
+  /* H — the craft */
+  .craft{border:1px solid var(--gold);background:#fbf9f2;padding:6px 10px 7px;margin:6px 0 0;}
+  .craft .kick{display:inline-block;background:var(--gold);color:#fff;font-size:6.4px;font-weight:700;
+    letter-spacing:.13em;text-transform:uppercase;padding:2px 7px;border-radius:2px;}
+  .craft .cl{font-size:8.2px;line-height:1.45;margin:5px 0 0;}
+  .craft .q{font-style:italic;font-size:8.1px;color:#403e37;margin:4px 0 0;line-height:1.4;}
+  .craft .q .by{font-style:normal;font-weight:700;color:var(--gold);}
+
+  /* I — readiness */
+  .ready{border:1px solid var(--bar);margin:6px 0 0;}
+  .ready .kick{background:var(--bar);color:#fff;font-size:6.4px;font-weight:700;letter-spacing:.13em;
+    text-transform:uppercase;padding:3px 8px;display:flex;gap:10px;align-items:baseline;}
+  .ready .kick b{background:var(--gold);padding:1px 6px;border-radius:2px;letter-spacing:.06em;}
+  .ready .rgrid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;}
+  .ready .rgrid>div{padding:4px 8px 5px;border-left:1px solid var(--rule);}
+  .ready .rgrid>div:first-child{border-left:none;}
+  .ready .n{font-size:6.7px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:2px;}
+  .ready p{margin:0;font-size:7.6px;line-height:1.35;}
+
+  /* J — contacts strip */
+  .strip{display:flex;justify-content:space-between;align-items:center;border-top:2px solid var(--gold);
+    border-bottom:1px solid var(--rule);margin-top:6px;padding:4px 0;}
+  .strip .c{font-size:7px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-soft);font-weight:600;}
+  .strip .c b{color:var(--ink);letter-spacing:.02em;margin-left:4px;font-size:8px;}
+  .foot{margin-top:3px;text-align:center;font-size:7px;color:var(--ink-soft);letter-spacing:.03em;line-height:1.5;}
+
+  @media print{
+    body{background:#fff;font-size:6.85px;line-height:1.15;}
+    .page{margin:0;box-shadow:none;width:auto;min-height:0;padding:0.03in 0.24in 0in;}
+    .topbar{padding:1.4px 0;}
+    .masthead{padding:0;} .masthead h1{font-size:18.5px;}
+    .classline{padding:1.5px 0;margin-top:2px;}
+    .band{margin:0.5px 0;} .cell{padding:2px 3px 1.5px;} .cell .lab{min-height:13px;font-size:6.3px;line-height:1.2;} .cell .chip{font-size:7.2px;padding:2px 0;margin:1.5px 0 1px;} .cell .tr{font-size:6.4px;}
+    .lead{padding:3px 7px 1.5px;margin:0 0 3px;font-size:7.65px;line-height:1.29;}
+    .lead .focus{padding-top:2.5px;margin-top:2.5px;font-size:7.15px;}
+    h3.dash{margin:3px 0 2px;padding-bottom:1.5px;font-size:7.2px;} h3.dash em{font-size:6.2px;}
+    .chart{padding:1px 3px 0;} .legend{padding:0 2px 1px;}
+    .out .d{padding:1.2px 5px;margin-bottom:2.5px;} .out .d p{font-size:6.95px;line-height:1.28;} .out .d .when{font-size:6.3px;}
+    .dv{gap:2.6px;} .dv>div{padding:1px 4px 1.2px;} .dv .n{padding-bottom:0.9px;margin-bottom:1.1px;font-size:6.5px;} .dv p{line-height:1.29;font-size:7.1px;}
+    .wi .r{padding:1.3px 5.5px;font-size:7.4px;line-height:1.27;} .wi .h{padding:1.6px 6px;} .wi .badge{font-size:6px;}
+    .two{gap:4px 14px;} ul{margin:2px 0 2px;} li{margin:0.9px 0;}
+    .flag{padding:2.4px 6px;margin:1.6px 0 0;} .flag .t{line-height:1.30;font-size:7.2px;} .flag .lvl{font-size:7px;padding:3.5px 7px;}
+    .qa .q{font-size:7.2px;margin:1.5px 0 0;}
+    .qa .a{font-size:7.2px;line-height:1.28;margin:0 0 2.4px;}
+    .craft{margin:2.5px 0 0;padding:2.5px 8px 3px;} .craft .cl{margin-top:2px;line-height:1.33;font-size:7.3px;} .craft .q{margin-top:2px;font-size:7.2px;line-height:1.27;}
+    .ready{margin:2.5px 0 0;} .ready .kick{padding:1.4px 7px;} .ready .rgrid>div{padding:1.6px 6px 2px;} .ready p{line-height:1.30;font-size:7.2px;} .ready .n{font-size:6.2px;margin-bottom:1.2px;}
+    .strip{margin-top:2px;padding:1.5px 0;}
+    .foot{margin-top:1px;font-size:5.7px;line-height:1.15;} script{display:none!important;}
+  }
+  @page{size:Letter;margin:0;}
+</style>
+</head>
+<body>
+<div class="page">
+      <div class="topbar"><span>Produced by the <b>ATX Security Office</b></span><span>For the <b>DBS &amp; Guest Experience</b> distribution</span><span>DTG <b>060600 SEP 06 CDT</b></span></div>
+  <div class="masthead">
+    <h1>DAYBREAK&nbsp;BRIEF</h1>
+    <div class="sub">One-Page Summary &middot; Daily Awareness &amp; Guest Environment</div>
+    <div class="dateline"><b>Sunday, 6 September 2026</b> &middot; Edition ATX-DB-2026-250 &middot; Four Seasons Hotel Austin</div>
+  </div>
+  <div class="classline"><span>Internal &mdash; All Divisions &middot; Please Handle With Discretion</span><span>Not For Guest Distribution &middot; Questions To The Security Office</span></div>
+
+  <div class="band">
+    <div class="cell"><div class="lab">Neighborhood &amp; Street</div><span class="chip c-attentive">Attentive</span><div class="tr"><span class="tr-steady">&#9644;</span> nothing new in three days</div></div>
+    <div class="cell"><div class="lab">Public Gatherings</div><span class="chip c-attentive">Attentive</span><div class="tr"><span class="tr-down">&#9660;</span> down two from High</div></div>
+    <div class="cell"><div class="lab">Weather &amp; Storms</div><span class="chip c-elevated">Elevated</span><div class="tr"><span class="tr-up">&#9650;</span> Red returns, rain arrives</div></div>
+    <div class="cell"><div class="lab">Traffic &amp; Arrivals</div><span class="chip c-attentive">Attentive</span><div class="tr"><span class="tr-down">&#9660;</span> down two from High</div></div>
+    <div class="cell"><div class="lab">Utilities &amp; Grid</div><span class="chip c-attentive">Attentive</span><div class="tr"><span class="tr-steady">&#9644;</span> reporting blind 17 days</div></div>
+  </div>
+
+  <div class="lead">
+    <b>Yesterday was the crowd. Today is the sky.</b> The stadium and the bridge are both empty; what replaces them is heat and, for the first time in weeks, real rain. This morning's <b>12:44 AM</b> product gives <b>near 97&deg; with a heat index of 106&deg;</b> &mdash; <b>back inside the Red band, exactly as this brief said in advance</b> &mdash; and a <b>40% chance of showers with thunderstorms possible after 1 PM</b>, the highest rain chance of this run. <b>The flag steps Yellow &rarr; Red.</b> <b>And tomorrow is hotter &mdash; by an amount the Weather Service is not settled on. Labor Day is near 99&deg;, and two issuances an hour apart put the index at 107&deg; then 109&deg;, straddling the 108&deg; line at which a Heat Advisory is issued.</b> <b>Plan for Black, hope for Red</b>, and brief it tonight, not Monday morning. Tonight is small: <b>Malcolm Todd, Moody Theater, 8:00 PM</b>, <b>Brandi Carlile at the Moody Center at a time the venue has not published</b>, 3TEN dark. <b>Gatherings and Traffic both fall two steps to Attentive.</b> Abroad, <b>the United States says it struck Iranian oil tankers</b> near Kharg Island.
+    <div class="focus"><b>TODAY'S FOCUS: A quiet street and a loud sky &mdash; use the quiet.</b> Two things while the building has room. <b>The rain:</b> 40% with thunderstorms after one is the first real lightning-hold call in weeks &mdash; agree the trigger and who makes it <b>this morning</b>, not at the first rumble. <b>And look at each other:</b> six days of heat, then a game day, then a festival. <b>The one to watch is not the one who says it was rough. It is the one who says they are fine.</b></div>
+  </div>
+
+  <h3 class="dash">Day at a Glance <em>curve interpolated between the published low, high and peak index &mdash; not an hourly product</em></h3>
+  <div class="glance">
+    <div class="chart">
+      <div class="legend"><span><i></i>Air temp</span><span><i class="ix"></i>Heat index</span><span><i class="bd"></i>Red band 103&ndash;115&deg;</span><span><i class="yb"></i>Yellow band 91&ndash;102&deg;</span></div>
+      <svg id="arc" viewBox="0 0 470 152" width="100%" style="display:block"></svg>
+    </div>
+    <div class="out">
+      <div class="d"><div class="when">Today &mdash; Red returns, and so does rain</div><p>Near <b>97&deg;</b>, index <b>106&deg;</b>. <b>40% showers, thunderstorms after 1 PM.</b> Sunrise 7:10, sunset 7:47. <b>Flag Red.</b></p></div>
+      <div class="d"><div class="when">Tonight &mdash; a small evening</div><p><b>Malcolm Todd, Moody Theater, 8:00 PM</b> (0.5 mi W). <b>Brandi Carlile, Moody Center</b> (1.5 mi N) &mdash; <b>no start time published</b>. 3TEN dark. Watch the drive from about half nine.</p></div>
+      <div class="d"><div class="when">Mon 7 Sep &mdash; Labor Day, the hot one</div><p>Near <b>99&deg;</b>, dry. <b>Index unsettled: 107&deg; then 109&deg; on two products an hour apart &mdash; the advisory line is 108&deg;, between them.</b> City offices closed. Every venue dark. <b>Heavy departure day.</b></p></div>
+    </div>
+  </div>
+
+  <h3 class="dash">What Today Asks of You <em>one line per division &middot; if your cell says normal, the day is normal &mdash; not the brief incomplete</em></h3>
+  <div class="dv">
+    <div><div class="n">Front Office &amp; Concierge</div><p><b>Monday is Labor Day</b> &mdash; City offices and facilities closed, watercraft ban on <b>Lake Austin</b> (not the lake here). <b>Tell guests today that Monday is the hot one: 99&deg;, feeling 107&ndash;109&deg;.</b> Anyone with outdoor plans should hear it now.</p></div>
+    <div><div class="n">Guest Services &mdash; Valet &amp; Front Drive</div><p><b>Rain kit out by midday</b> &mdash; umbrellas, mats, slip check on the porte-coch&egrave;re. Storm window opens at one. Index back to <b>106&deg;</b>: rotations shorten again. Two releases tonight, <b>one at an unpublished time</b>.</p></div>
+    <div><div class="n">Housekeeping</div><p>Third warm night running &mdash; low 78&deg;. <b>Check balcony and terrace doors before the 1 PM storm window.</b> Many guests out this evening; turndown earlier where you can.</p></div>
+    <div><div class="n">Food &amp; Beverage</div><p>Iceberg and mixed-leaf supplier check <b>stays live</b> (WI-06; Texas a case state) &mdash; unchanged a third edition. Hydration back at Red-band level. <b>Outdoor service: the hold decision is yours to make before service, not during.</b></p></div>
+    <div><div class="n">Banquets</div><p><b>The first genuine lightning-hold decision in weeks.</b> 40% with thunderstorms after 1 PM. <b>Put the hold trigger and the tear-down point in today's timeline with a named person on each.</b></p></div>
+    <div><div class="n">Engineering</div><p>Walk drainage and the porte-coch&egrave;re <b>before</b> one o'clock; standing water after it passes. On the same round, confirm the <b>evacuation stairwell doors are unlocked, lit and signed</b> (see Readiness).</p></div>
+    <div><div class="n">Spa &amp; Fitness</div><p>Pool deck back to <b>Red rules at a 106&deg; index</b>. <b>Name the lightning hold at pre-shift</b> and say where people go: a cabana, a marquee or an umbrella <b>is not shelter</b>.</p></div>
+    <div><div class="n">Security &amp; Overnight MOD</div><p>Two releases &mdash; the theatre about ten, the arena at an hour nobody has published. <b>Exterior walk after the rain, not before.</b> <b>Brief Monday's unsettled 107&ndash;109&deg; index at tonight's pre-shift</b> &mdash; it straddles the advisory criterion. <b>Build for the higher figure; re-check first thing.</b></p></div>
+  </div>
+
+  <div class="wi" style="margin-top:6px">
+    <div class="h"><span>Watch Items &mdash; Standing Register</span><span>full reasoning and sourcing in the five-page brief</span></div>
+    <div class="r"><div class="ref">WI-13</div><div class="badge b-closed">Closing &middot; Day 3</div><div class="tx"><b>Bat Fest and the Labor Day weekend &mdash; closed. The weekend passed without incident.</b> The festival ran 3:00&ndash;11:00 PM Saturday on the Congress bridge alongside a hundred-thousand-seat home opener at DKR, and <b>no police release was posted on 5 or 6 September, nor any City item</b>. The item was opened for one weekend, it covered it, and it ends here. <span class="act">No action. Drops off the register tomorrow &mdash; but note the next one now: Ohio State at DKR, Saturday 12 September, 6:30 PM.</span></div></div>
+    <div class="r"><div class="ref">WI-05</div><div class="badge b-open">Open &middot; Day 55</div><div class="tx"><b>Strait of Hormuz &mdash; the sea war changed character.</b> <b>The United States says it struck Iranian oil tankers</b> in the Gulf of Oman and near Kharg Island. For fifty-five days this item tracked attacks <em>on</em> shipping; it now also tracks a state striking tankers. With peace talks already conditioned on Iran stopping attacks on ships, <b>both sides have made shipping the instrument rather than the casualty.</b> Counts stay frozen a seventh day. Oil, Friday's close: <b>Brent $96.28, WTI $91.48.</b> <span class="act">No property action &mdash; but do not tell a guest the strait is closed.</span></div></div>
+    <div class="r"><div class="ref">WI-06</div><div class="badge b-monitoring">Monitor &middot; Day 54</div><div class="tx"><b>Cyclospora (iceberg lettuce) &mdash; unchanged a third edition.</b> CDC still carries <b>11,458 illnesses, 20 states, 495+ hospitalizations, 2 deaths</b>, <b>Texas on the case list</b>. Reported onsets still end <b>15 August</b> &mdash; <b>three weeks static across three editions</b>, the most encouraging pattern this item has shown &mdash; though CDC has declared nothing and reporting lags. <span class="act">F&amp;B: the produce and supplier-documentation check stays live &mdash; do not record it closed.</span></div></div>
+  </div>
+
+  <div class="two" style="margin-top:6px">
+    <div>
+      <h3 class="dash">Around the Property</h3>
+      <ul>
+        <li><b>The first ordinary Sunday in three days.</b> <b>Malcolm Todd</b> plays the <b>Moody Theater at eight</b>, half a mile west, his second of two nights; <b>3TEN is dark and stays dark through Wednesday</b>. <b>Brandi Carlile</b> plays the <b>Moody Center</b>, the arena on the university campus a mile and a half north &mdash; <b>the venue page publishes no start time and we are not inventing one</b>, so watch the drive from about half nine rather than to a clock. One daytime item downtown: a string quartet at the Saengerrunde Halle, three to five. <b>Monday is empty</b> &mdash; every venue dark and nothing listed downtown.</li>
+        <li><b>Two quiet days on both City feeds</b> &mdash; nothing posted 5 or 6 September, and <b>no incident release since 3 September</b>, the longest quiet stretch of this run. The standing cases are seven to thirty-six days old, none downtown. <b>Grid: unknown, not fine</b> &mdash; still 20 August, seventeen days &mdash; though the source does say ERCOT stayed in normal operations and that August's peak came in <b>below</b> July's record, against forecasts of a new high.</li>
+      </ul>
+      <div class="flag">
+        <div class="lvl" style="background:var(--flag-red)">Red</div>
+        <div class="t"><b>Yellow lasted exactly one day, which is what yesterday's brief said it would.</b> An index of <b>106&deg;</b> puts today back in the Red band (103&ndash;115): <b>shortened rotations, mandatory water and shaded relief return</b> for door, drive and every exterior post. <b>Nothing is in effect</b>, so the chip goes no higher. Two things make today different: <b>there is rain in it</b> &mdash; 40% with thunderstorms after one, so a slick porte-coch&egrave;re and a hold decision to make in advance &mdash; and <b>the team is coming off the largest day this brief has covered</b>. A cooler Saturday did not undo six days of heat, a game day and a festival.</div>
+      </div>
+    </div>
+    <div class="qa">
+      <h3 class="dash">If a Guest Asks</h3>
+      <div class="q">&ldquo;How hot is it today?&rdquo;</div>
+      <div class="a">About 97, feeling near 106 &mdash; and there's a real chance of showers and a thunderstorm after one o'clock, the best chance of rain we've had in weeks. Do take an umbrella. Tomorrow is hotter and dry: about 99, and it will feel somewhere between 107 and 109 &mdash; the forecast has been moving, so we'd rather check again in the morning than promise you a number.</div>
+      <div class="q">&ldquo;What's on tonight?&rdquo;</div>
+      <div class="a">Brandi Carlile is at the Moody Center on the university campus &mdash; the venue hasn't published a start time, so let us check rather than guess. Malcolm Todd plays the Moody Theater at eight, half a mile west. And there's a string quartet at the Saengerrunde Halle from three this afternoon.</div>
+      <div class="q">&ldquo;What's open on Labor Day?&rdquo;</div>
+      <div class="a">City of Austin offices and municipal facilities are closed Monday. Restaurants and shops mostly keep holiday hours, so booking ahead is worth it. If boating comes up &mdash; there's a personal watercraft ban on Lake Austin for the holiday; that's the lake upstream, not the water here.</div>
+      <div class="q">&ldquo;Will the storms affect our flight?&rdquo;</div>
+      <div class="a">Possibly this afternoon &mdash; it's a 40% chance, so more likely not than yes, but it's the first real storm risk in a while. Let us check live conditions before you leave and allow a little margin. Monday looks dry, though it will be the busy departure day.</div>
+    </div>
+  </div>
+
+  <div class="craft">
+    <span class="kick">The Craft &middot; A Daily Note on People &amp; Presence</span>
+    <p class="cl"><b>Watch the ones who are fine.</b> This team has just worked six straight days at or above a hundred degrees, then a hundred-thousand-seat home opener, then a festival that finished at eleven. <b>The person most likely to be in trouble this morning is not the one who says yesterday was brutal</b> &mdash; that one has told you where they are, and telling you is most of the repair. It is the one who says they are <em>fine</em>, cheerfully and immediately, while volunteering for another double. There is nothing mysterious about why: sustained pressure is easier to carry than to put down, and being needed is steadying. So the tell is rarely distress &mdash; <b>it is a brightness that doesn't fit the week</b>: first in and last out on the day after the hard one, hasn't sat down, answers every question about themselves by talking about the operation. <b>Cheerfulness on the seventh hard day is data, not reassurance.</b> What to do is small. <b>Don't challenge the &ldquo;fine&rdquo;</b> &mdash; arguing only makes them defend it. <b>Remove the need for it:</b> send them on a break rather than offering one, put someone else on the double, hand them a job that requires sitting down. <b>Make the rest a decision you made, not a favour they have to accept</b> &mdash; accepting it is exactly what a person in that state won't do. And say out loud, by name, that the weekend went well. A hard stretch nobody marks teaches people the effort was invisible, and that is what wears them out &mdash; not the heat.</p>
+    <p class="q">&ldquo;No one is useless in this world who lightens the burden of it to anyone else.&rdquo;<span class="by"> &mdash; Charles Dickens, <em>Our Mutual Friend</em>, 1865</span></p>
+  </div>
+
+  <div class="ready">
+    <div class="kick"><span>Readiness &middot; Safety, Security &amp; Crisis</span><b>Topic 5 of 12 &mdash; Fire Alarms &amp; Evacuation</b></div>
+    <div class="rgrid">
+      <div><div class="n">Know This</div><p>In a hotel the alarm is almost never the emergency &mdash; <b>the response is</b>. Most activations are cooking, steam, dust or a contractor. <b>But for the first ninety seconds the real one looks exactly the same</b>, which is why &ldquo;it's probably nothing&rdquo; is the single most expensive sentence in the building. A high-rise does not empty all at once: we move the <b>floor of alarm and the floors above and below it</b> unless told otherwise. <b>Lifts are never used.</b> And guests will not leave a room because a bell is ringing &mdash; <b>they leave when a person tells them to</b>.</p></div>
+      <div><div class="n">Do This Today</div><p><b>Find your two stairs.</b> From wherever you work, locate the two nearest stairwells and know which is the designated evacuation stair. <b>Check the doors are unlocked, lit and signed.</b> Know where the fire alarm panel is and who reads it &mdash; if you don't know, that's the thing to ask today. If you work a floor, know how many rooms are on it. <b>Two minutes, once.</b></p></div>
+      <div><div class="n">If It Happens</div><p><b>Never say &ldquo;false alarm&rdquo;</b> &mdash; you don't know yet, and being wrong once costs everything. Go to your assigned area, <b>knock and speak</b>, move people to the stair, <b>count</b>. Report your sweep <b>by area</b> &mdash; &ldquo;fourteenth floor, east side, twelve rooms, all clear&rdquo; &mdash; never a bare &ldquo;all clear,&rdquo; which tells the incident commander nothing about what was actually checked. First thirty seconds: <b>panel, floor, stairs.</b></p></div>
+    </div>
+  </div>
+
+  <div class="strip">
+    <div class="c">Emergency <b>911</b></div>
+    <div class="c">Duty Manager <b>[Ext]</b></div>
+    <div class="c">Security Duty <b>Ext 8240</b></div>
+    <div class="c">Overnight MOD <b>Ext 8110</b></div>
+    <div class="c">Austin Energy Outages <b>512-322-9100</b></div>
+    <div class="c">Cooling / Heat Help <b>2-1-1</b></div>
+  </div>
+  <div class="foot">Daybreak Brief &middot; ATX Security Office &middot; ATX-DB-2026-250 &middot; DTG 060600 SEP 06 CDT &middot; Written to inform, not alarm &middot; Full five-page brief on request &middot; Next edition Monday 0600 CDT</div>
+
+<script>
+var DAY = {
+  hours: [6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22],
+  air:   [79,80,83,87,90,92,94,95,96,97,97,96,94,91,88,85,83],
+  index: [83,84,87,91,96,100,103,105,106,106,105,103,100,96,92,89,87],
+  rain:  [13,19],
+  yellow:[91,102],
+  sun:   [7.17,19.78],
+  peakIndex: 106, high: 97, low: 78
+};
+(function(){
+  var S=document.getElementById('arc'), W=470,H=152,
+      L=26,R=6,T=10,B=18, x0=6, x1=22, yLo=72, yHi=114;
+  function X(h){return L+(h-x0)/(x1-x0)*(W-L-R);}
+  function Y(v){return T+(yHi-v)/(yHi-yLo)*(H-T-B);}
+  function el(n,a){var e=document.createElementNS('http://www.w3.org/2000/svg',n);for(var k in a)e.setAttribute(k,a[k]);return e;}
+  function add(e){S.appendChild(e);return e;}
+  S.setAttribute('viewBox','0 0 '+W+' '+H);
+  add(el('rect',{x:0,y:0,width:W,height:H,fill:'#fdfcf8'}));
+  add(el('rect',{x:L,y:Y(115),width:W-L-R,height:Y(103)-Y(115),fill:'rgba(164,51,31,.13)'}));
+  if(DAY.yellow){add(el('rect',{x:L,y:Y(DAY.yellow[1]),width:W-L-R,height:Y(DAY.yellow[0])-Y(DAY.yellow[1]),fill:'rgba(201,151,31,.13)'}));}
+  if(DAY.rain){add(el('rect',{x:X(DAY.rain[0]),y:T,width:X(DAY.rain[1])-X(DAY.rain[0]),height:H-T-B,fill:'rgba(90,130,170,.16)'}));
+    var rl=add(el('text',{x:(X(DAY.rain[0])+X(DAY.rain[1]))/2,y:T+11,'text-anchor':'middle','font-family':'Source Sans 3,sans-serif','font-size':7,'font-weight':700,fill:'#4a6c8c'}));rl.textContent='STORM WINDOW 40%';}
+  [80,90,100,110].forEach(function(v){
+    add(el('line',{x1:L,y1:Y(v),x2:W-R,y2:Y(v),stroke:'#e3ddcb','stroke-width':1}));
+    var t=add(el('text',{x:L-4,y:Y(v)+3,'text-anchor':'end','font-family':'Source Sans 3,sans-serif','font-size':7,fill:'#8a8578'}));t.textContent=v+'°';});
+  DAY.sun.forEach(function(h,i){
+    add(el('line',{x1:X(h),y1:T,x2:X(h),y2:H-B,stroke:'#c9971f','stroke-width':1,'stroke-dasharray':'3 3'}));
+    var t=add(el('text',{x:X(h)+(i?-3:3),y:H-B-3,'text-anchor':i?'end':'start','font-family':'Source Sans 3,sans-serif','font-size':6.5,fill:'#a2861f','paint-order':'stroke',stroke:'#fdfcf8','stroke-width':2.5}));
+    t.textContent=i?'sunset 7:47':'sunrise';});
+  function path(vals,color,dash){
+    var d='';for(var i=0;i<DAY.hours.length;i++){d+=(i?'L':'M')+X(DAY.hours[i]).toFixed(1)+' '+Y(vals[i]).toFixed(1)+' ';}
+    var p=add(el('path',{d:d,fill:'none',stroke:color,'stroke-width':1.8,'stroke-linejoin':'round'}));
+    if(dash)p.setAttribute('stroke-dasharray',dash);return p;}
+  path(DAY.air,'#94803a','5 3');
+  path(DAY.index,'#a4331f',null);
+  add(el('line',{x1:L,y1:H-B,x2:W-R,y2:H-B,stroke:'#cfc9b6','stroke-width':1}));
+  [6,8,10,12,14,16,18,20,22].forEach(function(h){
+    var lab=(h<12?h+'a':(h===12?'12p':(h-12)+'p'));
+    var t=add(el('text',{x:X(h),y:H-B+9,'text-anchor':'middle','font-family':'Source Sans 3,sans-serif','font-size':7,fill:'#8a8578'}));t.textContent=lab;});
+  var pi=DAY.index.indexOf(DAY.peakIndex), ai=DAY.air.indexOf(DAY.high);
+  function call(ix,vals,txt,color,dy){
+    var t=add(el('text',{x:X(DAY.hours[ix]),y:Y(vals[ix])+dy,'text-anchor':'middle','font-family':'Source Sans 3,sans-serif','font-size':7.5,'font-weight':700,fill:color,'paint-order':'stroke',stroke:'#fdfcf8','stroke-width':3}));t.textContent=txt;}
+  call(pi,DAY.index,'peak '+DAY.peakIndex+'°','#a4331f',-6);
+  call(ai,DAY.air,'high '+DAY.high+'°','#7a6a2e',13);
+})();
+</script>
+
+</div>
+</body>
+</html>

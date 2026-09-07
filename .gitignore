@@ -1,0 +1,11 @@
+cli/raw/*
+cli/out/*
+cli/logs/*
+!cli/raw/.gitkeep
+!cli/out/.gitkeep
+!cli/logs/.gitkeep
+__pycache__/
+*.pyc
+.DS_Store
+dchk/
+p-*.png
