@@ -1,0 +1,159 @@
+# .github/workflows/daybreak.yml
+#
+# Runs the Daybreak Brief pipeline on GitHub's machines, so an edition exists
+# whether or not any of your computers is awake.
+#
+# IT WORKS WITH NO SECRETS AT ALL. Without ANTHROPIC_API_KEY it runs
+# fetch + build --degraded and commits a facts-only brief. Add the secret later
+# and the same workflow starts producing full editions. Nothing else changes.
+
+name: Daybreak Brief
+
+on:
+  schedule:
+    - cron: "20 9 * * *"     # 04:20 CDT (Mar–Nov)
+    - cron: "20 10 * * *"    # 04:20 CST (Nov–Mar). GitHub cron is UTC and does
+                             # NOT follow daylight saving, so both are listed.
+                             # The second run of the day is a no-op re-fetch.
+  workflow_dispatch:         # ← the "Run workflow" button. Use this to test.
+    inputs:
+      date:
+        description: "Edition date (YYYY-MM-DD). Blank = today."
+        required: false
+
+permissions:
+  contents: write            # to commit the day's output back into the repo
+
+concurrency:                 # never let two runs fight over the same commit
+  group: daybreak
+  cancel-in-progress: false
+
+jobs:
+  brief:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      # Decide up-front whether this is a full run or a degraded one, and SAY SO
+      # in the log. A silent downgrade is exactly the failure mode this project
+      # exists to prevent.
+      - name: Determine run mode
+        id: mode
+        env:
+          KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          if [ -n "$KEY" ]; then
+            echo "mode=full" >> "$GITHUB_OUTPUT"
+            echo "::notice::FULL run — ANTHROPIC_API_KEY present."
+          else
+            echo "mode=degraded" >> "$GITHUB_OUTPUT"
+            echo "::notice::DEGRADED run — no ANTHROPIC_API_KEY. Facts-only brief."
+          fi
+
+      - name: Set edition date
+        id: d
+        run: |
+          D="${{ inputs.date }}"
+          [ -z "$D" ] && D=$(TZ=America/Chicago date +%F)
+          echo "date=$D" >> "$GITHUB_OUTPUT"
+          echo "::notice::Edition date $D"
+
+      # ---- the part that never needs a model -------------------------------
+      - name: Fetch the manifest and run the gates
+        id: fetch
+        working-directory: cli
+        env:
+          NO_COLOR: "1"
+        run: |
+          set +e
+          python3 daybreak.py fetch --date "${{ steps.d.outputs.date }}"
+          CODE=$?
+          set -e
+          echo "code=$CODE" >> "$GITHUB_OUTPUT"
+          if [ "$CODE" = "2" ]; then
+            echo "::error::G13 FAIL — a manifest row was never attempted. Not drafting."
+            exit 2
+          fi
+
+      # Surface the gate report in the run summary so a bad morning is legible
+      # from the phone, without opening any files.
+      - name: Gate report → run summary
+        if: always()
+        working-directory: cli
+        run: |
+          F="out/gates_${{ steps.d.outputs.date }}.json"
+          [ -f "$F" ] || { echo "no gate report" >> "$GITHUB_STEP_SUMMARY"; exit 0; }
+          {
+            echo "## Gates — ${{ steps.d.outputs.date }}"
+            python3 - "$F" <<'PY'
+import json,sys
+g=json.load(open(sys.argv[1]))
+a=g["G13"]; b=g.get("G14",{})
+print(f"**G13 SOURCE COVERAGE — {a['status']}**  ")
+print(f"{a['attempted']-len(a['unreachable'])} of {a['attempted']} sources reachable\n")
+for u in a["unreachable"]:
+    print(f"- ⚠️ **row {u['n']} {u['name']}** — `{u['error']}` — must publish as a gap")
+print(f"\n**G14 THRESHOLD RE-READ — {b.get('status','N/A')}**\n")
+for f in b.get("findings",[]):
+    icon = "⚠️" if f["straddle"] else "·"
+    print(f"- {icon} {f['period']}: {f['field']} {f['prior']} → {f['current']} "
+          f"vs {f['criterion']} {f['threshold']}")
+    print(f"  - {f['verdict']}")
+PY
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      # ---- the part that does ----------------------------------------------
+      - name: Install Node + Chromium (full runs only)
+        if: steps.mode.outputs.mode == 'full'
+        run: |
+          npm i -g playwright @anthropic-ai/claude-code
+          npx playwright install --with-deps chromium
+
+      - name: Draft and build
+        if: steps.mode.outputs.mode == 'full'
+        working-directory: cli
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          NO_COLOR: "1"
+        run: |
+          set +e
+          python3 daybreak.py draft --date "${{ steps.d.outputs.date }}"
+          if [ $? -ne 0 ]; then
+            echo "::warning::draft stage failed — falling back to a degraded edition"
+            python3 daybreak.py build --date "${{ steps.d.outputs.date }}" --degraded
+          else
+            python3 daybreak.py build --date "${{ steps.d.outputs.date }}"
+          fi
+
+      - name: Degraded build
+        if: steps.mode.outputs.mode == 'degraded'
+        working-directory: cli
+        env:
+          NO_COLOR: "1"
+        run: python3 daybreak.py build --date "${{ steps.d.outputs.date }}" --degraded
+
+      - name: Commit the edition
+        if: always()
+        run: |
+          git config user.name  "daybreak-bot"
+          git config user.email "noreply@rowanrisk.invalid"
+          git add cli/out cli/raw cli/state 2>/dev/null || true
+          git diff --staged --quiet || git commit -m "ed. ${{ steps.d.outputs.date }} (${{ steps.mode.outputs.mode }})"
+          git pull --rebase --autostash || true
+          git push
+
+      # Keep the artifacts even on a failed run — the gate report is the first
+      # thing you want on a bad morning.
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: daybreak-${{ steps.d.outputs.date }}
+          path: |
+            cli/out/
+            cli/raw/
+          retention-days: 30
