@@ -82,30 +82,11 @@ jobs:
 
       # Surface the gate report in the run summary so a bad morning is legible
       # from the phone, without opening any files.
-      - name: Gate report → run summary
+      - name: Gate report to run summary
         if: always()
         working-directory: cli
         run: |
-          F="out/gates_${{ steps.d.outputs.date }}.json"
-          [ -f "$F" ] || { echo "no gate report" >> "$GITHUB_STEP_SUMMARY"; exit 0; }
-          {
-            echo "## Gates — ${{ steps.d.outputs.date }}"
-            python3 - "$F" <<'PY'
-import json,sys
-g=json.load(open(sys.argv[1]))
-a=g["G13"]; b=g.get("G14",{})
-print(f"**G13 SOURCE COVERAGE — {a['status']}**  ")
-print(f"{a['attempted']-len(a['unreachable'])} of {a['attempted']} sources reachable\n")
-for u in a["unreachable"]:
-    print(f"- ⚠️ **row {u['n']} {u['name']}** — `{u['error']}` — must publish as a gap")
-print(f"\n**G14 THRESHOLD RE-READ — {b.get('status','N/A')}**\n")
-for f in b.get("findings",[]):
-    icon = "⚠️" if f["straddle"] else "·"
-    print(f"- {icon} {f['period']}: {f['field']} {f['prior']} → {f['current']} "
-          f"vs {f['criterion']} {f['threshold']}")
-    print(f"  - {f['verdict']}")
-PY
-          } >> "$GITHUB_STEP_SUMMARY"
+          python3 gate_summary.py "out/gates_${{ steps.d.outputs.date }}.json" >> "$GITHUB_STEP_SUMMARY"
 
       # ---- the part that does ----------------------------------------------
       - name: Install Node + Chromium (full runs only)
