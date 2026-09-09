@@ -123,7 +123,7 @@ jobs:
         run: |
           git config user.name  "daybreak-bot"
           git config user.email "noreply@rowanrisk.invalid"
-          git add cli/out cli/raw cli/state 2>/dev/null || true
+          git add cli/out cli/state 2>/dev/null || true
           git diff --staged --quiet || git commit -m "ed. ${{ steps.d.outputs.date }} (${{ steps.mode.outputs.mode }})"
           git pull --rebase --autostash || true
           git push

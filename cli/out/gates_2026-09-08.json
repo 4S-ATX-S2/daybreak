@@ -1,0 +1,129 @@
+{
+  "G13": {
+    "gate": "G13 SOURCE COVERAGE",
+    "status": "PARTIAL",
+    "attempted": 2,
+    "tier1_total": 23,
+    "unreachable": [
+      {
+        "n": 9,
+        "id": "hormuz_tracker",
+        "name": "Strait of Hormuz tracker",
+        "rule": "Sole source. Flag its internal inconsistencies, reconcile nothing. 403s a plain client - browser fallback.",
+        "error": "HTTP 403"
+      }
+    ],
+    "not_attempted": [
+      {
+        "n": 1,
+        "id": "nws_point_forecast",
+        "name": "NWS point forecast (30.27,-97.74)"
+      },
+      {
+        "n": 2,
+        "id": "nws_zfp",
+        "name": "Travis zone forecast product"
+      },
+      {
+        "n": 3,
+        "id": "nws_alerts",
+        "name": "Active alerts for the point"
+      },
+      {
+        "n": 4,
+        "id": "nws_cli_att",
+        "name": "CLI Camp Mabry (ATT)"
+      },
+      {
+        "n": 5,
+        "id": "obs_katt",
+        "name": "KATT observations"
+      },
+      {
+        "n": 6,
+        "id": "obs_kaus",
+        "name": "KAUS observations"
+      },
+      {
+        "n": 7,
+        "id": "brent",
+        "name": "Trading Economics - Brent"
+      },
+      {
+        "n": 8,
+        "id": "wti",
+        "name": "Trading Economics - WTI"
+      },
+      {
+        "n": 10,
+        "id": "aljazeera",
+        "name": "Al Jazeera news index"
+      },
+      {
+        "n": 11,
+        "id": "cdc_cyclospora",
+        "name": "CDC cyclosporiasis investigation"
+      },
+      {
+        "n": 12,
+        "id": "aph_news",
+        "name": "Austin Public Health news"
+      },
+      {
+        "n": 13,
+        "id": "city_news",
+        "name": "austintexas.gov/news"
+      },
+      {
+        "n": 14,
+        "id": "apd_news",
+        "name": "austintexas.gov/police/news"
+      },
+      {
+        "n": 15,
+        "id": "ercot",
+        "name": "ERCOT via Texas Power Cost"
+      },
+      {
+        "n": 16,
+        "id": "moody_center",
+        "name": "Moody Center calendar"
+      },
+      {
+        "n": 17,
+        "id": "acl_live",
+        "name": "ACL Live combined listing"
+      },
+      {
+        "n": 18,
+        "id": "acl_3ten",
+        "name": "3TEN venue page"
+      },
+      {
+        "n": 19,
+        "id": "daa_events",
+        "name": "Downtown Austin Alliance calendar"
+      },
+      {
+        "n": 21,
+        "id": "ut_parking",
+        "name": "UT Parking & Transportation notices"
+      },
+      {
+        "n": 22,
+        "id": "austin_fc",
+        "name": "Austin FC / Q2 Stadium"
+      },
+      {
+        "n": 23,
+        "id": "nws_afd",
+        "name": "NWS Area Forecast Discussion (EWX)"
+      }
+    ],
+    "publish_instruction": "PARTIAL: a subset was run on purpose. DO NOT PUBLISH an edition from this run - re-run without --rows first."
+  },
+  "G14": {
+    "gate": "G14",
+    "status": "N/A \u2014 forecast row not fetched"
+  }
+}

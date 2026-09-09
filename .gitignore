@@ -1,9 +1,12 @@
+# Durable record: the readable brief and the gate report are tracked.
+# Debug material is not — raw captures and the full facts blob are large and
+# already kept for 30 days as the Actions run artifact.
 cli/raw/*
-cli/out/*
 cli/logs/*
+cli/out/facts_*.json
 !cli/raw/.gitkeep
-!cli/out/.gitkeep
 !cli/logs/.gitkeep
+!cli/out/.gitkeep
 __pycache__/
 *.pyc
 .DS_Store
