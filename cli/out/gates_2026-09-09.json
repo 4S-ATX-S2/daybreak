@@ -29,14 +29,14 @@
     "margin": 3,
     "findings": [
       {
-        "period": "Wednesday",
+        "period": "Today",
         "field": "heat_index",
         "criterion": "Heat Advisory",
         "threshold": 108,
-        "current": 107,
-        "prior": 107,
-        "current_meets": false,
-        "prior_meets": false,
+        "current": 108,
+        "prior": 108,
+        "current_meets": true,
+        "prior_meets": true,
         "straddle": false,
         "verdict": "Two reads agree. Safe to assert."
       },
@@ -45,10 +45,10 @@
         "field": "heat_index",
         "criterion": "Heat Advisory",
         "threshold": 108,
-        "current": 108,
-        "prior": 108,
-        "current_meets": true,
-        "prior_meets": true,
+        "current": 106,
+        "prior": 106,
+        "current_meets": false,
+        "prior_meets": false,
         "straddle": false,
         "verdict": "Two reads agree. Safe to assert."
       }
