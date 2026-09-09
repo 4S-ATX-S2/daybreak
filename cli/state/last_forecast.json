@@ -1,18 +1,18 @@
 {
-  "updateTime": "2026-09-08T23:42:38+00:00",
-  "generatedAt": "2026-09-09T00:25:32+00:00",
+  "updateTime": "2026-09-09T04:32:49+00:00",
+  "generatedAt": "2026-09-09T05:30:12+00:00",
   "periods": [
     {
-      "name": "Tonight",
+      "name": "Overnight",
       "isDaytime": false,
       "temperature": 79,
-      "startTime": "2026-09-08T19:00:00-05:00",
-      "shortForecast": "Slight Chance Showers And Thunderstorms then Mostly Clear",
-      "detailedForecast": "A slight chance of showers and thunderstorms before 10pm. Mostly clear, with a low around 79. Heat index values as high as 101. South southeast wind 0 to 5 mph. Chance of precipitation is 20%.",
-      "heat_index": 101,
+      "startTime": "2026-09-09T00:00:00-05:00",
+      "shortForecast": "Mostly Clear",
+      "detailedForecast": "Mostly clear, with a low around 79. South wind 0 to 5 mph.",
+      "heat_index": null,
       "high": null,
       "low": 79,
-      "pop": 20
+      "pop": 4
     },
     {
       "name": "Wednesday",
