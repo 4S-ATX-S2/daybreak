@@ -1,14 +1,14 @@
 {
   "updateTime": "2026-09-11T11:42:39+00:00",
-  "generatedAt": "2026-09-11T13:08:41+00:00",
+  "generatedAt": "2026-09-11T14:07:21+00:00",
   "periods": [
     {
       "name": "Today",
       "isDaytime": true,
       "temperature": 101,
-      "startTime": "2026-09-11T08:00:00-05:00",
+      "startTime": "2026-09-11T09:00:00-05:00",
       "shortForecast": "Mostly Sunny then Slight Chance Showers And Thunderstorms",
-      "detailedForecast": "A slight chance of showers and thunderstorms after 4pm. Mostly sunny, with a high near 101. Heat index values as high as 106. South wind 0 to 5 mph. Chance of precipitation is 20%.",
+      "detailedForecast": "A slight chance of showers and thunderstorms after 4pm. Mostly sunny, with a high near 101. Heat index values as high as 106. South wind around 5 mph. Chance of precipitation is 20%.",
       "heat_index": 106,
       "high": 101,
       "low": null,
