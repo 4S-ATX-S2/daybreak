@@ -1,15 +1,15 @@
 {
-  "updateTime": "2026-09-16T11:42:37+00:00",
-  "generatedAt": "2026-09-16T13:48:37+00:00",
+  "updateTime": "2026-09-16T14:34:37+00:00",
+  "generatedAt": "2026-09-16T14:47:35+00:00",
   "periods": [
     {
       "name": "Today",
       "isDaytime": true,
       "temperature": 101,
-      "startTime": "2026-09-16T08:00:00-05:00",
+      "startTime": "2026-09-16T09:00:00-05:00",
       "shortForecast": "Mostly Sunny",
-      "detailedForecast": "Mostly sunny, with a high near 101. Heat index values as high as 109. Southeast wind 0 to 5 mph.",
-      "heat_index": 109,
+      "detailedForecast": "Mostly sunny, with a high near 101. Heat index values as high as 106. South southeast wind 5 to 10 mph.",
+      "heat_index": 106,
       "high": 101,
       "low": null,
       "pop": 3
@@ -20,8 +20,8 @@
       "temperature": 79,
       "startTime": "2026-09-16T18:00:00-05:00",
       "shortForecast": "Partly Cloudy",
-      "detailedForecast": "Partly cloudy, with a low around 79. Heat index values as high as 105. Southeast wind 0 to 5 mph.",
-      "heat_index": 105,
+      "detailedForecast": "Partly cloudy, with a low around 79. Heat index values as high as 102. East southeast wind 0 to 10 mph.",
+      "heat_index": 102,
       "high": null,
       "low": 79,
       "pop": 2
