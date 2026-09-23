@@ -1,0 +1,58 @@
+{
+  "G13": {
+    "gate": "G13 SOURCE COVERAGE",
+    "status": "DEGRADED",
+    "attempted": 23,
+    "tier1_total": 23,
+    "unreachable": [
+      {
+        "n": 9,
+        "id": "hormuz_tracker",
+        "name": "Strait of Hormuz tracker",
+        "rule": "Sole source. Flag its internal inconsistencies, reconcile nothing. 403s a plain client - browser fallback.",
+        "error": "URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate (_ssl.c:1010)>"
+      },
+      {
+        "n": 12,
+        "id": "aph_news",
+        "name": "Austin Public Health news",
+        "rule": "404'd on ed. 250 - if it fails, the day count is an increment on an UNVERIFIED base and must say so.",
+        "error": "HTTP 404"
+      }
+    ],
+    "not_attempted": [],
+    "publish_instruction": "Every UNREACHABLE row must appear in the confidence note as 'not verified this pass'. Do not estimate. Do not omit."
+  },
+  "G14": {
+    "gate": "G14 THRESHOLD RE-READ",
+    "status": "PASS",
+    "margin": 3,
+    "findings": [
+      {
+        "period": "Today",
+        "field": "heat_index",
+        "criterion": "Heat Advisory",
+        "threshold": 108,
+        "current": 107,
+        "prior": 107,
+        "current_meets": false,
+        "prior_meets": false,
+        "straddle": false,
+        "verdict": "Two reads agree. Safe to assert."
+      },
+      {
+        "period": "Thursday",
+        "field": "heat_index",
+        "criterion": "Heat Advisory",
+        "threshold": 108,
+        "current": 106,
+        "prior": 106,
+        "current_meets": false,
+        "prior_meets": false,
+        "straddle": false,
+        "verdict": "Two reads agree. Safe to assert."
+      }
+    ],
+    "publish_instruction": "A range that spans a decision point is more honest AND more useful than a single number on one side of it."
+  }
+}

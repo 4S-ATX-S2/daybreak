@@ -1,78 +1,54 @@
 {
-  "updateTime": "2026-09-22T11:42:21+00:00",
-  "generatedAt": "2026-09-22T11:56:23+00:00",
+  "updateTime": "2026-09-23T11:42:24+00:00",
+  "generatedAt": "2026-09-23T11:52:31+00:00",
   "periods": [
     {
       "name": "Today",
       "isDaytime": true,
-      "temperature": 100,
-      "startTime": "2026-09-22T06:00:00-05:00",
-      "shortForecast": "Mostly Sunny then Slight Chance Showers And Thunderstorms",
-      "detailedForecast": "A slight chance of showers and thunderstorms after 1pm. Mostly sunny, with a high near 100. Heat index values as high as 106. Northeast wind 0 to 5 mph. Chance of precipitation is 20%.",
-      "heat_index": 106,
-      "high": 100,
+      "temperature": 99,
+      "startTime": "2026-09-23T06:00:00-05:00",
+      "shortForecast": "Mostly Sunny",
+      "detailedForecast": "Mostly sunny, with a high near 99. Heat index values as high as 107. Northeast wind 0 to 5 mph.",
+      "heat_index": 107,
+      "high": 99,
       "low": null,
-      "pop": 20
+      "pop": 11
     },
     {
       "name": "Tonight",
       "isDaytime": false,
-      "temperature": 78,
-      "startTime": "2026-09-22T18:00:00-05:00",
-      "shortForecast": "Slight Chance Showers And Thunderstorms then Partly Cloudy",
-      "detailedForecast": "A slight chance of showers and thunderstorms before 10pm. Partly cloudy, with a low around 78. Heat index values as high as 102. East northeast wind 0 to 5 mph. Chance of precipitation is 20%. New rainfall amounts less than a tenth of an inch possible.",
-      "heat_index": 102,
-      "high": null,
-      "low": 78,
-      "pop": 20
-    },
-    {
-      "name": "Wednesday",
-      "isDaytime": true,
-      "temperature": 100,
-      "startTime": "2026-09-23T06:00:00-05:00",
-      "shortForecast": "Mostly Sunny then Slight Chance Showers And Thunderstorms",
-      "detailedForecast": "A slight chance of showers and thunderstorms after 4pm. Mostly sunny, with a high near 100. Heat index values as high as 106. North northeast wind 0 to 5 mph. Chance of precipitation is 20%.",
-      "heat_index": 106,
-      "high": 100,
-      "low": null,
-      "pop": 20
-    },
-    {
-      "name": "Wednesday Night",
-      "isDaytime": false,
-      "temperature": 78,
+      "temperature": 77,
       "startTime": "2026-09-23T18:00:00-05:00",
-      "shortForecast": "Slight Chance Showers And Thunderstorms then Mostly Cloudy",
-      "detailedForecast": "A slight chance of showers and thunderstorms before 7pm. Mostly cloudy, with a low around 78. Heat index values as high as 102. East wind 0 to 5 mph. Chance of precipitation is 20%.",
+      "shortForecast": "Mostly Cloudy",
+      "detailedForecast": "Mostly cloudy, with a low around 77. Heat index values as high as 102. East southeast wind 0 to 5 mph.",
       "heat_index": 102,
       "high": null,
-      "low": 78,
-      "pop": 20
+      "low": 77,
+      "pop": 12
     },
     {
       "name": "Thursday",
       "isDaytime": true,
-      "temperature": 100,
+      "temperature": 99,
       "startTime": "2026-09-24T06:00:00-05:00",
       "shortForecast": "Mostly Sunny",
-      "detailedForecast": "Mostly sunny, with a high near 100. East northeast wind 0 to 5 mph.",
-      "heat_index": null,
-      "high": 100,
+      "detailedForecast": "Mostly sunny, with a high near 99. Heat index values as high as 106. Northeast wind 0 to 5 mph.",
+      "heat_index": 106,
+      "high": 99,
       "low": null,
-      "pop": 4
+      "pop": 3
     },
     {
       "name": "Thursday Night",
       "isDaytime": false,
-      "temperature": 76,
+      "temperature": 77,
       "startTime": "2026-09-24T18:00:00-05:00",
       "shortForecast": "Partly Cloudy",
-      "detailedForecast": "Partly cloudy, with a low around 76. East wind 0 to 5 mph.",
-      "heat_index": null,
+      "detailedForecast": "Partly cloudy, with a low around 77. Heat index values as high as 101. East wind 0 to 5 mph.",
+      "heat_index": 101,
       "high": null,
-      "low": 76,
-      "pop": 1
+      "low": 77,
+      "pop": 3
     },
     {
       "name": "Friday",
@@ -80,7 +56,7 @@
       "temperature": 99,
       "startTime": "2026-09-25T06:00:00-05:00",
       "shortForecast": "Mostly Sunny",
-      "detailedForecast": "Mostly sunny, with a high near 99. Northeast wind 0 to 5 mph.",
+      "detailedForecast": "Mostly sunny, with a high near 99. East northeast wind 0 to 5 mph.",
       "heat_index": null,
       "high": 99,
       "low": null,
@@ -89,14 +65,38 @@
     {
       "name": "Friday Night",
       "isDaytime": false,
-      "temperature": 75,
+      "temperature": 76,
       "startTime": "2026-09-25T18:00:00-05:00",
       "shortForecast": "Partly Cloudy",
-      "detailedForecast": "Partly cloudy, with a low around 75. Southeast wind 0 to 5 mph.",
+      "detailedForecast": "Partly cloudy, with a low around 76. Southeast wind 0 to 5 mph.",
       "heat_index": null,
       "high": null,
-      "low": 75,
+      "low": 76,
       "pop": 0
+    },
+    {
+      "name": "Saturday",
+      "isDaytime": true,
+      "temperature": 99,
+      "startTime": "2026-09-26T06:00:00-05:00",
+      "shortForecast": "Partly Sunny",
+      "detailedForecast": "Partly sunny, with a high near 99. South southeast wind 0 to 5 mph.",
+      "heat_index": null,
+      "high": 99,
+      "low": null,
+      "pop": 1
+    },
+    {
+      "name": "Saturday Night",
+      "isDaytime": false,
+      "temperature": 77,
+      "startTime": "2026-09-26T18:00:00-05:00",
+      "shortForecast": "Mostly Cloudy",
+      "detailedForecast": "Mostly cloudy, with a low around 77. South southeast wind around 5 mph.",
+      "heat_index": null,
+      "high": null,
+      "low": 77,
+      "pop": 2
     }
   ]
 }
