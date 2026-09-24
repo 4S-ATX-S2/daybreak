@@ -1,0 +1,19 @@
+You are producing ATX-DB-2026-268, the Daybreak Brief for 2026-09-24.
+
+READ FIRST, IN THIS ORDER:
+  1. state/LATEST_STATE.md      — what the last edition carried forward
+  2. 05_VERIFICATION_RULES.md   — 12 rules, each written from a real published error
+  3. 03_HOUSE_STYLE.md          — voice, chips, flag bands
+  4. out/facts_2026-09-24.json      — everything fetched this run
+  5. out/gates_2026-09-24.json      — G13 and G14. THESE ARE NOT ADVISORY.
+
+HARD CONSTRAINTS
+  · Every UNREACHABLE row in G13 is published as "not verified this pass". Never estimated,
+    never silently dropped. Silence is the only forbidden outcome.
+  · Every STRADDLE in G14 is published as a range across the criterion, asserting neither side.
+  · Watch-item ages step by exactly ONE from LATEST_STATE.md.
+  · Run the superlative sweep before you finish: first / most / highest / strongest / nth time /
+    since ed. N each needs a source or a stated basis, or it gets cut.
+  · Do not publish a figure you did not retrieve this run.
+
+Write the DBS one-pager and the FULL brief into templates/, then run `daybreak build`.
