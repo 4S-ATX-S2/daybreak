@@ -1,12 +1,12 @@
 {
   "updateTime": "2026-09-25T11:42:23+00:00",
-  "generatedAt": "2026-09-25T13:57:01+00:00",
+  "generatedAt": "2026-09-25T12:08:12+00:00",
   "periods": [
     {
       "name": "Today",
       "isDaytime": true,
       "temperature": 99,
-      "startTime": "2026-09-25T08:00:00-05:00",
+      "startTime": "2026-09-25T07:00:00-05:00",
       "shortForecast": "Mostly Sunny",
       "detailedForecast": "Mostly sunny, with a high near 99. Heat index values as high as 101. East wind 0 to 5 mph.",
       "heat_index": 101,
