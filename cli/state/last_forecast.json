@@ -1,12 +1,12 @@
 {
   "updateTime": "2026-09-26T11:42:38+00:00",
-  "generatedAt": "2026-09-26T12:00:21+00:00",
+  "generatedAt": "2026-09-26T13:13:15+00:00",
   "periods": [
     {
       "name": "Today",
       "isDaytime": true,
       "temperature": 97,
-      "startTime": "2026-09-26T07:00:00-05:00",
+      "startTime": "2026-09-26T08:00:00-05:00",
       "shortForecast": "Partly Sunny",
       "detailedForecast": "Partly sunny, with a high near 97. Southeast wind 0 to 5 mph.",
       "heat_index": null,
