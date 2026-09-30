@@ -1,54 +1,30 @@
 {
-  "updateTime": "2026-09-29T15:44:45+00:00",
-  "generatedAt": "2026-09-29T16:20:32+00:00",
+  "updateTime": "2026-09-30T14:42:22+00:00",
+  "generatedAt": "2026-09-30T15:17:21+00:00",
   "periods": [
     {
       "name": "Today",
       "isDaytime": true,
-      "temperature": 97,
-      "startTime": "2026-09-29T11:00:00-05:00",
-      "shortForecast": "Partly Sunny then Slight Chance Showers And Thunderstorms",
-      "detailedForecast": "A slight chance of showers and thunderstorms between 1pm and 4pm. Partly sunny, with a high near 97. Heat index values as high as 104. Southeast wind around 10 mph, with gusts as high as 25 mph. Chance of precipitation is 20%.",
-      "heat_index": 104,
-      "high": 97,
+      "temperature": 96,
+      "startTime": "2026-09-30T10:00:00-05:00",
+      "shortForecast": "Chance Showers And Thunderstorms",
+      "detailedForecast": "A chance of showers and thunderstorms. Mostly cloudy, with a high near 96. Heat index values as high as 107. South southeast wind 10 to 15 mph, with gusts as high as 25 mph. Chance of precipitation is 40%. New rainfall amounts less than a tenth of an inch possible.",
+      "heat_index": 107,
+      "high": 96,
       "low": null,
-      "pop": 20
+      "pop": 40
     },
     {
       "name": "Tonight",
       "isDaytime": false,
-      "temperature": 76,
-      "startTime": "2026-09-29T18:00:00-05:00",
-      "shortForecast": "Mostly Cloudy then Slight Chance Rain Showers",
-      "detailedForecast": "A slight chance of rain showers after 4am. Mostly cloudy, with a low around 76. Heat index values as high as 100. Southeast wind around 10 mph, with gusts as high as 25 mph. Chance of precipitation is 20%.",
-      "heat_index": 100,
-      "high": null,
-      "low": 76,
-      "pop": 20
-    },
-    {
-      "name": "Wednesday",
-      "isDaytime": true,
-      "temperature": 97,
-      "startTime": "2026-09-30T06:00:00-05:00",
-      "shortForecast": "Chance Rain Showers then Chance Showers And Thunderstorms",
-      "detailedForecast": "A chance of rain showers before 4pm, then a chance of showers and thunderstorms. Partly sunny, with a high near 97. Heat index values as high as 109. South southeast wind around 10 mph, with gusts as high as 25 mph. Chance of precipitation is 50%. New rainfall amounts between a tenth and quarter of an inch possible.",
-      "heat_index": 109,
-      "high": 97,
-      "low": null,
-      "pop": 50
-    },
-    {
-      "name": "Wednesday Night",
-      "isDaytime": false,
       "temperature": 77,
       "startTime": "2026-09-30T18:00:00-05:00",
-      "shortForecast": "Chance Showers And Thunderstorms then Showers And Thunderstorms Likely",
-      "detailedForecast": "A chance of showers and thunderstorms before 7pm, then showers and thunderstorms likely. Mostly cloudy, with a low around 77. Heat index values as high as 102. South southeast wind 10 to 15 mph, with gusts as high as 30 mph. Chance of precipitation is 70%.",
+      "shortForecast": "Chance Showers And Thunderstorms",
+      "detailedForecast": "A chance of showers and thunderstorms before 1am, then a chance of showers and thunderstorms. Mostly cloudy, with a low around 77. Heat index values as high as 102. South southeast wind around 10 mph, with gusts as high as 30 mph. Chance of precipitation is 50%. New rainfall amounts between a tenth and quarter of an inch possible.",
       "heat_index": 102,
       "high": null,
       "low": 77,
-      "pop": 70
+      "pop": 50
     },
     {
       "name": "Thursday",
@@ -56,23 +32,23 @@
       "temperature": 91,
       "startTime": "2026-10-01T06:00:00-05:00",
       "shortForecast": "Showers And Thunderstorms",
-      "detailedForecast": "Showers and thunderstorms. Mostly cloudy, with a high near 91. South wind 5 to 10 mph, with gusts as high as 25 mph. Chance of precipitation is 100%.",
+      "detailedForecast": "Showers and thunderstorms. Mostly cloudy. High near 91, with temperatures falling to around 87 in the afternoon. South southeast wind 5 to 10 mph, with gusts as high as 20 mph. Chance of precipitation is 90%. New rainfall amounts between a half and three quarters of an inch possible.",
       "heat_index": null,
       "high": 91,
       "low": null,
-      "pop": 100
+      "pop": 90
     },
     {
       "name": "Thursday Night",
       "isDaytime": false,
-      "temperature": 73,
+      "temperature": 75,
       "startTime": "2026-10-01T18:00:00-05:00",
       "shortForecast": "Showers And Thunderstorms",
-      "detailedForecast": "Showers and thunderstorms. Cloudy, with a low around 73. Southeast wind 0 to 5 mph. Chance of precipitation is 100%.",
+      "detailedForecast": "Showers and thunderstorms. Some of the storms could produce heavy rain. Cloudy, with a low around 75. Southeast wind 0 to 5 mph. Chance of precipitation is 90%.",
       "heat_index": null,
       "high": null,
-      "low": 73,
-      "pop": 100
+      "low": 75,
+      "pop": 90
     },
     {
       "name": "Friday",
@@ -80,7 +56,7 @@
       "temperature": 84,
       "startTime": "2026-10-02T06:00:00-05:00",
       "shortForecast": "Showers And Thunderstorms",
-      "detailedForecast": "Showers and thunderstorms. Cloudy, with a high near 84. Northeast wind 0 to 5 mph. Chance of precipitation is 90%.",
+      "detailedForecast": "Showers and thunderstorms. Some of the storms could produce heavy rain. Cloudy, with a high near 84. East northeast wind 0 to 5 mph. Chance of precipitation is 90%.",
       "heat_index": null,
       "high": 84,
       "low": null,
@@ -89,14 +65,38 @@
     {
       "name": "Friday Night",
       "isDaytime": false,
-      "temperature": 70,
+      "temperature": 71,
       "startTime": "2026-10-02T18:00:00-05:00",
-      "shortForecast": "Rain Showers Likely",
-      "detailedForecast": "Rain showers likely. Mostly cloudy, with a low around 70. North northeast wind 0 to 5 mph. Chance of precipitation is 70%.",
+      "shortForecast": "Showers And Thunderstorms Likely",
+      "detailedForecast": "Showers and thunderstorms likely. Mostly cloudy, with a low around 71. North northeast wind 0 to 5 mph. Chance of precipitation is 60%.",
+      "heat_index": null,
+      "high": null,
+      "low": 71,
+      "pop": 60
+    },
+    {
+      "name": "Saturday",
+      "isDaytime": true,
+      "temperature": 83,
+      "startTime": "2026-10-03T06:00:00-05:00",
+      "shortForecast": "Chance Showers And Thunderstorms",
+      "detailedForecast": "A chance of showers and thunderstorms. Mostly cloudy, with a high near 83. North wind 5 to 10 mph, with gusts as high as 20 mph. Chance of precipitation is 50%.",
+      "heat_index": null,
+      "high": 83,
+      "low": null,
+      "pop": 50
+    },
+    {
+      "name": "Saturday Night",
+      "isDaytime": false,
+      "temperature": 70,
+      "startTime": "2026-10-03T18:00:00-05:00",
+      "shortForecast": "Chance Showers And Thunderstorms then Slight Chance Showers And Thunderstorms",
+      "detailedForecast": "A chance of showers and thunderstorms before 7pm, then a slight chance of showers and thunderstorms between 7pm and 1am, then a chance of showers and thunderstorms. Mostly cloudy, with a low around 70. North wind 5 to 10 mph, with gusts as high as 20 mph. Chance of precipitation is 50%.",
       "heat_index": null,
       "high": null,
       "low": 70,
-      "pop": 70
+      "pop": 50
     }
   ]
 }
