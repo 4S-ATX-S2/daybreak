@@ -1,12 +1,12 @@
 {
   "updateTime": "2026-10-03T13:24:48+00:00",
-  "generatedAt": "2026-10-03T14:00:28+00:00",
+  "generatedAt": "2026-10-03T13:47:18+00:00",
   "periods": [
     {
       "name": "Today",
       "isDaytime": true,
       "temperature": 81,
-      "startTime": "2026-10-03T09:00:00-05:00",
+      "startTime": "2026-10-03T08:00:00-05:00",
       "shortForecast": "Chance Rain Showers",
       "detailedForecast": "A chance of rain showers before 1pm, then a chance of showers and thunderstorms. Mostly cloudy, with a high near 81. North wind 5 to 10 mph, with gusts as high as 25 mph. Chance of precipitation is 40%. New rainfall amounts less than a tenth of an inch possible.",
       "heat_index": null,
