@@ -1,12 +1,12 @@
 {
-  "updateTime": "2026-10-04T13:18:53+00:00",
-  "generatedAt": "2026-10-04T13:51:32+00:00",
+  "updateTime": "2026-10-04T14:44:35+00:00",
+  "generatedAt": "2026-10-04T14:55:42+00:00",
   "periods": [
     {
       "name": "Today",
       "isDaytime": true,
       "temperature": 81,
-      "startTime": "2026-10-04T08:00:00-05:00",
+      "startTime": "2026-10-04T09:00:00-05:00",
       "shortForecast": "Slight Chance Rain Showers",
       "detailedForecast": "Patchy drizzle before 11am, then a slight chance of rain showers between 11am and 1pm. Mostly cloudy, with a high near 81. North northeast wind around 10 mph, with gusts as high as 25 mph. Chance of precipitation is 20%. New rainfall amounts less than a tenth of an inch possible.",
       "heat_index": null,
