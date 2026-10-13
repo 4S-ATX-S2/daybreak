@@ -1,18 +1,18 @@
 {
-  "updateTime": "2026-10-13T11:42:26+00:00",
-  "generatedAt": "2026-10-13T11:52:38+00:00",
+  "updateTime": "2026-10-13T16:33:03+00:00",
+  "generatedAt": "2026-10-13T17:05:11+00:00",
   "periods": [
     {
-      "name": "Today",
+      "name": "This Afternoon",
       "isDaytime": true,
       "temperature": 95,
-      "startTime": "2026-10-13T06:00:00-05:00",
-      "shortForecast": "Partly Sunny",
-      "detailedForecast": "Partly sunny, with a high near 95. Heat index values as high as 103. South wind 5 to 10 mph, with gusts as high as 25 mph.",
+      "startTime": "2026-10-13T12:00:00-05:00",
+      "shortForecast": "Mostly Sunny",
+      "detailedForecast": "Mostly sunny, with a high near 95. Heat index values as high as 103. South wind around 10 mph, with gusts as high as 25 mph.",
       "heat_index": 103,
       "high": 95,
       "low": null,
-      "pop": 11
+      "pop": 8
     },
     {
       "name": "Tonight",
