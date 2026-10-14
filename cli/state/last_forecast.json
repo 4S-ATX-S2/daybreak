@@ -1,12 +1,12 @@
 {
   "updateTime": "2026-10-14T11:46:19+00:00",
-  "generatedAt": "2026-10-14T12:26:24+00:00",
+  "generatedAt": "2026-10-14T11:57:28+00:00",
   "periods": [
     {
       "name": "Today",
       "isDaytime": true,
       "temperature": 94,
-      "startTime": "2026-10-14T07:00:00-05:00",
+      "startTime": "2026-10-14T06:00:00-05:00",
       "shortForecast": "Partly Sunny then Chance Showers And Thunderstorms",
       "detailedForecast": "A chance of showers and thunderstorms after 1pm. Partly sunny, with a high near 94. Heat index values as high as 103. South southeast wind 5 to 10 mph, with gusts as high as 25 mph. Chance of precipitation is 40%. New rainfall amounts between a tenth and quarter of an inch possible.",
       "heat_index": 103,
