@@ -1,12 +1,12 @@
 {
   "updateTime": "2026-10-19T11:42:43+00:00",
-  "generatedAt": "2026-10-19T12:42:47+00:00",
+  "generatedAt": "2026-10-19T11:49:20+00:00",
   "periods": [
     {
       "name": "Today",
       "isDaytime": true,
       "temperature": 81,
-      "startTime": "2026-10-19T07:00:00-05:00",
+      "startTime": "2026-10-19T06:00:00-05:00",
       "shortForecast": "Mostly Sunny",
       "detailedForecast": "Mostly sunny. High near 81, with temperatures falling to around 77 in the afternoon. East northeast wind 0 to 5 mph.",
       "heat_index": null,
