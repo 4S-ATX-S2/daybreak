@@ -13,6 +13,13 @@
         "error": "HTTP 403"
       },
       {
+        "n": 10,
+        "id": "aljazeera",
+        "name": "Al Jazeera news index",
+        "rule": "Check the DAY, not just the year.",
+        "error": "HTTP 403"
+      },
+      {
         "n": 12,
         "id": "aph_news",
         "name": "Austin Public Health news",
