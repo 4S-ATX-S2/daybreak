@@ -1,14 +1,14 @@
 {
   "updateTime": "2026-10-27T14:42:23+00:00",
-  "generatedAt": "2026-10-27T15:13:15+00:00",
+  "generatedAt": "2026-10-27T14:52:37+00:00",
   "periods": [
     {
       "name": "Today",
       "isDaytime": true,
       "temperature": 82,
-      "startTime": "2026-10-27T10:00:00-05:00",
+      "startTime": "2026-10-27T09:00:00-05:00",
       "shortForecast": "Partly Sunny",
-      "detailedForecast": "Partly sunny, with a high near 82. Southeast wind 0 to 5 mph.",
+      "detailedForecast": "Partly sunny, with a high near 82. East southeast wind 0 to 5 mph.",
       "heat_index": null,
       "high": 82,
       "low": null,
