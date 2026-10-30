@@ -1,102 +1,102 @@
 {
-  "updateTime": "2026-10-29T16:32:42+00:00",
-  "generatedAt": "2026-10-29T16:41:56+00:00",
+  "updateTime": "2026-10-30T11:42:43+00:00",
+  "generatedAt": "2026-10-30T11:49:37+00:00",
   "periods": [
     {
       "name": "Today",
       "isDaytime": true,
-      "temperature": 76,
-      "startTime": "2026-10-29T11:00:00-05:00",
-      "shortForecast": "Chance Rain Showers",
-      "detailedForecast": "A chance of rain showers. Mostly cloudy, with a high near 76. East wind around 5 mph. Chance of precipitation is 30%. New rainfall amounts less than a tenth of an inch possible.",
+      "temperature": 71,
+      "startTime": "2026-10-30T06:00:00-05:00",
+      "shortForecast": "Rain Showers Likely",
+      "detailedForecast": "Rain showers likely. Cloudy, with a high near 71. East wind 0 to 5 mph. Chance of precipitation is 60%. New rainfall amounts between a tenth and quarter of an inch possible.",
       "heat_index": null,
-      "high": 76,
+      "high": 71,
       "low": null,
-      "pop": 30
+      "pop": 60
     },
     {
       "name": "Tonight",
       "isDaytime": false,
-      "temperature": 64,
-      "startTime": "2026-10-29T18:00:00-05:00",
-      "shortForecast": "Slight Chance Rain Showers then Mostly Cloudy",
-      "detailedForecast": "A slight chance of rain showers before 7pm. Mostly cloudy, with a low around 64. East southeast wind 0 to 5 mph. Chance of precipitation is 20%. New rainfall amounts less than a tenth of an inch possible.",
-      "heat_index": null,
-      "high": null,
-      "low": 64,
-      "pop": 20
-    },
-    {
-      "name": "Friday",
-      "isDaytime": true,
-      "temperature": 75,
-      "startTime": "2026-10-30T06:00:00-05:00",
-      "shortForecast": "Chance Rain Showers",
-      "detailedForecast": "A chance of rain showers after 7am. Mostly cloudy, with a high near 75. East wind 0 to 5 mph. Chance of precipitation is 50%. New rainfall amounts less than a tenth of an inch possible.",
-      "heat_index": null,
-      "high": 75,
-      "low": null,
-      "pop": 50
-    },
-    {
-      "name": "Friday Night",
-      "isDaytime": false,
-      "temperature": 64,
+      "temperature": 63,
       "startTime": "2026-10-30T18:00:00-05:00",
-      "shortForecast": "Chance Rain Showers",
-      "detailedForecast": "A chance of rain showers. Mostly cloudy, with a low around 64. East northeast wind 0 to 5 mph. Chance of precipitation is 40%.",
+      "shortForecast": "Rain Showers Likely",
+      "detailedForecast": "Rain showers likely. Cloudy, with a low around 63. East northeast wind 0 to 5 mph. Chance of precipitation is 60%. New rainfall amounts between a tenth and quarter of an inch possible.",
       "heat_index": null,
       "high": null,
-      "low": 64,
-      "pop": 40
+      "low": 63,
+      "pop": 60
     },
     {
       "name": "Saturday",
       "isDaytime": true,
-      "temperature": 81,
+      "temperature": 79,
       "startTime": "2026-10-31T06:00:00-05:00",
-      "shortForecast": "Slight Chance Rain Showers",
-      "detailedForecast": "A slight chance of rain showers. Mostly cloudy, with a high near 81. North northeast wind 0 to 5 mph. Chance of precipitation is 20%.",
+      "shortForecast": "Chance Rain Showers",
+      "detailedForecast": "A chance of rain showers before 4pm. Mostly cloudy, with a high near 79. Northeast wind 0 to 5 mph. Chance of precipitation is 40%. New rainfall amounts less than a tenth of an inch possible.",
       "heat_index": null,
-      "high": 81,
+      "high": 79,
       "low": null,
-      "pop": 20
+      "pop": 40
     },
     {
       "name": "Saturday Night",
       "isDaytime": false,
       "temperature": 65,
       "startTime": "2026-10-31T18:00:00-05:00",
-      "shortForecast": "Slight Chance Rain Showers then Mostly Cloudy",
-      "detailedForecast": "A slight chance of rain showers before 7pm. Mostly cloudy, with a low around 65. North northeast wind around 0 mph. Chance of precipitation is 20%.",
+      "shortForecast": "Mostly Cloudy",
+      "detailedForecast": "Mostly cloudy, with a low around 65. Northeast wind around 0 mph.",
       "heat_index": null,
       "high": null,
       "low": 65,
-      "pop": 20
+      "pop": 4
     },
     {
       "name": "Sunday",
       "isDaytime": true,
-      "temperature": 84,
+      "temperature": 85,
       "startTime": "2026-11-01T06:00:00-06:00",
-      "shortForecast": "Partly Sunny",
-      "detailedForecast": "Partly sunny, with a high near 84. East southeast wind 0 to 5 mph.",
+      "shortForecast": "Mostly Cloudy",
+      "detailedForecast": "Mostly cloudy, with a high near 85. East wind 0 to 5 mph.",
       "heat_index": null,
-      "high": 84,
+      "high": 85,
       "low": null,
-      "pop": 0
+      "pop": 1
     },
     {
       "name": "Sunday Night",
       "isDaytime": false,
-      "temperature": 67,
+      "temperature": 68,
       "startTime": "2026-11-01T18:00:00-06:00",
       "shortForecast": "Mostly Cloudy",
-      "detailedForecast": "Mostly cloudy, with a low around 67. South southeast wind 0 to 5 mph.",
+      "detailedForecast": "Mostly cloudy, with a low around 68. Southeast wind 0 to 5 mph.",
       "heat_index": null,
       "high": null,
-      "low": 67,
-      "pop": 1
+      "low": 68,
+      "pop": 0
+    },
+    {
+      "name": "Monday",
+      "isDaytime": true,
+      "temperature": 86,
+      "startTime": "2026-11-02T06:00:00-06:00",
+      "shortForecast": "Partly Sunny",
+      "detailedForecast": "Partly sunny, with a high near 86. South wind 5 to 10 mph, with gusts as high as 25 mph.",
+      "heat_index": null,
+      "high": 86,
+      "low": null,
+      "pop": 5
+    },
+    {
+      "name": "Monday Night",
+      "isDaytime": false,
+      "temperature": 68,
+      "startTime": "2026-11-02T18:00:00-06:00",
+      "shortForecast": "Chance Showers And Thunderstorms",
+      "detailedForecast": "A chance of showers and thunderstorms before midnight, then a chance of showers and thunderstorms. Mostly cloudy, with a low around 68. South wind around 5 mph, with gusts as high as 25 mph. Chance of precipitation is 50%.",
+      "heat_index": null,
+      "high": null,
+      "low": 68,
+      "pop": 50
     }
   ]
 }
