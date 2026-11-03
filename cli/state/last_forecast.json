@@ -1,14 +1,14 @@
 {
-  "updateTime": "2026-11-03T14:42:27+00:00",
-  "generatedAt": "2026-11-03T15:15:51+00:00",
+  "updateTime": "2026-11-03T16:33:03+00:00",
+  "generatedAt": "2026-11-03T17:05:36+00:00",
   "periods": [
     {
       "name": "Today",
       "isDaytime": true,
       "temperature": 78,
-      "startTime": "2026-11-03T09:00:00-06:00",
+      "startTime": "2026-11-03T11:00:00-06:00",
       "shortForecast": "Slight Chance Rain Showers then Sunny",
-      "detailedForecast": "A slight chance of rain showers before noon. Sunny, with a high near 78. Northwest wind 5 to 10 mph, with gusts as high as 20 mph. Chance of precipitation is 20%. New rainfall amounts between a tenth and quarter of an inch possible.",
+      "detailedForecast": "A slight chance of rain showers before noon. Sunny, with a high near 78. North northwest wind 5 to 10 mph, with gusts as high as 20 mph. Chance of precipitation is 20%. New rainfall amounts between a tenth and quarter of an inch possible.",
       "heat_index": null,
       "high": 78,
       "low": null,
