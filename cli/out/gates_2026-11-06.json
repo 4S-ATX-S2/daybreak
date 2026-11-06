@@ -13,13 +13,6 @@
         "error": "HTTP 403"
       },
       {
-        "n": 11,
-        "id": "cdc_cyclospora",
-        "name": "CDC cyclosporiasis investigation",
-        "rule": "Note re-dating without a data change - it has done this 3 editions running.",
-        "error": "HTTP 403"
-      },
-      {
         "n": 12,
         "id": "aph_news",
         "name": "Austin Public Health news",
