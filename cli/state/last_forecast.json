@@ -1,66 +1,42 @@
 {
-  "updateTime": "2026-11-07T11:42:23+00:00",
-  "generatedAt": "2026-11-07T12:36:06+00:00",
+  "updateTime": "2026-11-08T11:44:46+00:00",
+  "generatedAt": "2026-11-08T12:51:50+00:00",
   "periods": [
     {
       "name": "Today",
       "isDaytime": true,
-      "temperature": 74,
-      "startTime": "2026-11-07T06:00:00-06:00",
-      "shortForecast": "Mostly Cloudy then Slight Chance Light Rain",
-      "detailedForecast": "A slight chance of rain after 3pm. Mostly cloudy, with a high near 74. North wind around 5 mph. Chance of precipitation is 20%. New rainfall amounts less than a tenth of an inch possible.",
+      "temperature": 63,
+      "startTime": "2026-11-08T06:00:00-06:00",
+      "shortForecast": "Rain Showers",
+      "detailedForecast": "Rain showers. Mostly cloudy, with a high near 63. Northeast wind around 5 mph. Chance of precipitation is 90%. New rainfall amounts between a quarter and half of an inch possible.",
       "heat_index": null,
-      "high": 74,
+      "high": 63,
       "low": null,
-      "pop": 20
+      "pop": 90
     },
     {
       "name": "Tonight",
       "isDaytime": false,
-      "temperature": 58,
-      "startTime": "2026-11-07T18:00:00-06:00",
-      "shortForecast": "Chance Showers And Thunderstorms then Chance Light Rain",
-      "detailedForecast": "A chance of rain before 9pm, then a chance of showers and thunderstorms between 9pm and midnight, then a chance of rain. Mostly cloudy, with a low around 58. North northeast wind around 5 mph. Chance of precipitation is 50%. New rainfall amounts less than a tenth of an inch possible.",
-      "heat_index": null,
-      "high": null,
-      "low": 58,
-      "pop": 50
-    },
-    {
-      "name": "Sunday",
-      "isDaytime": true,
-      "temperature": 67,
-      "startTime": "2026-11-08T06:00:00-06:00",
-      "shortForecast": "Light Rain",
-      "detailedForecast": "Rain. Cloudy, with a high near 67. Northeast wind around 5 mph. Chance of precipitation is 100%. New rainfall amounts between a quarter and half of an inch possible.",
-      "heat_index": null,
-      "high": 67,
-      "low": null,
-      "pop": 100
-    },
-    {
-      "name": "Sunday Night",
-      "isDaytime": false,
       "temperature": 56,
       "startTime": "2026-11-08T18:00:00-06:00",
-      "shortForecast": "Chance Light Rain",
-      "detailedForecast": "A chance of rain. Mostly cloudy, with a low around 56. Northeast wind around 0 mph. Chance of precipitation is 50%.",
+      "shortForecast": "Rain Showers Likely",
+      "detailedForecast": "Rain showers likely. Mostly cloudy, with a low around 56. North northeast wind 0 to 5 mph. Chance of precipitation is 70%. New rainfall amounts less than a tenth of an inch possible.",
       "heat_index": null,
       "high": null,
       "low": 56,
-      "pop": 50
+      "pop": 70
     },
     {
       "name": "Monday",
       "isDaytime": true,
-      "temperature": 68,
+      "temperature": 67,
       "startTime": "2026-11-09T06:00:00-06:00",
-      "shortForecast": "Rain Showers Likely",
-      "detailedForecast": "Rain showers likely. Mostly cloudy, with a high near 68. East northeast wind around 0 mph. Chance of precipitation is 60%.",
+      "shortForecast": "Chance Rain Showers",
+      "detailedForecast": "A chance of rain showers. Partly sunny, with a high near 67. Northeast wind around 0 mph. Chance of precipitation is 50%. New rainfall amounts less than a tenth of an inch possible.",
       "heat_index": null,
-      "high": 68,
+      "high": 67,
       "low": null,
-      "pop": 60
+      "pop": 50
     },
     {
       "name": "Monday Night",
@@ -79,12 +55,12 @@
       "isDaytime": true,
       "temperature": 72,
       "startTime": "2026-11-10T06:00:00-06:00",
-      "shortForecast": "Slight Chance Rain Showers then Partly Sunny",
-      "detailedForecast": "A slight chance of rain showers before noon. Partly sunny, with a high near 72. South southeast wind around 0 mph. Chance of precipitation is 20%.",
+      "shortForecast": "Partly Sunny",
+      "detailedForecast": "Partly sunny, with a high near 72. South wind around 0 mph.",
       "heat_index": null,
       "high": 72,
       "low": null,
-      "pop": 20
+      "pop": 8
     },
     {
       "name": "Tuesday Night",
@@ -92,11 +68,35 @@
       "temperature": 57,
       "startTime": "2026-11-10T18:00:00-06:00",
       "shortForecast": "Mostly Cloudy",
-      "detailedForecast": "Mostly cloudy, with a low around 57. South southwest wind around 0 mph.",
+      "detailedForecast": "Mostly cloudy, with a low around 57. Southwest wind around 0 mph.",
       "heat_index": null,
       "high": null,
       "low": 57,
       "pop": 14
+    },
+    {
+      "name": "Veterans Day",
+      "isDaytime": true,
+      "temperature": 77,
+      "startTime": "2026-11-11T06:00:00-06:00",
+      "shortForecast": "Mostly Cloudy",
+      "detailedForecast": "Mostly cloudy, with a high near 77. West northwest wind 0 to 5 mph.",
+      "heat_index": null,
+      "high": 77,
+      "low": null,
+      "pop": 13
+    },
+    {
+      "name": "Wednesday Night",
+      "isDaytime": false,
+      "temperature": 56,
+      "startTime": "2026-11-11T18:00:00-06:00",
+      "shortForecast": "Partly Cloudy",
+      "detailedForecast": "Partly cloudy, with a low around 56. Northwest wind 0 to 5 mph.",
+      "heat_index": null,
+      "high": null,
+      "low": 56,
+      "pop": 0
     }
   ]
 }
