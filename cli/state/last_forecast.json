@@ -1,66 +1,42 @@
 {
-  "updateTime": "2026-11-09T19:46:41+00:00",
-  "generatedAt": "2026-11-09T20:24:16+00:00",
+  "updateTime": "2026-11-10T16:32:24+00:00",
+  "generatedAt": "2026-11-10T16:42:59+00:00",
   "periods": [
     {
-      "name": "This Afternoon",
+      "name": "Today",
       "isDaytime": true,
-      "temperature": 69,
-      "startTime": "2026-11-09T14:00:00-06:00",
-      "shortForecast": "Rain Showers Likely",
-      "detailedForecast": "Rain showers likely. Mostly cloudy, with a high near 69. North northeast wind around 0 mph. Chance of precipitation is 70%. New rainfall amounts less than a tenth of an inch possible.",
+      "temperature": 72,
+      "startTime": "2026-11-10T10:00:00-06:00",
+      "shortForecast": "Mostly Cloudy",
+      "detailedForecast": "Mostly cloudy, with a high near 72. South wind 0 to 5 mph.",
       "heat_index": null,
-      "high": 69,
+      "high": 72,
       "low": null,
-      "pop": 70
+      "pop": 10
     },
     {
       "name": "Tonight",
       "isDaytime": false,
-      "temperature": 55,
-      "startTime": "2026-11-09T18:00:00-06:00",
-      "shortForecast": "Slight Chance Rain Showers then Patchy Fog",
-      "detailedForecast": "A slight chance of rain showers before 9pm, then patchy fog. Partly cloudy, with a low around 55. Wind around 0 mph. Chance of precipitation is 20%. New rainfall amounts less than a tenth of an inch possible.",
-      "heat_index": null,
-      "high": null,
-      "low": 55,
-      "pop": 20
-    },
-    {
-      "name": "Tuesday",
-      "isDaytime": true,
-      "temperature": 72,
-      "startTime": "2026-11-10T06:00:00-06:00",
-      "shortForecast": "Patchy Fog then Mostly Sunny",
-      "detailedForecast": "Patchy fog before 9am. Mostly sunny, with a high near 72. South wind around 0 mph.",
-      "heat_index": null,
-      "high": 72,
-      "low": null,
-      "pop": 7
-    },
-    {
-      "name": "Tuesday Night",
-      "isDaytime": false,
-      "temperature": 58,
+      "temperature": 57,
       "startTime": "2026-11-10T18:00:00-06:00",
-      "shortForecast": "Mostly Clear",
-      "detailedForecast": "Mostly clear, with a low around 58. West southwest wind around 0 mph.",
+      "shortForecast": "Partly Cloudy",
+      "detailedForecast": "Partly cloudy, with a low around 57. Southwest wind around 0 mph.",
       "heat_index": null,
       "high": null,
-      "low": 58,
-      "pop": 5
+      "low": 57,
+      "pop": 3
     },
     {
       "name": "Veterans Day",
       "isDaytime": true,
       "temperature": 79,
       "startTime": "2026-11-11T06:00:00-06:00",
-      "shortForecast": "Mostly Sunny",
-      "detailedForecast": "Mostly sunny, with a high near 79. West northwest wind 0 to 5 mph.",
+      "shortForecast": "Patchy Fog then Mostly Sunny",
+      "detailedForecast": "Patchy fog before 7am. Mostly sunny, with a high near 79. Northwest wind 0 to 5 mph.",
       "heat_index": null,
       "high": 79,
       "low": null,
-      "pop": 2
+      "pop": 0
     },
     {
       "name": "Wednesday Night",
@@ -77,12 +53,12 @@
     {
       "name": "Thursday",
       "isDaytime": true,
-      "temperature": 76,
+      "temperature": 78,
       "startTime": "2026-11-12T06:00:00-06:00",
       "shortForecast": "Sunny",
-      "detailedForecast": "Sunny, with a high near 76. North wind 0 to 5 mph.",
+      "detailedForecast": "Sunny, with a high near 78. North northeast wind 0 to 5 mph.",
       "heat_index": null,
-      "high": 76,
+      "high": 78,
       "low": null,
       "pop": 0
     },
@@ -96,6 +72,30 @@
       "heat_index": null,
       "high": null,
       "low": 51,
+      "pop": 0
+    },
+    {
+      "name": "Friday",
+      "isDaytime": true,
+      "temperature": 78,
+      "startTime": "2026-11-13T06:00:00-06:00",
+      "shortForecast": "Sunny",
+      "detailedForecast": "Sunny, with a high near 78. West wind around 0 mph.",
+      "heat_index": null,
+      "high": 78,
+      "low": null,
+      "pop": 0
+    },
+    {
+      "name": "Friday Night",
+      "isDaytime": false,
+      "temperature": 52,
+      "startTime": "2026-11-13T18:00:00-06:00",
+      "shortForecast": "Mostly Clear",
+      "detailedForecast": "Mostly clear, with a low around 52. South southeast wind around 0 mph.",
+      "heat_index": null,
+      "high": null,
+      "low": 52,
       "pop": 0
     }
   ]
