@@ -1,12 +1,12 @@
 {
-  "updateTime": "2026-11-11T16:00:23+00:00",
-  "generatedAt": "2026-11-11T16:22:26+00:00",
+  "updateTime": "2026-11-11T16:44:40+00:00",
+  "generatedAt": "2026-11-11T17:12:38+00:00",
   "periods": [
     {
       "name": "Veterans Day",
       "isDaytime": true,
       "temperature": 77,
-      "startTime": "2026-11-11T10:00:00-06:00",
+      "startTime": "2026-11-11T11:00:00-06:00",
       "shortForecast": "Mostly Sunny",
       "detailedForecast": "Mostly sunny, with a high near 77. North northwest wind around 0 mph.",
       "heat_index": null,
