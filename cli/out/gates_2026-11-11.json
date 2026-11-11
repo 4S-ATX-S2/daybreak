@@ -1,0 +1,33 @@
+{
+  "G13": {
+    "gate": "G13 SOURCE COVERAGE",
+    "status": "DEGRADED",
+    "attempted": 23,
+    "tier1_total": 23,
+    "unreachable": [
+      {
+        "n": 9,
+        "id": "hormuz_tracker",
+        "name": "Strait of Hormuz tracker",
+        "rule": "Sole source. Flag its internal inconsistencies, reconcile nothing. 403s a plain client - browser fallback.",
+        "error": "HTTP 403"
+      },
+      {
+        "n": 12,
+        "id": "aph_news",
+        "name": "Austin Public Health news",
+        "rule": "404'd on ed. 250 - if it fails, the day count is an increment on an UNVERIFIED base and must say so.",
+        "error": "HTTP 404"
+      }
+    ],
+    "not_attempted": [],
+    "publish_instruction": "Every UNREACHABLE row must appear in the confidence note as 'not verified this pass'. Do not estimate. Do not omit."
+  },
+  "G14": {
+    "gate": "G14 THRESHOLD RE-READ",
+    "status": "N/A \u2014 no figure near a criterion",
+    "margin": 3,
+    "findings": [],
+    "publish_instruction": "A range that spans a decision point is more honest AND more useful than a single number on one side of it."
+  }
+}
