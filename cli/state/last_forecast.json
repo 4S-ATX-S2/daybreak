@@ -1,14 +1,14 @@
 {
-  "updateTime": "2026-11-15T11:42:27+00:00",
-  "generatedAt": "2026-11-15T12:17:34+00:00",
+  "updateTime": "2026-11-15T16:32:59+00:00",
+  "generatedAt": "2026-11-15T16:54:52+00:00",
   "periods": [
     {
       "name": "Today",
       "isDaytime": true,
       "temperature": 55,
-      "startTime": "2026-11-15T06:00:00-06:00",
+      "startTime": "2026-11-15T10:00:00-06:00",
       "shortForecast": "Showers And Thunderstorms",
-      "detailedForecast": "Showers and thunderstorms before 3pm, then a slight chance of drizzle. Mostly cloudy, with a high near 55. East northeast wind 5 to 10 mph, with gusts as high as 25 mph. Chance of precipitation is 90%. New rainfall amounts between three quarters and one inch possible.",
+      "detailedForecast": "Showers and thunderstorms before 3pm, then a slight chance of drizzle. Mostly cloudy, with a high near 55. Northeast wind 5 to 10 mph, with gusts as high as 25 mph. Chance of precipitation is 90%. New rainfall amounts between three quarters and one inch possible.",
       "heat_index": null,
       "high": 55,
       "low": null,
