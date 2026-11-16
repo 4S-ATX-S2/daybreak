@@ -1,14 +1,14 @@
 {
-  "updateTime": "2026-11-16T18:44:22+00:00",
-  "generatedAt": "2026-11-16T19:17:28+00:00",
+  "updateTime": "2026-11-16T19:46:21+00:00",
+  "generatedAt": "2026-11-16T20:11:33+00:00",
   "periods": [
     {
       "name": "This Afternoon",
       "isDaytime": true,
       "temperature": 59,
-      "startTime": "2026-11-16T13:00:00-06:00",
+      "startTime": "2026-11-16T14:00:00-06:00",
       "shortForecast": "Mostly Sunny",
-      "detailedForecast": "Mostly sunny, with a high near 59. North northeast wind 5 to 10 mph.",
+      "detailedForecast": "Mostly sunny, with a high near 59. North northeast wind around 5 mph.",
       "heat_index": null,
       "high": 59,
       "low": null,
