@@ -1,6 +1,6 @@
 {
-  "updateTime": "2026-11-23T20:44:23+00:00",
-  "generatedAt": "2026-11-23T21:00:22+00:00",
+  "updateTime": "2026-11-23T21:42:20+00:00",
+  "generatedAt": "2026-11-23T21:48:37+00:00",
   "periods": [
     {
       "name": "This Afternoon",
@@ -8,7 +8,7 @@
       "temperature": 61,
       "startTime": "2026-11-23T15:00:00-06:00",
       "shortForecast": "Sunny",
-      "detailedForecast": "Sunny, with a high near 61. North northeast wind 5 to 10 mph.",
+      "detailedForecast": "Sunny, with a high near 61. North northeast wind around 10 mph.",
       "heat_index": null,
       "high": 61,
       "low": null,
