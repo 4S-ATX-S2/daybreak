@@ -1,36 +1,12 @@
 {
-  "updateTime": "2026-11-25T19:46:33+00:00",
-  "generatedAt": "2026-11-25T19:56:34+00:00",
+  "updateTime": "2026-11-26T17:44:22+00:00",
+  "generatedAt": "2026-11-26T18:19:15+00:00",
   "periods": [
-    {
-      "name": "This Afternoon",
-      "isDaytime": true,
-      "temperature": 59,
-      "startTime": "2026-11-25T13:00:00-06:00",
-      "shortForecast": "Sunny",
-      "detailedForecast": "Sunny. High near 59, with temperatures falling to around 55 in the afternoon. North wind 5 to 10 mph.",
-      "heat_index": null,
-      "high": 59,
-      "low": null,
-      "pop": 0
-    },
-    {
-      "name": "Tonight",
-      "isDaytime": false,
-      "temperature": 33,
-      "startTime": "2026-11-25T18:00:00-06:00",
-      "shortForecast": "Clear",
-      "detailedForecast": "Clear, with a low around 33. North northwest wind 0 to 5 mph.",
-      "heat_index": null,
-      "high": null,
-      "low": 33,
-      "pop": 0
-    },
     {
       "name": "Thanksgiving Day",
       "isDaytime": true,
       "temperature": 59,
-      "startTime": "2026-11-26T06:00:00-06:00",
+      "startTime": "2026-11-26T12:00:00-06:00",
       "shortForecast": "Sunny",
       "detailedForecast": "Sunny, with a high near 59. North northwest wind 0 to 10 mph, with gusts as high as 20 mph.",
       "heat_index": null,
@@ -39,7 +15,7 @@
       "pop": 0
     },
     {
-      "name": "Thursday Night",
+      "name": "Tonight",
       "isDaytime": false,
       "temperature": 37,
       "startTime": "2026-11-26T18:00:00-06:00",
@@ -56,7 +32,7 @@
       "temperature": 67,
       "startTime": "2026-11-27T06:00:00-06:00",
       "shortForecast": "Sunny",
-      "detailedForecast": "Sunny, with a high near 67. Southwest wind 0 to 10 mph, with gusts as high as 20 mph.",
+      "detailedForecast": "Sunny. High near 67, with temperatures falling to around 63 in the afternoon. West southwest wind 0 to 10 mph, with gusts as high as 25 mph.",
       "heat_index": null,
       "high": 67,
       "low": null,
@@ -67,8 +43,8 @@
       "isDaytime": false,
       "temperature": 42,
       "startTime": "2026-11-27T18:00:00-06:00",
-      "shortForecast": "Clear",
-      "detailedForecast": "Clear, with a low around 42. South southwest wind around 5 mph.",
+      "shortForecast": "Mostly Clear",
+      "detailedForecast": "Mostly clear, with a low around 42. South southwest wind around 5 mph.",
       "heat_index": null,
       "high": null,
       "low": 42,
@@ -89,13 +65,37 @@
     {
       "name": "Saturday Night",
       "isDaytime": false,
-      "temperature": 52,
+      "temperature": 54,
       "startTime": "2026-11-28T18:00:00-06:00",
       "shortForecast": "Mostly Clear",
-      "detailedForecast": "Mostly clear, with a low around 52. Southwest wind 10 to 15 mph, with gusts as high as 30 mph.",
+      "detailedForecast": "Mostly clear, with a low around 54. Southwest wind around 10 mph, with gusts as high as 35 mph.",
       "heat_index": null,
       "high": null,
-      "low": 52,
+      "low": 54,
+      "pop": 0
+    },
+    {
+      "name": "Sunday",
+      "isDaytime": true,
+      "temperature": 66,
+      "startTime": "2026-11-29T06:00:00-06:00",
+      "shortForecast": "Mostly Sunny",
+      "detailedForecast": "Mostly sunny, with a high near 66. North northwest wind 10 to 15 mph, with gusts as high as 35 mph.",
+      "heat_index": null,
+      "high": 66,
+      "low": null,
+      "pop": 0
+    },
+    {
+      "name": "Sunday Night",
+      "isDaytime": false,
+      "temperature": 40,
+      "startTime": "2026-11-29T18:00:00-06:00",
+      "shortForecast": "Mostly Clear",
+      "detailedForecast": "Mostly clear, with a low around 40. North wind 0 to 5 mph, with gusts as high as 20 mph.",
+      "heat_index": null,
+      "high": null,
+      "low": 40,
       "pop": 0
     }
   ]
